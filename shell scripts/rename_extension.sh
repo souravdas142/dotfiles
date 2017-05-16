@@ -2,6 +2,7 @@
 # taking argument as the target folder as $1
 # taking argument as the target folder as $2
 #taking argument as the extension name as $3
+# this is sourav das and i promise this code to work in more efficient way... Thanks
 
 #for i in `ls ~/Desktop/shell/test/`;
 for i in `ls $1`;
