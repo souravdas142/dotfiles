@@ -55,6 +55,7 @@ so, the script want to take inputs from user which source you want to be compile
 
 Example : 
 
+$ . gcc_Version_2.sh
 
 Enter Language ( gcc ( for C ) OR g++ ( for C++ ) ) : gcc
 
@@ -69,6 +70,16 @@ insertionsort.c compiling with -std=c11
 please wait... generating object sort...
 
 object successfully generated...
+
+
+![screenshot00193](https://cloud.githubusercontent.com/assets/24272753/26275985/10f4f706-3d8b-11e7-938b-12626d59ead3.png)
+
+you can see here, how we compile a c source file without much typing any commands or anything... and after next you don't to do again
+execute " . gcc_Version_2.sh" over and over... just invoke " gccv " and be ready for next compile...
+
+so the next screenshot show the output generated ( sort.exe ) by the shell script
+
+![screenshot00194](https://cloud.githubusercontent.com/assets/24272753/26276001/6762ef58-3d8b-11e7-97ec-9a4f9f98715c.png)
 
 
 if Script has any bug then please let me know about that i'll fix it... thanks...
