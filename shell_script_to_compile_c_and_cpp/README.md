@@ -1,5 +1,5 @@
 
-This Script will help to compile C and C++ Source File Without much typing commands and all
+# This Script will help to compile C and C++ Source File Without much typing commands and all
 
 souce files are compile with -Wall -Wextra -pedantic -Werror -g 
 
