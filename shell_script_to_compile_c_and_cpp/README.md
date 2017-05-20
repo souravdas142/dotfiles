@@ -57,11 +57,17 @@ Example :
 
 
 Enter Language ( gcc ( for C ) OR g++ ( for C++ ) ) : gcc
+
 Enter Source file Name : insertionsort
+
 Enter object file name : sort
+
 Enter Standard ( Default -std=c11 ) :
+
 insertionsort.c compiling with -std=c11
+
 please wait... generating object sort...
+
 object successfully generated...
 
 
