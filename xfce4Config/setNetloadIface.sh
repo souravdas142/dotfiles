@@ -1,5 +1,8 @@
 if [ "$2" == "up" ];then
-	netloadPath=/home/sourav/.config/xfce4/panel/netload-10.rc
+
+        user="sourav" # Change User name to yours
+
+	netloadPath=/home/$user/.config/xfce4/panel/netload-10.rc
 	if [ -f $netloadPath ]; then
 		pid=$(ps aux | grep -i "netload" | grep -v "grep"|awk '{print $2}')
 		if [ "$pid" != "" ]; then
