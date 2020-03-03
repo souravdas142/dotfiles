@@ -8,7 +8,9 @@ first enable service `NetworkManager-dispatcher.service`
 move this script to `/etc/NetworkManager/dispatcher.d/`
 change its user and group ownership to root set permission to 755
 
-`10        user="sourav" # Change User name to yours`
+```bash
+10        user="sourav" # Change User name to yours
+```
 
 For more information check :
  [NetworkManager-1](https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/NetworkManager.html)
