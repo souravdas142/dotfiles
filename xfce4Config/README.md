@@ -15,5 +15,5 @@ For more information check :
 [NetworkManager-2](https://wiki.archlinux.org/index.php/NetworkManager)
 
 If someone want change the conept, check : 
-[Various Triggering-1](https://askubuntu.com/questions/436943/how-to-run-a-script-when-there-is-a-change-in-your-local-ip) 
-[Various Triggering-2](https://askubuntu.com/questions/258580/how-to-run-a-script-depending-on-internet-connection)
+[Various_Triggering-1](https://askubuntu.com/questions/436943/how-to-run-a-script-when-there-is-a-change-in-your-local-ip) 
+[Various_Triggering-2](https://askubuntu.com/questions/258580/how-to-run-a-script-depending-on-internet-connection)
