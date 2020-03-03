@@ -1,3 +1,5 @@
+#!/bin/bash 
+
 if [ "$2" == "up" ];then
 
         user="sourav" # Change User name to yours
