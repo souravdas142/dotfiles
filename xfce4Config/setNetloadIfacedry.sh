@@ -25,7 +25,10 @@ if [ "$2" == "up" ];then #check if IFace connected with a ssid, if yes then,
 				if [ "$pre_dev" != "$cur_dev" ];then #if current interface change then
 					sed  -e  "s/Network_Device=.*/Network_Device=$cur_dev/" $netloadPath # replace prev Iface with curr
 				#	kill -1 $pid # send SIGHUP signal for reread its configuration file
+				else
+					echo "Previous Iface and Current Iface is same, So No Change."
 				fi
+				
 			fi
 	fi
 fi
