@@ -3,14 +3,18 @@
 
 ### This script triggers when NetworkManager connects to a network Interface
 
+
+| :warning: WARNING: |
+| :----------------  |
+|	**This Script is made for Only One Instance of netload and for One user at a time</br> It may show unknown behaviour if uses with multiple Instance and multiple user at a time** |
+
+
 first enable service `NetworkManager-dispatcher.service`
 
 move this script to `/etc/NetworkManager/dispatcher.d/`
 change its user and group ownership to root set permission to 755
 
-```bash
-10        user="sourav" # Change User name to yours
-```
+
 
 For more information check :
  [NetworkManager-1](https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/NetworkManager.html)
