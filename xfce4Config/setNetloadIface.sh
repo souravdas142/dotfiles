@@ -15,7 +15,7 @@ if [ "$2" == "up" ];then #check if IFace connected with a ssid, if yes then,
 	if [ "$pid" != "" ]; then #if pid exists then
        	user=$(echo $procString | awk '{print $1}') # Extract User name 
 
-		netloadNum=$(echo $procString | awk '{print $13}') 
+		netloadNum=$(echo $procString | awk '{print $13}') # which config file use for that pid 
 		netloadPath=/home/$user/.config/xfce4/panel/netload-$netloadNum.rc # set config path for netload
 		if [ -f $netloadPath ]; then #if netload config file exists then
 	#			cur_dev=$(ip route  | tail -1 | cut -d' ' -f3) #set curr Iface using,from ip route, default gateway
