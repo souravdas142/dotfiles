@@ -17,13 +17,15 @@ if [ "$2" == "up" ];then #check if IFace connected with a ssid, if yes then,
 	#			cur_dev=$(ip route  | tail -1 | cut -d' ' -f3) #set curr Iface using,from ip route, default gateway
 				cur_dev=$1 # by default NetworkManager-dispatcher pass interface name in $1
 				pre_dev=$(awk -F'=' '/Network_Device/ {print $2}'  $netloadPath) #Iface previously used
+				echo "User = $user"
+				echo "Pid = $pid"
+				echo "Path = $netloadPath"
+				echo "cur_dev = $cur_dev"
+				echo "pre_dev = $pre_dev"
 				if [ "$pre_dev" != "$cur_dev" ];then #if current interface change then
-					sed -i -e  "s/Network_Device=.*/Network_Device=$cur_dev/" $netloadPath # replace prev Iface with curr
-					kill -1 $pid # send SIGHUP signal for reread its configuration file
+					sed  -e  "s/Network_Device=.*/Network_Device=$cur_dev/" $netloadPath # replace prev Iface with curr
+				#	kill -1 $pid # send SIGHUP signal for reread its configuration file
 				fi
 			fi
 	fi
 fi
-
-
-# should handle if multiple pid available in next version
