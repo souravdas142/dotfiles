@@ -8,6 +8,11 @@
 | :----------------  |
 |	**This Script is made for Only One Instance of netload and for One user at a time</br> It may show unknown behaviour if uses with multiple Instance and multiple user at a time** |
 
+|:pencil2: **Dependencies :**|
+|:-----------------|
+|<ol><li> Xfce4 Panel </li><li> Network Monitor (netload)</li><li> Network Manager</li><li> awk</li><li> sed</li><li> cut</li><li> grep</li>|
+|---------------|
+
 
 first enable service `NetworkManager-dispatcher.service`
 
