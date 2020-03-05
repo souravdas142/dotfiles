@@ -6,7 +6,7 @@
 #!/bin/bash 
 if [ ! -L /home/root ];then  # if pid own by root thn simple redirect to /root 
 	ln -fs /root/ /home/root # from /home/root, here we can treat root is a 
-fi							 # non-non root user :/
+fi							 # non-root user (but actually not :/ )
 
 # by default NetworkManager-dispatcher pass connected Iface is up or down in $2
 if [ "$2" == "up" ];then #check if IFace connected with a ssid, if yes then,
