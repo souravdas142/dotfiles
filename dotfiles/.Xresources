@@ -79,7 +79,7 @@ Xcursor.size: 9W
 URxvt.urgentOnBell: true
 URxvt.scrollBar: false
 URxvt.matcher.button: 1
-URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,ibeamcursor,clipboard-paste-on-right-click
+URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,ibeamcursor,clipboard-paste-on-right-click,selection-to-clipboard
 xvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
