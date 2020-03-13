@@ -2,7 +2,7 @@ URxvt*termName: rxvt-unicode
 !URxvt*termName:         rxvt-256color
 !URxvt*termName:  screen-256color
 URxvt*background:                     #151718
-URxvt*foreground:                     #d6d6d6
+URxvt*foreground:                     #ffffff
 URxvt*transparent:					  true
 URxvt.shading:       15
 URxvt.depth: 32
@@ -57,20 +57,23 @@ URxvt*color20:                        #43a5d5
 URxvt*color21:                        #eeeeee
 
 ! fonts
-#define font1         Droid Sans Mono
-#define font2         Inconsolata Nerd Font Mono
+!#define font1         Droid Sans Mono
+!#define font2         Inconsolata Nerd Font Mono
+!#define font3         DejaVu Sans
+!#define font4         Noto Sans Mono CJK JP
+#define font1         Hack-Regular
+#define font2         Hack-Bold
 #define font3         DejaVu Sans
 #define font4         Noto Sans Mono CJK JP
+#define font5         Hack-RegularOblique
 
-URxvt*font:           xft:font1:pixelsize=14, xft:font2:pixelsize=11:minspace=false, xft:font3:pixelsize=11,xft:font4:pixelsize=11
-URxvt*boldFont:       xft:font1:bold:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
-URxvt*italicFont:     xft:font1:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
-URxvt*boldItalicFont: xft:font1:bold:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False, xft:font3:pixelsize=14, xft:font4:pixelsize=14
-!URxvt.font: xft:hack:size=11
-! URxvt*font: xft:Inconsolata Nerd Font Mono:size=11, xft:DejaVu Sans:size=12
-!URxvt.font: xft:monospace:size=12
+URxvt*font:           xft:font1:pixelsize=14, xft:font2:pixelsize=11:minspace=false, xft:font3:pixelsize=11,xft:font4:pixelsize=11,xft:symbola
+URxvt*boldFont:       xft:font2:bold:pixelsize=14, xft:font2:pixelsize=14:weight=bold:minspace=False,xft:font3:pixelsize=14:weight=bold,xft:font4:pixelsize=14:weight=bold,xft:symbola
+URxvt*italicFont:     xft:font5:italic:pixelsize=14, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14,xft:symbola
+URxvt*boldItalicFont: xft:font5:bold:italic:pixelsize=16:weight=bold, xft:font2:pixelsize=14:weight=bold:minspace=False, xft:font3:pixelsize=14:weight=bold, xft:font4:pixelsize=14:weight=bold,xft:symbola
 
-! xterm: do not jump to bottom when new output appears,
+
+! do not jump to bottom when new output appears,
 !        but do so on key press
 URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
