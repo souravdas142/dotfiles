@@ -1,9 +1,10 @@
+#!/bin/bash 
+# shebang to eliminate confusion if users using antoher shell
 # enable service NetworkManager-dispatcther.service
 # move this script to /etc/NetworkManager/dispatcher.d/
 # give user and group ownership to root and set permission to 755
 
-# shebang to eliminate confusion if users using antoher shell
-#!/bin/bash 
+
 if [ ! -L /home/root ];then  # if pid own by root thn simple redirect to /root 
 	ln -fs /root/ /home/root # from /home/root, here we can treat root is a 
 fi							 # non-root user (but actually not :/ )
