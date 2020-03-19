@@ -1,7 +1,7 @@
-# bandwidth2
+# bandwidth2 specially patched for polybar(without color)
 
 Monitor bandwidth usage.
-This is a C version of the bandwidth blocklet.
+This is a C version of the bandwidth for Polybar
 
 ![](bandwidth2.png)
 
