@@ -30,10 +30,10 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 15
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+;radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
@@ -42,8 +42,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+;border-size = 4
+;border-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -51,9 +51,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = siji:pixelsize=12;1
 font-3 = "Font Awesome 5 Free Solid:style=Solid:size=10;0"
 
 modules-left = i3
@@ -411,24 +411,9 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 tail = true 
 label = %output%
-interval = 1
-exec = /home/sourav/Desktop/git/dot_config_shell_files/bandwidth2/bandwidth2
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+interval = 0 
+exec = /home/sourav/.config/polybar/modules/bandwidth2/bandwidth2
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
