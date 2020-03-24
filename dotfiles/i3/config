@@ -41,7 +41,7 @@ font pango:System San Francisco Display 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pass-screen-keys --pass-power-keys
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -64,6 +64,7 @@ for_window [window_type="dialog"]                       floating enable
 for_window [window_type="menu"]                         floating enable
 #for_window [class="persepolis"] floating enable
 for_window [class="persepolis"] move window to workspace $ws10,layout stacking
+for_window [class="persepolis" title=".*_Float$"] floating enable,resize set 645 224
 for_window [class="firefox" window_role="About"] floating enable
 for_window [class="firefox" instance="Place"] floating enable
 for_window [class="copyq"] floating enable,resize set 640 480
@@ -74,7 +75,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec --no-startup-id tilix
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -87,7 +88,13 @@ bindsym $mod+d exec rofi -show run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym --release Print exec --no-startup-id maim --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
+bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
+bindsym --release Shift+Print exec --no-startup-id maim -s --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
 
+bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full --clipboard --path /home/sourav/Pictures/
+
+bindsym $mod+Mod1+Print --release exec --no-startup-id shutter -fcen  -o /home/sourav/Pictures/shut%nb_name%Y%m%d%T.png 
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -239,4 +246,4 @@ hide_edge_borders both
 
 exec_always --no-startup-id /home/sourav/.config/polybar/launchPolybar.sh
 
-bindsym $mod+x exec --no-startup-id i3lock --color "$bg-color"
+bindsym $mod+x exec --no-startup-id i3lock --color "$bg-color"  --pass-screen-keys --pass-power-keys
