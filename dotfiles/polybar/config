@@ -414,6 +414,10 @@ label = %output%
 interval = 0 
 exec = /home/sourav/.config/polybar/modules/bandwidth2/bandwidth2
 
+[module/battery-notify]
+type = custom/script
+interval = 30 
+exec = /home/shilpa/.config/polybar/modules/battery-notify/battery-notify.sh
 
 [settings]
 screenchange-reload = true
