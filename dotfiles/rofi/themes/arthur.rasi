@@ -4,27 +4,13 @@
  * Copyright: Dave Davenport
  */
 
-configuration {
-
-    // The display name of this browser
-    display-ssh:                   "  ";
-    // The display name of this browser
-    display-run:                    "";
-    // The display name of this browser
-    display-drun:                   "";
-    // The display name of this browser
-    display-window:                 "";
-    display-combi:                  "";
-    show-icons: true;
-}
-
-
 /**
  * User: Qball
  * Copyright: Dave Davenport
  */
 * {
     foreground:  #ffeedd;
+	custforegr:	 #e0ffff;
     backlight:   #ccffeedd;
     background-color:  transparent;
     dark: #1c1c1c;
@@ -32,6 +18,7 @@ configuration {
     black:       #3d352a;
     lightblack:  #554444;
     tlightblack:  #554444cc;
+	tcustcolor:	  #3B93CEF8;
     //
     // Red
     red:         #cd5c5c;
@@ -78,7 +65,7 @@ configuration {
     color: @magenta;
     background-color: @transparent;
     spacing: 0;
-    children:  [vertb, mainbox];
+    children:  [mainbox];
     orientation: horizontal;
 }
 
@@ -100,13 +87,13 @@ configuration {
 }
 
 #inputbar {
-    color: @lightgreen;
+    color: @custforegr;
     padding: 11px;
-    background-color: @tlightblack;
+    background-color: @tcustcolor;
     border: 2px 2px 2px 2px;
     border-radius:  15px 15px 0px 0px;
     border-color: @foreground;
-    font: "Source Code Pro 18";
+    font: "Source Code Pro 30";
 }
 #entry,prompt,case-indicator {
     text-font: inherit;
@@ -164,13 +151,13 @@ configuration {
 
 #vertb {
     expand: false;
-    children: [ dummy0, sidebar, dummy1  ];
+    children: [ dummy0, mode-switcher, dummy1  ];
 }
 #dummy0,  dummy1 {
     expand: true;
 }
 
-#sidebar {
+#mode-switcher {
     expand: false;
     orientation: vertical;
     spacing: 0px;
