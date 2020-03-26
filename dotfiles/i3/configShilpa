@@ -8,10 +8,11 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
+exec_always --no-startup-id feh --bg-fill ~/.local/share/Wallpapers/symWall.jpg
 #some color variable
 #gaps outer 10
-#gaps inner 5
+gaps inner 5
+set $lockColor			 #808080
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
@@ -19,7 +20,6 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 #end of color variable
 exec --no-startup-id picom
-exec_always --no-startup-id feh --bg-fill ~/.local/share/Wallpapers/symWall.jpg
 #exec --no-startup-id copyq
 #exec --no-startup-id quiterss
 exec --no-startup-id persepolis --tray
@@ -48,12 +48,6 @@ font pango:System San Francisco Display 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -74,6 +68,7 @@ for_window [class="Org\.gnome\.Nautilus"]					floating enable
 #for_window [class="persepolis"]						floating enable
 for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
 for_window [class="firefox" window_role="About"]		floating enable
+for_window [class="firefox" window_role="GtkFileChooserDialog"]		floating enable,resize set 640 480,move absolute position center
 for_window [class="firefox" instance="Place"]			floating enable
 for_window [class="copyq"]								floating enable,resize set 640 480
 for_window [class="QuiteRss"]							floating enable,resize set 640 480
@@ -248,7 +243,16 @@ hide_edge_borders both
 
 exec_always --no-startup-id /home/shilpa/.config/polybar/launchPolybar.sh
 
-bindsym $mod+x exec --no-startup-id i3lock --color "$bg-color" --pass-screen-keys --pass-power-keys
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
+
+#bindsym $mod+x exec --no-startup-id i3lock -i /home/shilpa/newimage.png  --color $lockColor  --pass-screen-keys --pass-power-keys
 
 ##################### screenshot ####################3
 #
