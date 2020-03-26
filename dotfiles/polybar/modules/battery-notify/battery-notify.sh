@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+#################################################################
+#																#
+#			Maintainer : Sourav Das								#
+#			GitRepo : github.com/souravdas142					#
+#																#	
+#					Dunstify:									#
+#							ChargeNotify						#
+#							TimeRemaining						#	
+#																#	
+#																#
+#																#
+#################################################################
+
 echo -e "$(acpi -s | cut -d, -f3 | cut -d' ' -f 2 | awk -F: '{print "R: " $1"h:"$2"m"}')"	
 
 rate=
