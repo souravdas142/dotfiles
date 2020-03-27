@@ -14,7 +14,7 @@
 ##################################################################
 
 flag=1
-
+Msg=
 case $1 in
 	brightnessInc)
 		percent=$(xbacklight -get | roundoff )
@@ -22,6 +22,7 @@ case $1 in
 		notiId=9999
 		appName="changeBrightness-Up" 
 		flag=0
+		Msg="Brightness"
 		;;
 	brightnessDec)
 		percent=$(xbacklight -get | roundoff )
@@ -29,6 +30,7 @@ case $1 in
 		notiId=9999
 		appName="changeBrightnessDwn"
 		flag=0
+		Msg="Brightness"
 		;;
 	volUp)
 		percent=$( amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
@@ -36,6 +38,7 @@ case $1 in
 		notiId=9998
 		appName="ChangevolUp"
 		flag=0
+		Msg="Volume"
 		;;
 	volDwn)
 		percent=$( amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
@@ -43,6 +46,7 @@ case $1 in
 		notiId=9998
 		appName="ChangevolDwn"
 		flag=0
+		Msg="Volume"
 		;;
 	volM)
 		;;
@@ -51,7 +55,7 @@ case $1 in
 esac
 
 if [[ $flag == 0 ]]; then
-	dunstify -a $appName -u normal -i $setIcon -r $notiId "Brightness : $percent" "$(getProgressString.sh 10 "<b> </b>" " " $percent )"
+	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString.sh 10 "<b> </b>" " " $percent )"
 	flag=1
 fi
 

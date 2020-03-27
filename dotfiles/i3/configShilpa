@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec_always --no-startup-id feh --bg-fill ~/.local/share/Wallpapers/symWall.jpg
+exec --no-startup-id numlockx on
 #some color variable
 #gaps outer 10
 gaps inner 5
@@ -250,7 +251,7 @@ exec_always --no-startup-id /home/shilpa/.config/polybar/launchPolybar.sh
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
 
 #bindsym $mod+x exec --no-startup-id i3lock -i /home/shilpa/newimage.png  --color $lockColor  --pass-screen-keys --pass-power-keys
