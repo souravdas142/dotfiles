@@ -45,16 +45,17 @@ endif
 "set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		" Enable mouse usage (all modes)
 
 " *********************** CHANGES MADE BY SOURAV ********************
 " {
 
 " Setting some decent VIM settings for programming 
 set ai                          " set auto-indenting on for programming
+set hlsearch
 set tabstop=4
 set number
-" set ai
+set ai
 set shiftwidth=4
 set showmatch                   " automatically show matching brackets. work    s like it does in bbedit.
 set novb                          " turn on the "visual bell" - which is much     quieter than the "audio blink"
@@ -65,18 +66,18 @@ set backspace=indent,eol,start  " make that backspace key work the way it sh    
 set background=dark        	" Use colours that work well on a dark backg    round (Console is usually black)
 set showmode                    " show the current mode
 set clipboard=unnamedplus           
-" syntax on 
+syntax on 
 set softtabstop=4				" number of spaces in tab when editing
 
 set undofile
-set undodir=/home/sourav/.VimTemp/undo//
+set undodir=/home/shilpa/.VimTemp/undo//
 set undolevels=1000
 set undoreload=1000
 
 set backup
-set backupdir=/home/sourav/.VimTemp/backup//
+set backupdir=/home/shilpa/.VimTemp/backup//
 
-set directory=/home/sourav/.VimTemp/dir//
+set directory=/home/shilpa/.VimTemp/dir//
 
 
 " }

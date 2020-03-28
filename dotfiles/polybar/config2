@@ -60,6 +60,7 @@ modules-left = i3
 modules-center = 
 modules-right =  bandwidth2 battery battery-notify date powermenu
 
+tray-reparent = true
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
@@ -67,7 +68,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -413,12 +414,12 @@ type = custom/script
 tail = true 
 label = %output%
 interval = 0 
-exec = /home/shilpa/.config/polybar/modules/bandwidth2/bandwidth2
+exec = /home/shilpa2/.config/polybar/modules/bandwidth2/bandwidth2
 
 [module/battery-notify]
 type = custom/script
 interval = 30 
-exec = /home/shilpa/.config/polybar/modules/battery-notify/battery-notify.sh
+exec = /home/shilpa2/.config/polybar/modules/battery-notify/battery-notify.sh
 format = <label>
 label = %output%
 format-underline = #ffb52a

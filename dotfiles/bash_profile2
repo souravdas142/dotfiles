@@ -1,0 +1,24 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+sleep 2
+flag=0
+
+echo "trying to startX"
+
+while [ $flag ]
+do
+echo "trying to startX"
+if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+echo "starting startX..."
+	sleep 2
+	exec startx 
+	flag2=$?
+	if [ $flag2 -eq 0 ]; then
+		break
+	fi
+echo "executed startX..."
+fi
+done
