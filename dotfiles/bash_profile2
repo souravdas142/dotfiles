@@ -3,22 +3,24 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-sleep 2
-flag=0
 
-echo "trying to startX"
-
-while [ $flag ]
+count=0
+while :
 do
-echo "trying to startX"
+
+count=$( expr $count + 1 )
+echo "trying to startX $count"
+
 if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-echo "starting startX..."
-	sleep 2
+
+	echo "starting startX......($count)"
 	exec startx 
 	flag2=$?
 	if [ $flag2 -eq 0 ]; then
+		echo "executed startX..."
 		break
 	fi
-echo "executed startX..."
+
 fi
+
 done
