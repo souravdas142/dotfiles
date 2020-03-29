@@ -6,8 +6,8 @@
 
 if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 
-	startxLogFile=/home/shilpa/.local/share/xorg/startx.log
-	echo -e "\n\nStart logging for $USER Time : $(date) \n\n" | tee -a $startxLogFile
+	startxLogFile=/home/$USER/.local/share/xorg/startx.log
+	echo -e "\n\nStart logging for $USER Time : $(date) ........\n\n" | tee -a $startxLogFile
 
 	exec startx -- -keeptty 2>&1 | tee -a $startxLogFile
 
