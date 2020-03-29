@@ -4,8 +4,9 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+
 count=0
-while :
+while [ ! $DISPLAY ]
 do
 
 count=$( expr $count + 1 )
@@ -21,8 +22,6 @@ if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 
 		break
 	fi
 
-elif [ $DISPLAY ]; then
-	break
 fi
 
 done
