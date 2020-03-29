@@ -6,6 +6,7 @@
 
 
 count=0
+flag=1
 startxLogFile=/home/$USER/.local/share/xorg/startx.log
 
 echo -e "\n\nStart logging for $USER Time : $(date) ........" >> $startxLogFile
@@ -25,6 +26,7 @@ if systemctl -q is-active graphical.target; then
 	flag2=$?
 	if [ $flag2 -eq 0 ]; then
 		echo "executed startX..."
+		flag=0
 		break
 	fi
 
@@ -51,4 +53,7 @@ fi
 
 done
 
-find $LogPath -type f -iname "startx.log" -size +5M \( -exec cp  -u --backup=simple -S$(date '+%d%m%y_%I%M%P').bak '{}' '{}'.bak \; -a -exec  rm -f '{}' \; \)
+if [[ $flag ]]; then
+	find $LogPath -type f -iname "startx.log" -size +5M \( -exec cp  -u --backup=simple -S$(date '+%d%m%y_%I%M%P').bak '{}' '{}'.bak \; -a -exec  rm -f '{}' \; \)
+	flag=1
+fi
