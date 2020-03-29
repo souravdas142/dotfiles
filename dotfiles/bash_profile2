@@ -6,13 +6,13 @@
 
 
 count=0
-while [ ! $DISPLAY ]
+while [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]
 do
 
 count=$( expr $count + 1 )
 echo "trying to startX $count"
 
-if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if systemctl -q is-active graphical.target ; then
 
 	echo "starting startX......($count)"
 	exec startx 
@@ -21,6 +21,10 @@ if systemctl -q is-active graphical.target &&  [[ ! $DISPLAY && $XDG_VTNR -eq 1 
 		echo "executed startX..."
 		break
 	fi
+
+else
+	echo "waiting to start grphical.target..."
+	sleep 4
 
 fi
 
