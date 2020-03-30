@@ -261,16 +261,16 @@ type = internal/date
 interval = 1
 
 date = " %d-%m"
-date-alt = " %d-%m-%y"
+;date-alt = " %d-%m-%y"
 
 time = %I:%M %p
-time-alt = %I:%M:%S %p
+;time-alt = %I:%M:%S %p
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = %{A1:/home/$USER/.config/polybar/modules/calender/calender:}%time%%{A}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -332,7 +332,9 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
-
+time-format = %H:%M
+label-discharging = %percentage%% %time%
+label-charging = %percentage%% %time%
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
@@ -420,9 +422,9 @@ exec = /home/shilpa2/.config/polybar/modules/bandwidth2/bandwidth2
 type = custom/script
 interval = 30 
 exec = /home/shilpa2/.config/polybar/modules/battery-notify/battery-notify.sh
-format = <label>
-label = %output%
-format-underline = #ffb52a
+;format = <label>
+;label = %output%
+;format-underline = #ffb52a
 
 
 [settings]

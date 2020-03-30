@@ -19,7 +19,7 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 #end of color variable
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/symWall.jpg
+#exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/symWall.jpg
 exec --no-startup-id copyq
 exec --no-startup-id quiterss
 exec --no-startup-id persepolis --tray

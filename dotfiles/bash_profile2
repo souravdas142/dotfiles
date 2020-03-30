@@ -43,7 +43,7 @@ sleep 2
 break
 
 else
-	echo "\waiting(4 sec) to finish unit grphical.target..." 
+	echo -e "\nwaiting(4 sec) to finish unit grphical.target..." 
 
 	sleep 4
 

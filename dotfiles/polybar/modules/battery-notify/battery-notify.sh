@@ -14,7 +14,7 @@
 #																#
 #################################################################
 
-echo -e "$(acpi -s | cut -d, -f3 | cut -d' ' -f 2 | awk -F: '{print "R: " $1"h:"$2"m"}')"	
+#echo -e "$(acpi -s | cut -d, -f3 | cut -d' ' -f 2 | awk -F: '{print "R: " $1"h:"$2"m"}')"	
 
 rate=
 urgency=
