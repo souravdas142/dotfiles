@@ -55,7 +55,7 @@ case $1 in
 esac
 
 if [[ $flag == 0 ]]; then
-	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString.sh 10 "<b> </b>" " " $percent )"
+	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
 	flag=1
 fi
 

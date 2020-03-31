@@ -51,7 +51,6 @@ set mouse=a		" Enable mouse usage (all modes)
 " {
 
 " Setting some decent VIM settings for programming 
-set ai                          " set auto-indenting on for programming
 set hlsearch
 set tabstop=4
 set number
