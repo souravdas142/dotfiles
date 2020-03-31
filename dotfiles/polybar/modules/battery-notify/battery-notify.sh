@@ -63,7 +63,7 @@ if [[ $flag == 0 ]]; then
 	#urgency="critical"
 	timeOutMiliSec=31000
 	
-	dunstify -a $appName -u $urgency -t $timeOutMiliSec -i $setIcon -r $notiId  " Battery : $percent"  "  <b><i>$Msg</i></b>\n  $(getProgressString.sh 10 "<b> </b>" " " $percent )"
+	dunstify -a $appName -u $urgency -t $timeOutMiliSec -i $setIcon -r $notiId  " Battery : $percent"  "  <b><i>$Msg</i></b>\n  $(getProgressString 10 "<b> </b>" " " $percent )"
 	flag=1
 	
 fi

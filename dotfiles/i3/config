@@ -46,6 +46,9 @@ set $mod Mod4
 set $shtLoc ~/Pictures
 set $shtNme Screenshot-$(date '+%m%d%y-%H%M%S').png
 set $refresh_i3status killall -SIGUSR1 i3status
+# Set program location
+set $alacritty_colorscheme ~/.local/bin/alacritty-colorscheme
+
 ########################################## End of Some of Variable ######################################
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -100,6 +103,15 @@ hide_edge_borders both
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec tilix
+
+# Toggle between light and dark colorscheme
+bindsym $mod+Shift+n exec $alacritty_colorscheme -t solarized-light.yml solarized-dark.yml
+
+# Toggle between all available colorscheme
+bindsym $mod+Shift+m exec $alacritty_colorscheme -T
+
+# Get notification with current colorscheme
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -249,5 +261,15 @@ bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
 
 
 ################################### END OF ALL KEYBOARD BINDIGS ####################################
+
+
+
+
+
+
+
+
+
+
 
 

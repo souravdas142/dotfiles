@@ -24,7 +24,7 @@ if systemctl -q is-active graphical.target; then
 	exec startx -- -keeptty 2>&1 | tee -a $LogFile
 	flag2=$?
 	if [ $flag2 -eq 0 ]; then
-		echo "\nexecuted startX..."
+		echo -e "\nexecuted startX..."
 		break
 	fi
 

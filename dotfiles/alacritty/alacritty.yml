@@ -13,16 +13,24 @@ window:
 
   dynamic_padding: false
 
-  decorations: full
+#may be "full" or "none"
+  decorations: none
 
   startup_mode: Windowed
+  #window title
+  title: Alacritty
+
+#Window Class
+class:
+  instance: Alacritty
+  general: Alacritty
 
 scrolling:
-  history: 2500
+  history: 25000
   multiplier: 3
-  auto_scroll: false
+  #  auto_scroll: true
 
-tabspaces: 4
+  tabspaces: 4
 
 font:
   normal:
@@ -51,59 +59,68 @@ font:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: true
+    #draw_bold_text_with_bright_colors: true
 
-# Oxide colors
+# color_start
+# base16-3024.yml
+# Base16 3024 - alacritty color config
+# Jan T. Sott (http://github.com/idleberg)
 colors:
+  # Default colors
   primary:
-    background: '0x212121'
-    foreground: '0xc0c5ce'
-    bright_foreground: '0xf3f4f5'
+    background: '0x090300'
+    foreground: '0xa5a2a2'
 
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x212121'
-    cursor: '0xc0c5ce'
+    text: '0x090300'
+    cursor: '0xa5a2a2'
 
+  # Normal colors
   normal:
-    black:   '0x212121'
-    red:     '0xe57373'
-    green:   '0xa6bc69'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xc0c5ce'
+    black:   '0x090300'
+    red:     '0xdb2d20'
+    green:   '0x01a252'
+    yellow:  '0xfded02'
+    blue:    '0x01a0e4'
+    magenta: '0xa16a94'
+    cyan:    '0xb5e4f4'
+    white:   '0xa5a2a2'
 
+  # Bright colors
   bright:
-    black:   '0x5c5c5c'
-    red:     '0xe57373'
-    green:   '0xa6bc69'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xf3f4f5'
+    black:   '0x5c5855'
+    red:     '0xe8bbd0'
+    green:   '0x3a3432'
+    yellow:  '0x4a4543'
+    blue:    '0x807d7c'
+    magenta: '0xd6d5d4'
+    cyan:    '0xcdab53'
+    white:   '0xf7f7f7'
 
-  indexed_colors: []
+draw_bold_text_with_bright_colors: false
 
+# color_end
+ 
 visual_bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
 
-background_opacity: 1.0
+background_opacity: 0.95
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 dynamic_title: true
 
 cursor:
-  style: Block
+  style: Beam
+  vi_mode_style: None
   unfocused_hollow: true
 
-live_config_reload: false
+live_config_reload: true
 
 working_directory: None
 
