@@ -66,8 +66,9 @@ set backspace=indent,eol,start  " make that backspace key work the way it sh    
 set background=dark        	" Use colours that work well on a dark backg    round (Console is usually black)
 set showmode                    " show the current mode
 set clipboard=unnamedplus           
-syntax on 
+syntax enable
 set softtabstop=4				" number of spaces in tab when editing
+set guifont=Hack
 
 set undofile
 set undodir=~/.VimTemp/undo//
