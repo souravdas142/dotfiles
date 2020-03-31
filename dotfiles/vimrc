@@ -70,14 +70,14 @@ syntax on
 set softtabstop=4				" number of spaces in tab when editing
 
 set undofile
-set undodir=/home/shilpa/.VimTemp/undo//
+set undodir=~/.VimTemp/undo//
 set undolevels=1000
 set undoreload=1000
 
 set backup
-set backupdir=/home/shilpa/.VimTemp/backup//
+set backupdir=~/.VimTemp/backup//
 
-set directory=/home/shilpa/.VimTemp/dir//
+set directory=~/.VimTemp/dir//
 
 
 " }

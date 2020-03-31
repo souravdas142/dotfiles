@@ -9,24 +9,44 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+################################### Some startup Applicaltion ############################
+#
+###### Polybar Launch ########
+exec_always --no-startup-id ~/.config/polybar/launchPolybar.sh
+###### Polybar Launch Finished  ########
+
+exec --no-startup-id numlockx on
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id nm-applet --sm-disable
+exec --no-startup-id picom
+#exec --no-startup-id copyq
+#exec --no-startup-id quiterss
+exec --no-startup-id persepolis --tray
+exec --no-startup-id dunst
+#
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
+
+################################### End of Some startup Applicaltion ############################
+
+########################################## Some of Variable ######################################
 #some color variable
-#gaps outer 10
-#gaps inner 5
+set $indColor			 #00ff0000
+set $lockColor			 #808080
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 #end of color variable
-exec --no-startup-id picom
-#exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/symWall.jpg
-exec --no-startup-id copyq
-exec --no-startup-id quiterss
-exec --no-startup-id persepolis --tray
-exec --no-startup-id dunst
+
 set $mod Mod4
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+set $shtLoc ~/Pictures
+set $shtNme Screenshot-$(date '+%m%d%y-%H%M%S').png
+set $refresh_i3status killall -SIGUSR1 i3status
+########################################## End of Some of Variable ######################################
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -36,65 +56,55 @@ font pango:System San Francisco Display 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+#################################### Changing Window Behaviour ###################################
+#
+#gaps outer 10
+gaps inner 5
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pass-screen-keys --pass-power-keys
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-exec_always --no-startup-id nm-applet --sm-disable
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # floating window
-for_window [window_role="pop-up"]                       floating enable
+
 for_window [window_role="bubble"]                       floating enable 
+for_window [class="Yad"]								floating enable
 for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable 
 for_window [window_type="menu"]                         floating enable
-#for_window [class="persepolis"] floating enable
-for_window [class="persepolis"] move window to workspace $ws10,layout stacking
-for_window [class="persepolis" title=".*_Float$"] floating enable,resize set 645 224
-for_window [class="firefox" window_role="About"] floating enable
-for_window [class="firefox" instance="Place"] floating enable
-for_window [class="copyq"] floating enable,resize set 640 480
-for_window [class="QuiteRss"] floating enable,resize set 640 480
-for_window [title=".*[Ss]oft\ [kK]eyboard.*"] floating enable,resize set 645 224
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+for_window [class="Org\.gnome\.Nautilus"]					floating enable
+#for_window [class="persepolis"]						floating enable
+for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
+for_window [class="firefox" window_role="About"]		floating enable
+for_window [class="firefox" window_role="GtkFileChooserDialog"]		floating enable,resize set 640 480,move absolute position center
+for_window [class="firefox" instance="Place"]			floating enable
+for_window [class="copyq"]								floating enable,resize set 640 480
+for_window [class="QuiteRss"]							floating enable,resize set 640 480
+for_window [title=".*[Ss]oft\ [kK]eyboard.*"]			floating enable,resize set 645 224
+#
+#
+# window colors
+# #                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color				$indColor
+client.unfocused        $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$indColor
+hide_edge_borders both
+
+#################################### End of Changing Window Behaviour ###################################
+
+############################## ALL KEY BINDINGS #################################
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec --no-startup-id tilix
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 500 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+#application launcher
 bindsym $mod+d exec rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym --release Print exec --no-startup-id maim --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
-bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
-bindsym --release Shift+Print exec --no-startup-id maim -s --format png | tee /home/sourav/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png -i
 
-bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full --clipboard --path /home/sourav/Pictures/
-
-bindsym $mod+Mod1+Print --release exec --no-startup-id shutter -fcen  -o /home/sourav/Pictures/shut%nb_name%Y%m%d%T.png 
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -190,6 +200,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -214,36 +225,27 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && DunstifyVolLight volUp
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && DunstifyVolLight brightnessInc 
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && DunstifyVolLight brightnessDec
 
-# window colors
-# #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color	$inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-hide_edge_borders both
+#screenshot bindigs
+# imgToClip alias to xclip -selection clipboard image/png -i
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#		position top
-##        status_command i3status
-#		status_command i3blocks -c /home/sourav/.config/i3/i3blocks.conf
-#		tray_output primary
-#    colors {
-#	        background $bg-color
-#			separator #757575
-#			#                  border             background         text
-#			focused_workspace  $bg-color          $bg-color          $text-color
-#			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#		}
-#		    
-#}
+bindsym --release Print exec --no-startup-id maim --format png | tee $shtLoc/$shtNme | imgToClip
+bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png | tee $shtLoc/$shtNme | imgToClip
+bindsym --release Shift+Print exec --no-startup-id maim -s --format png | tee $shtLoc/$shtNme | imgToClip
+bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full --clipboard --path $shtLoc/$shtNme
+bindsym $mod+Mod1+Print --release exec --no-startup-id shutter -fcen  -o $shtLoc/$shtNme
 
-####################################### Polybar Launch #############################
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
 
-exec_always --no-startup-id /home/sourav/.config/polybar/launchPolybar.sh
 
-bindsym $mod+x exec --no-startup-id i3lock --color "$bg-color"  --pass-screen-keys --pass-power-keys
+
+################################### END OF ALL KEYBOARD BINDIGS ####################################
+
+

@@ -121,27 +121,5 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-
-
-# ................... << CUSTOMIZED BY SOURAV DAS >> ......................
-
-
-
-if [ -f /usr/bin/gcc2.sh ]
-then
-	source /usr/bin/gcc2.sh
-fi
-
-
-# this is for gccf function 
-
-if [ -f ~/.Script/gccf.sh ]
-then
-	source ~/.Script/gccf.sh
-fi
-
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
-#source ~/.rvm/scripts/rvm
-
+export cmModPoly=$HOME/.config/polybar/modules
+alias imgToClip='xclip -selection clipboard -t image/png -i'

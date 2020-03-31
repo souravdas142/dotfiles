@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while [ 1 ];
+while :
 do
 	count=`curl -s "$1" | grep -ic "$2"`
 	echo "count = $count"
@@ -10,7 +10,7 @@ do
 		echo "Ubuntu 18.04 LTS Launched ..!!" 
 		termux-toast -s "Ubuntu 18.04 LTS Launched ..!!"
 		termux-notification -c "Ubuntu 18.04 LTS Launched ..!!" -i 5006 -t "Ubuntu 18.04"
-		while [ 1 ];
+		while :
 		do
 			termux-vibrate -d 4000 -f
 			termux-tts-speak -e termux-tts-engines -p 2 -s ALARM "ALERT...!! UBUNTU 18.04 RELEASED...!!"

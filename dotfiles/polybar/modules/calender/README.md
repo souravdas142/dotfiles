@@ -19,5 +19,5 @@ This is similar to the rofi-calendar blocklet, but without the rofi dependency a
 ##polybar
 ```
 [date]
-label = %{A1:/home/sourav/.config/polybar/modules/calender/calender:}%date% %time%%{A}
+label = %{A1:/home/$USER/.config/polybar/modules/calender/calender:}%date% %time%%{A}
 ```
