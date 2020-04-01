@@ -1,0 +1,23 @@
+colorscheme illyria-dark
+colorscheme green-mono-88
+colorscheme cmus-base16
+colorscheme zenburn
+colorscheme jellybeans
+colorscheme gray-88
+colorscheme dracula
+colorscheme cyan
+q
+colorscheme tomorrow
+colorscheme=tomorrow
+colorscheme : tomorrow
+colorscheme none
+colorshceme cmus-base16
+set color_info?
+/light
+/lightyellow
+set output_plugin?
+save
+set altformat_trackwin= %F%= %d 
+set altformat_title=%F
+set altformat_playlist= %F%= %d 
+set altformat_current?

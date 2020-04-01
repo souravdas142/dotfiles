@@ -1,0 +1,12 @@
+
+set output_plugin=alsa
+set dsp.alsa.device=default
+set mixer.alsa.device=default
+set mixer.alsa.channel=Master
+set altformat_playlist= %F%= %d 
+set altformat_title=%F
+set altformat_trackwin= %F%= %d 
+set color_info=white
+set color_win_cur=white
+set color_win_cur_sel_fg=white
+set color_win_inactive_cur_sel_fg=white
