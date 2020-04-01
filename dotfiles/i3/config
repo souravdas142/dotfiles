@@ -27,7 +27,7 @@ exec --no-startup-id dunst
 #
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 --nofork
 
 ################################### End of Some startup Applicaltion ############################
 
@@ -256,7 +256,7 @@ bindsym --release Shift+Print exec --no-startup-id maim -s --format png | tee $s
 bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full --clipboard --path $shtLoc/$shtNme
 bindsym $mod+Mod1+Print --release exec --no-startup-id shutter -fcen  -o $shtLoc/$shtNme
 
-bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
 
 
 
