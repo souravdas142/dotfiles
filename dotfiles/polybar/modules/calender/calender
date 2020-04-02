@@ -1,7 +1,7 @@
 
 
 
-yad --calendar --width=30 --height=30 --undecorated\
+yad --calendar --width=40 --height=30 --undecorated\
  --fixed --close-on-unfocus --no-buttons\
- --posx=1100 --posy=10 --borders=0 --sticky --on-top\
+ --posx=1045 --posy=15 --borders=0 --sticky --on-top\
  --splash > /dev/null

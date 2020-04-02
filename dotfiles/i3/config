@@ -33,7 +33,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur 
 
 ########################################## Some of Variable ######################################
 #some color variable
-set $indColor			 #00ff0000
+set $indColor			 #00000000
 set $lockColor			 #808080
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
