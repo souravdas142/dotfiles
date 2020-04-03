@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ $EUID -ne 0 ]; then
+	echo -e "run this program with root\n"
+else
+
+	echo -e "processing..."
+	
+	sudo reflector  --latest 200 \
+					--number 20 \
+				   	--age 15 \
+					--fastest 200 \
+					--protocol http \
+					--protocol https \
+					--completion-percent 100 \
+					--sort rate \
+					--save /tmp/mirrorlist.tmp
+	flag=$?
+	if [ $flag -ne 0 ]; then
+		echo -e "\nPossible troubleshot options :\
+			\n (1) Server Error\
+			\n (2) Set completion-percent bellow 100\
+			\n (3) Check Internet connectivity\n"
+		exit
+	else
+		echo -e "\nBacking up your old repository...\n"
+		cp /etc/pacman.d/mirrorlist{,.bak}
+	
+		sudo rankmirrors /tmp/mirrorlist.tmp | sudo tee /etc/pacman.d/mirrorlist
+		flag=$?
+		if [ $flag -ne 0 ]; then
+			echo -e "\nsome problem occured\n"
+		else
+			echo -e "\nSuccessfully Updated\n"
+		fi
+	fi
+	
+	
+fi
