@@ -1,5 +1,7 @@
 
-This Repo maintains all sort of Dot configuration files, scripts
-and configuration files. You can clone this repo if you find its really useful to you
-please let me know if you find any bug or you can `fork` this repo create a branch `fix`
-make a pull request, If i find its ok... I will merge this. Thanks
+# All dotfiles related to my Arch-Linux 
+
+anyone can make a clone of this repo and copy to his own 
+user location on a freshly created user. I will make a 
+easyly installation script that would make a clone of this'
+repo and automatically do this for you. thanks.
