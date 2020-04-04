@@ -130,4 +130,3 @@ fi
 #alacricity-color-scheme path
 export PATH="~/.local/bin/:$PATH"
 export cmModPoly=$HOME/.config/polybar/modules
-alias imgToClip='xclip -selection clipboard -t image/png -i'
