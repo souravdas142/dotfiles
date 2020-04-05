@@ -1,7 +1,35 @@
+#!/bin/sh
 
+OFFSET_X=100   # Leave space from either Right or Left side
+OFFSET_Y=0	   # Leave Space from either top of bottom side 
+BAR_HEIGHT=22  # polybar height
+BORDER_SIZE=1  # border size from your wm settings
+YAD_WIDTH=222  # 222 is minimum possible value
+YAD_HEIGHT=193 # 193 is minimum possible value
 
+if [ "$(xdotool getwindowfocus getwindowname)" = "yad-calendar" ]; then
+    exit 0
+fi
 
-yad --calendar --width=40 --height=30 --undecorated\
- --fixed --close-on-unfocus --no-buttons\
- --posx=1045 --posy=15 --borders=0 --sticky --on-top\
- --splash > /dev/null
+eval "$(xdotool getmouselocation --shell)"
+eval "$(xdotool getdisplaygeometry --shell)"
+
+# X
+if [ "$((X + YAD_WIDTH / 2 + BORDER_SIZE))" -gt "$WIDTH" ]; then #Right side
+    : $((pos_x = WIDTH - YAD_WIDTH - BORDER_SIZE - OFFSET_X))
+elif [ "$((X - YAD_WIDTH / 2 - BORDER_SIZE))" -lt 0 ]; then #Left side
+    : $((pos_x = BORDER_SIZE + OFFSET_X))
+else #Center
+    : $((pos_x = X - YAD_WIDTH / 2))
+fi
+
+# Y
+if [ "$Y" -gt "$((HEIGHT / 2))" ]; then #Bottom
+    : $((pos_y = HEIGHT - YAD_HEIGHT - BAR_HEIGHT - BORDER_SIZE - OFFSET_Y))
+else #Top
+    : $((pos_y = BAR_HEIGHT + BORDER_SIZE + OFFSET_Y))
+fi
+
+yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
+    --width=$YAD_WIDTH --height=$YAD_HEIGHT --posx=$pos_x --posy=$pos_y \
+    --title="yad-calendar" --borders=0 >/dev/null &
