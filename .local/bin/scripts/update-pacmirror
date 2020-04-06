@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Maintain by : Sourav Das
+# Dependency : pacman-contrib reflector 
+
+case $1 in
+	--help|-h|"")
+		echo -e "\n Usage : 
+		    \n\t-h,--help : see this help message \
+			\n\t-w,--with-rankmirrors : sort with rankmirrors \
+			\n\t[note] : if you don't want to sort wiht rankmirrors, give '--' as argument only\
+			\n\tdependency : reflector, pacman-contrib\n\n"
+		exit
+		;;
+esac
+
+
 if [ $EUID -ne 0 ]; then
 	echo -e "run this program with root\n"
 else
@@ -19,20 +34,36 @@ else
 	if [ $flag -ne 0 ]; then
 		echo -e "\nPossible troubleshot options :\
 			\n (1) Server Error\
-			\n (2) Set completion-percent bellow 100\
-			\n (3) Check Internet connectivity\n"
+			\n (2) Check Internet connectivity, or\
+			\n (3) Set completion-percent bellow 100\n"
 		exit
 	else
 		echo -e "\nBacking up your old repository...\n"
 		cp /etc/pacman.d/mirrorlist{,.bak}
-	
-		sudo rankmirrors /tmp/mirrorlist.tmp | sudo tee /etc/pacman.d/mirrorlist
-		flag=$?
-		if [ $flag -ne 0 ]; then
-			echo -e "\nsome problem occured\n"
-		else
-			echo -e "\nSuccessfully Updated\n"
-		fi
+		
+		case $1 in
+			-w|--with-rankmirrors)
+
+				sudo rankmirrors /tmp/mirrorlist.tmp | sudo tee /etc/pacman.d/mirrorlist
+				flag=$?
+				if [ $flag -ne 0 ]; then
+					echo -e "\nsome problem occured\n"
+				else
+					echo -e "\nSuccessfully Updated\n"
+				fi
+				;;
+			--)
+				cat /tmp/mirrorlist.tmp | sudo tee /etc/pacman.d/mirrorlist
+				flag=$?
+				if [ $flag -ne 0 ]; then
+					echo -e "\nsome problem occured\n"
+				else
+					echo -e "\nSuccessfully Updated\n"
+				fi
+				;;
+		esac
+
+
 	fi
 	
 	
