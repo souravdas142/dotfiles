@@ -26,6 +26,20 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+bg = #222D32
+fg = #ffffff
+adapta-cyan = #00BCD4
+adapta-red = #FF5252
+adapta-yellow = #ffb52a
+adapta-lightgreen = #4DB6AC
+adapta-green = #009688
+adapta-grey = #475359
+menu-acolor = #00897b
+menu-fg = #FFFFFF
+
+
+[margin]
+for-modules = 1
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -52,13 +66,20 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=12;1
-font-3 = "Font Awesome 5 Free Solid:style=Solid:size=10;0"
+font-1 = siji:pixelsize=12;1
+font-2 = "Fantasque Sans Mono:pixelsize=10;3"
+font-3 = "Iosevka Nerd Font:pixelsize=14;3"
+font-4 = "Material Icons:size=11;4"
+font-5 = "Iosevka Nerd Font:pixelsize=11;3"
+font-6 = "Noto Color Emoji:style=Regular:scale=10;2"
 
-modules-left = i3
+font-7 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-8 = Font Awesome 5 Free Regular:size=10;4
+font-9 = Font Awesome 5 Free Solid:size=10;4
+
+modules-left = menu i3
 modules-center = 
-modules-right =  bandwidth2 battery battery-notify date powermenu
+modules-right =  bandwidth2 battery battery-notify date dunst powermenu 
 
 tray-reparent = true
 tray-position = right
@@ -78,6 +99,19 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+[module/menu]
+type = custom/text
+content = 
+;alt-icon = 
+content-padding = 2 
+content-background = ${colors.menu-acolor}
+content-foreground = ${colors.menu-fg}
+click-left = $HOME/.config/polybar/modules/sysmenu/menu_1
+click-right = $HOME/.config/polybar/modules/sysmenu/menu_full_1
+
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -327,41 +361,93 @@ bar-volume-foreground-6 = #ff5555
 ;bar-volume-empty-font = 2
 ;bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = AC
+battery = BAT1
+adapter = ACAD
 full-at = 98
 time-format = %H:%M
-label-discharging = %percentage%% %time%
-label-charging = %percentage%% %time%
-
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+;format-charging-background = ${colors.shade2}
+format-charging-underline = ${colors.adapta-cyan}
+format-charging-padding = 1
+label-charging = " %percentage%% %time%"
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.adapta-yellow}
+format-discharging-padding = 1
+label-discharging = %percentage:2%% %time% 
+format-full = <label-full>
+format-full-underline = ${colors.adapta-green}
+format-full-padding = 1
+format-charging-margin = ${margin.for-modules}
+format-discharging-margin = ${margin.for-modules}
+format-full-margin = ${margin.for-modules}
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-0-foreground = ${colors.adapta-red}
+ramp-capacity-1-foreground = ${colors.adapta-red}
+ramp-capacity-2-foreground = ${colors.adapta-red}
+ramp-capacity-3-foreground = ${colors.adapta-red}
+ramp-capacity-4-foreground = ${colors.adapta-yellow}
+ramp-capacity-5-foreground = ${colors.adapta-yellow}
+ramp-capacity-foreground   = ${colors.fg}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-foreground = ${colors.fg}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+
+
+;[module/battery]
+;type = internal/battery
+;battery = BAT1
+;adapter = ACAD
+;full-at = 98
+;time-format = %H:%M
+;label-discharging = %percentage%% %time%
+;label-charging = %percentage%% %time%
+;
+;format-charging = <animation-charging> <label-charging>
+;format-charging-underline = #ffb52a
+;
+;format-discharging = <animation-discharging> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+;
+;format-full-prefix = " "
+;format-full-prefix-foreground = ${colors.foreground-alt}
+;format-full-underline = ${self.format-charging-underline}
+;
+;ramp-capacity-0 = 
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
+;ramp-capacity-foreground = ${colors.foreground-alt}
+;
+;animation-charging-0 = 
+;animation-charging-1 = 
+;animation-charging-2 = 
+;animation-charging-foreground = ${colors.foreground-alt}
+;animation-charging-framerate = 750
+;
+;animation-discharging-0 = 
+;animation-discharging-1 = 
+;animation-discharging-2 = 
+;animation-discharging-foreground = ${colors.foreground-alt}
+;animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
@@ -383,33 +469,45 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
-type = custom/menu
+type = custom/text
+content = 
+content-padding = 1
+content-background = ${colors.menu-acolor}
+content-foreground = ${colors.menu-fg}
+click-left = $HOME/.config/polybar/modules/sysmenu/sysmenu_1
+click-right = $HOME/.config/polybar/modules/sysmenu/sysmenu_1
 
-expand-right = true
 
-format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+;[module/powermenu]
+;type = custom/menu
+;
+;expand-right = true
+;
+;format-spacing = 1
+;
+;label-open = 
+;label-open-foreground = ${colors.secondary}
+;label-close =  cancel
+;label-close-foreground = ${colors.secondary}
+;label-separator = |
+;label-separator-foreground = ${colors.foreground-alt}
+;
+;menu-0-0 = reboot
+;menu-0-0-exec = menu-open-1
+;menu-0-1 = power off
+;menu-0-1-exec = menu-open-2
+;
+;menu-1-0 = cancel
+;menu-1-0-exec = menu-open-0
+;menu-1-1 = reboot
+;menu-1-1-exec = reboot
+;
+;menu-2-0 = power off
+;menu-2-0-exec = poweroff
+;menu-2-1 = cancel
+;menu-2-1-exec = menu-open-0
 
 [module/bandwidth2]
 type = custom/script
@@ -428,6 +526,12 @@ exec = $cmModPoly/battery-notify/battery-notify.sh
 ;format-underline = #ffb52a
 ;export cmModPoly=something on .bashrc
 
+[module/dunst]
+type=custom/script
+exec="[ -e /tmp/dunstpaused.tmp ] && echo 😴 || echo 💬"
+click-left=": >> /tmp/dunstpaused.tmp && killall -SIGUSR1 dunst"
+click-right="rm /tmp/dunstpaused.tmp && killall -SIGUSR2 dunst"
+interval=1
 
 [settings]
 screenchange-reload = true
