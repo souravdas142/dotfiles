@@ -1,11 +1,13 @@
-URxvt*termName: rxvt-unicode
+
+!URxvt*termName: rxvt-unicode
 !URxvt*termName:         rxvt-256color
 !URxvt*termName:  screen-256color
-URxvt*background:                     #151718
-URxvt*foreground:                     #ffffff
-URxvt*transparent:					  true
-URxvt.shading:       15
 URxvt.depth: 32
+!URxvt*inheritPixmap: true
+!URxvt*transparent:					  true
+URxvt.shading:       110
+URxvt*background:                     [90]#151718
+URxvt*foreground:                     #ffffff
 URxvt*saveLines: 65535
 URxvt*underlineColor: yellow
 URxvt*cursorBlink: true
@@ -71,19 +73,21 @@ URxvt*font:           xft:font1:pixelsize=14, xft:font2:pixelsize=11:minspace=fa
 URxvt*boldFont:       xft:font2:bold:pixelsize=14, xft:font2:pixelsize=14:weight=bold:minspace=False,xft:font3:pixelsize=14:weight=bold,xft:font4:pixelsize=14:weight=bold,xft:symbola
 URxvt*italicFont:     xft:font5:italic:pixelsize=14, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14,xft:symbola
 URxvt*boldItalicFont: xft:font5:bold:italic:pixelsize=16:weight=bold, xft:font2:pixelsize=14:weight=bold:minspace=False, xft:font3:pixelsize=14:weight=bold, xft:font4:pixelsize=14:weight=bold,xft:symbola
+!URxvt.font: xft:hack:size=11
+! URxvt*font: xft:Inconsolata Nerd Font Mono:size=11, xft:DejaVu Sans:size=12
+!URxvt.font: xft:monospace:size=12
 
-
-! do not jump to bottom when new output appears,
+! xterm: do not jump to bottom when new output appears,
 !        but do so on key press
 URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
 
-Xcursor.size: 9W
+Xcursor.size: 25W
 URxvt.urgentOnBell: true
 URxvt.scrollBar: false
 URxvt.matcher.button: 1
-URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,ibeamcursor,clipboard-paste-on-right-click,selection-to-clipboard
-xvt.url-select.launcher:  /usr/bin/firefox
+URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,ibeamcursor,clipboard-paste-on-right-click
+URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
@@ -109,3 +113,49 @@ URxvt.tabbed.tabbar-bg: 16
 URxvt.tabbed.tab-fg:    15
 URxvt.tabbed.tab-bg:    4
 URxvt*buffered:         false 
+
+
+
+
+
+
+!--------------------------- modified by ranger scheme rougarou ----------------------------
+
+
+
+! special
+*.foreground:   #dfdfdf
+*.background:   #232332
+*.cursorColor:  #dfdfdf
+
+! black
+*.color0:       #232328
+*.color8:       #e1aa57
+
+! red
+*.color1:       #f94757
+*.color9:       #f45b69
+
+! green
+*.color2:       #00b159
+*.color10:      #28b56f
+
+! yellow
+*.color3:       #fcb928
+*.color11:      #f9c34f
+
+! blue
+*.color4:       #1882dc
+*.color12:      #308bd8
+
+! magenta
+*.color5:       #7474b3
+*.color13:      #7474b3
+
+! cyan
+*.color6:       #33a5db
+*.color14:      #5fb5de
+
+! white
+*.color7:       #8c7676
+*.color15:      #dfdfdf

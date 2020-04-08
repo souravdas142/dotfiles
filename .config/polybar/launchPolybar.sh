@@ -6,7 +6,7 @@ killall -q polybar
 # polybar-msg cmd quit
 
 # Launch bar1 and bar2
-echo "--- $(date)" | tee -a /tmp/polybar1$USER.log /tmp/polybar2$USER.log
-polybar example >>/tmp/polybar1$USER.log 2>&1 &
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar example >>/tmp/polybar1.log 2>&1 &
 
 echo "Bars launched..."

@@ -51,10 +51,11 @@ set mouse=a		" Enable mouse usage (all modes)
 " {
 
 " Setting some decent VIM settings for programming 
+"set ai                          " set auto-indenting on for programming
 set hlsearch
 set tabstop=4
 set number
-set ai
+"set ai
 set shiftwidth=4
 set showmatch                   " automatically show matching brackets. work    s like it does in bbedit.
 set novb                          " turn on the "visual bell" - which is much     quieter than the "audio blink"

@@ -128,5 +128,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 #alacricity-color-scheme path
-export PATH="~/.local/bin/:$PATH"
 export cmModPoly=$HOME/.config/polybar/modules

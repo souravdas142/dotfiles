@@ -1,7 +1,7 @@
 artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
 cli_add_playlist_name Default
 close_send_to_tray 1
-deadbeef_version 1.8.3
+deadbeef_version devel
 filebrowser.autofilter 1
 filebrowser.bgcolor 
 filebrowser.bgcolor_selected 
@@ -41,7 +41,7 @@ gtkui.columns.playlist [{"title":"Album Art","id":"8","format":"","sort_format":
 gtkui.embolden_current_track 1
 gtkui.embolden_selected_tracks 1
 gtkui.hide_tray_icon 0
-gtkui.layout.0.6.2 vbox expand="1" fill="1" homogeneous=0 {hsplitter locked=0 ratio=0.113069 pos=0 size2=0 {vsplitter locked=0 ratio=0.500000 pos=0 size2=0 {filebrowser {} vsplitter locked=0 ratio=0.500000 pos=0 size2=0 {musical_spectrum {} scope {} } } hsplitter locked=0 ratio=0.755877 pos=0 size2=0 {vsplitter locked=0 ratio=0.059347 pos=0 size2=0 {quick_search {} vsplitter locked=0 ratio=0.851911 pos=0 size2=0 {tabbed_playlist hideheaders=0 width=836 {} waveform_seekbar {} } } vsplitter locked=0 ratio=0.563798 pos=0 size2=0 {selproperties {} vsplitter locked=0 ratio=0.160279 pos=0 size2=0 {hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {playback_order {} volumebar {} } coverart {} } } } } } 
+gtkui.layout.0.6.2 vbox expand="1" fill="1" homogeneous=0 {hsplitter locked=0 ratio=0.113069 pos=0 size2=0 {vsplitter locked=0 ratio=0.500000 pos=0 size2=0 {filebrowser {} vsplitter locked=0 ratio=0.500000 pos=0 size2=0 {musical_spectrum {} scope {} } } hsplitter locked=0 ratio=0.755877 pos=0 size2=0 {vsplitter locked=0 ratio=0.000000 pos=0 size2=0 {quick_search {} vsplitter locked=0 ratio=0.851911 pos=0 size2=0 {tabbed_playlist hideheaders=0 width=836 {} waveform_seekbar {} } } vsplitter locked=0 ratio=0.563798 pos=0 size2=0 {selproperties {} vsplitter locked=0 ratio=0.160279 pos=0 size2=0 {hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {playback_order {} volumebar {} } coverart {} } } } } } 
 gtkui.override_bar_colors 0
 gtkui.override_listview_colors 0
 gtkui.override_tabstrip_colors 1
@@ -153,11 +153,11 @@ playback.loop 1
 playback.order 0
 playback.volume 0.0000000
 playlist.current 0
-playlist.cursor.0 421
+playlist.cursor.0 466
 playlist.cursor.1 0
 playlist.cursor.2 0
 playlist.cursor.3 0
-playlist.scroll.0 14369
+playlist.scroll.0 16427
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -171,10 +171,10 @@ prefwin.geometry.w 622
 prefwin.geometry.x 733
 prefwin.geometry.y 180
 replaygain_mode 2
-resume.paused 0
+resume.paused 1
 resume.playlist 0
-resume.position 36.083953
-resume.track 421
+resume.position 2.7399538
+resume.track 466
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0
 spectrogram.color.gradient_02 65535 65535 0

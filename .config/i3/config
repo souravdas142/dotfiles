@@ -115,8 +115,7 @@ bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colors
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#application launcher,use '#' instead ',' because i3 don't like
-#bindsym $mod+d exec rofi -show run
+#application launcher
 #bindsym $mod+d exec rofi -show drun -modi drun
 bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
 
