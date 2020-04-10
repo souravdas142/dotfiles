@@ -117,7 +117,9 @@ bindsym $mod+Shift+q kill
 
 #application launcher
 #bindsym $mod+d exec rofi -show drun -modi drun
-bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
+#bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
+bindsym $mod+d exec ~/.config/polybar/modules/sysmenu/zorin-menu
+
 
 # change focus
 bindsym $mod+j focus left
@@ -251,19 +253,19 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && Dunstify
 # imgToClip alias to xclip -selection clipboard image/png -i
 
 bindsym --release Print exec --no-startup-id maim --format png | \
-tee ~/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
 bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png | \
-tee ~/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
 bindsym --release Shift+Print exec --no-startup-id maim -s --format png | \
-tee ~/Pictures/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
 bindsym $mod+Shift+Print --release exec --no-startup-id "flameshot full --clipboard --path \
-~/Pictures/ && flameshot config -t false"
+~/Pictures/Screenshot/ && flameshot config -t false"
 
 bindsym $mod+Mod1+Sys_Req --release exec --no-startup-id shutter -f -c -e -n  -o \
-'~/Pictures/Screenshot-%m%d%y-%T.png'
+'~/Pictures/Screenshot/Screenshot-%m%d%y-%T.png'
 
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
 

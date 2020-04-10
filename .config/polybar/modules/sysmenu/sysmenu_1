@@ -41,8 +41,8 @@ MENU="$(rofi -no-config  -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -line-padding 10 \
 -padding 20 \
 -width 15 \
--xoffset -5 -yoffset -530 \
--location 5 \
+-xoffset -2 -yoffset 16 \
+-location 3 \
 -columns 1 \
 -show-icons -icon-theme "Papirus" \
 -font "Fantasque Sans Mono 10" \
