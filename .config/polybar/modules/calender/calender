@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OFFSET_X=100   # Leave space from either Right or Left side
+OFFSET_X=120   # Leave space from either Right or Left side
 OFFSET_Y=0	   # Leave Space from either top of bottom side 
 BAR_HEIGHT=15  # polybar height
 BORDER_SIZE=1  # border size from your wm settings

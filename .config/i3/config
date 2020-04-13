@@ -78,6 +78,7 @@ for_window [window_type="dialog"]                       floating enable
 for_window [window_type="menu"]                         floating enable
 for_window [class="Org\.gnome\.Nautilus"]					floating enable
 #for_window [class="persepolis"]						floating enable
+for_window [class="java-lang-Thread"]					floating enable,resize set 640 480,move absolute position center
 for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
 for_window [class="firefox" window_role="About"]		floating enable
 for_window [class="firefox" window_role="GtkFileChooserDialog"]		floating enable,resize set 640 480,move absolute position center
@@ -119,7 +120,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec rofi -show drun -modi drun
 #bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
 bindsym $mod+d exec ~/.config/polybar/modules/sysmenu/zorin-menu
-
+bindsym $mod+Shift+d exec ~/.config/polybar/modules/sysmenu/rofimoji
 
 # change focus
 bindsym $mod+j focus left
@@ -244,7 +245,7 @@ mode "resize" {
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && DunstifyVolLight volUp
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && DunstifyVolLight volMute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && DunstifyVolLight brightnessInc 
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && DunstifyVolLight brightnessDec
@@ -264,7 +265,7 @@ tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selec
 bindsym $mod+Shift+Print --release exec --no-startup-id "flameshot full --clipboard --path \
 ~/Pictures/Screenshot/ && flameshot config -t false"
 
-bindsym $mod+Mod1+Sys_Req --release exec --no-startup-id shutter -f -c -e -n  -o \
+bindsym $mod+Control+Print --release exec --no-startup-id shutter -f -c -e -n  -o \
 '~/Pictures/Screenshot/Screenshot-%m%d%y-%T.png'
 
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15

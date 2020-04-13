@@ -68,7 +68,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=9;1
 font-1 = siji:pixelsize=12;1
 font-2 = "Fantasque Sans Mono:pixelsize=10;3"
-font-3 = "Iosevka Nerd Font:pixelsize=14;3"
+font-3 = "Iosevka Nerd Font:pixelsize=9;2"
 font-4 = "Material Icons:style=Regular:pixelsize=11;4"
 font-5 = "Iosevka Nerd Font:pixelsize=11;3"
 font-6 = "Noto Color Emoji:style=Regular:scale=10;2"
@@ -79,7 +79,7 @@ font-9 = Font Awesome 5 Free Solid:size=10;4
 
 modules-left = menu i3
 modules-center = 
-modules-right =  bandwidth2 battery battery-notify date dunst powermenu 
+modules-right =  bandwidth2 battery battery-notify date pulseaudio dunst powermenu 
 
 tray-reparent = true
 tray-position = right
@@ -103,7 +103,7 @@ cursor-scroll = ns-resize
 
 [module/menu]
 type = custom/text
-content = 
+content =   
 ;alt-icon = 
 content-padding = 2 
 content-background = ${colors.menu-acolor}
@@ -297,10 +297,10 @@ interval = 1
 date = " %d-%m"
 ;date-alt = " %d-%m-%y"
 
-time = %I:%M %p
+time = " %I:%M %p"
 ;time-alt = %I:%M:%S %p
 
-format-prefix = 
+format-prefix = 📆
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -310,10 +310,11 @@ label = %{A1:$cmModPoly/calender/calender:}%time%%{A}
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =  %percentage%%
+;label-volume =  %percentage%%
+label-volume = "🔊 %percentage%%"
 label-volume-foreground = ${root.foreground}
 
-label-muted =  muted
+label-muted = 🔇 
 label-muted-foreground = #ffffff
 
 ;bar-volume-width = 10
@@ -364,8 +365,8 @@ bar-volume-foreground-6 = #ff5555
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = AC
 full-at = 98
 time-format = %H:%M
 format-charging = <animation-charging> <label-charging>
@@ -470,10 +471,10 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/text
-content =     (U+e1eb)
-content-padding = 1
-content-background = "#f4511e"
-content-foreground = ${colors.menu-fg}
+content = ⏻
+;content-padding = 
+;content-background = ${colors.menu-acolor}
+;content-foreground = ${colors.menu-fg}
 click-left = $HOME/.config/polybar/modules/sysmenu/sysmenu_1
 click-right = $HOME/.config/polybar/modules/sysmenu/sysmenu_1
 
@@ -528,7 +529,7 @@ exec = $cmModPoly/battery-notify/battery-notify.sh
 
 [module/dunst]
 type=custom/script
-exec="[ -e /tmp/dunstpaused.tmp ] && echo 😴 || echo 💬"
+exec="[ -e /tmp/dunstpaused.tmp ] && echo 😴💤 || echo 💬"
 click-left=": >> /tmp/dunstpaused.tmp && killall -SIGUSR1 dunst"
 click-right="rm /tmp/dunstpaused.tmp && killall -SIGUSR2 dunst"
 interval=1

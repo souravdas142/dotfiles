@@ -48,7 +48,15 @@ case $1 in
 		flag=0
 		Msg="Volume"
 		;;
-	volM)
+	volMute)
+		amixer get Master | tail -1 | grep -ie "\[off\]" > /dev/null
+		exitCode=$?
+		percent=$( [[ $exitCode == 0 ]] && echo "0" || amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		setIcon=$( [[ $exitCode == 0 ]] && echo "/usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg" || echo "audio-volume-high" )
+		notiId=9998 
+		appName="toogleVolMute"
+		flag=0 
+		Msg=$( [[ $exitCode == 0 ]] && echo "Volume Muted" || echo "Volume Unmuted" )
 		;;
 	*)
 		;;

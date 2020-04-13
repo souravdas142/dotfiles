@@ -5,7 +5,7 @@
 BORDER="#00acc1"
 SEPARATOR="#000000"
 FOREGROUND="#00acc1"
-BACKGROUND="#DE000000"
+BACKGROUND="#DF000000"
 BACKGROUND_ALT="#00000000"
 HIGHLIGHT_BACKGROUND="#101010"
 HIGHLIGHT_FOREGROUND="#00acc1"
@@ -34,7 +34,7 @@ LIGHT_BLUE="#039be5"
 LIGHT_GREEN="#7cb342"
 
 # Launch Rofi
-rofi -no-config -combi -modi drun,run,window,ssh,combi -show drun -modi drun  -no-lazy-grab -show drun \
+rofi -no-config -combi -modi drun,emoji,run,window,ssh,combi -show drun -modi drun  -no-lazy-grab -show drun \
 -display-drun "Applications :" -drun-display-format "{name}" \
 -hide-scrollbar true \
 -bw 2 \
