@@ -39,6 +39,10 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
+#	dmenu=/usr/bin/rofi -dmenu -p 'dunst: '
+#	dmenu=/usr/bin/rofi -no-config -no-lazy-grab  -dmenu -p 'dunst' -hide-scrollbar true -bw 0 -lines 6  -padding 20 -width 15 -xoffset -2 -yoffset 16 -location 0 -columns 2 -font "Hack Regular 9"
+
+	dmenu=~/.local/bin/dunstDmenu
 
 [shortcuts]
     close = ctrl+space

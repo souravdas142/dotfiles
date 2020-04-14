@@ -16,7 +16,12 @@ case $1 in
 	"--mobile-phone")
 		mobile-phone
 		;;
+	"-h"|"--help")
+		usage
+		;;
 	*)
+		echo -e "\n\e[1;31m unknown option: $1?\n\e[0m"
+		usage
 		;;
 esac
 return 0
@@ -106,7 +111,7 @@ desktop(){
 				--action="Download,Download" \
 				--action="cancel,Cancel" \
 				"Ubuntu $ver Launched...!!" \
-				"\n<b>Yupii...Ubuntu $ver is Launched..!!</b>\n\n Download")
+				"\n<b>Yupii...Ubuntu $ver is Launched..!!</b>")
 	
 			case $recieve in
 				"Download")
@@ -123,5 +128,15 @@ desktop(){
 	
 }
 
+usage(){
+
+	echo -e "\n\033[1;33m Description:\033[0m\n\n\t This script check wheter Ubuntu 20.04 is released or not,\n if released show you a notification with download button, if you\n select \"Download\", script redirect you to your default browser and\n automatically start download Ubuntu 20.04"
+	echo -e "\n\e[1;33m Usage :\e[0m"
+
+	echo -e "\n\e[1m -h,--help \e[0m\n\n\t Show this help \n\
+		\n\e[1m --desktop \e[0m\n\n\t use this script for desktop or pc \n\
+		\n\e[1m --mobile-phone \e[0m\n\n\t use this script in mobile with termux\n"
+
+}
 
 main $1
