@@ -2,7 +2,7 @@
 
 ###### &nbsp;&nbsp;Description : 
 <p>
-			&nbsp;&nbsp;&nbsp;This script check whether Ubuntu 20.04 is released or not, if released,then it show you a notification with <br /> &nbsp;&nbsp;&nbsp;download button, if you select "Download", script redirect you to your default browser and automatically <br />&nbsp;&nbsp;&nbsp;start download "Ubuntu 20.04" (For Mobile-phones : clicking on "Download" option, will let you directly<br/>&nbsp;&nbsp;&nbsp; download with your download manager). <br />&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;This script check whether Ubuntu 20.04 is released or not, if released,then it show you a notification with <br /> &nbsp;&nbsp;&nbsp;download button, if you select "Download", script redirect you to your default browser and automatically <br />&nbsp;&nbsp;&nbsp;start download "Ubuntu 20.04" (For Mobile-phones : clicking on "Download" option, will let you directly<br/>&nbsp;&nbsp;&nbsp; download with your default download manager). <br />&nbsp;&nbsp;&nbsp;
 </p>
 
 ###### &nbsp;&nbsp;&nbsp;Usage 
@@ -16,14 +16,14 @@
 &nbsp;&nbsp;&nbsp;**Some Screenshots :**<br/><br/>
 &nbsp;&nbsp;&nbsp;**Manjaro-Kde :**<br/><br/>
 
-&nbsp;&nbsp;&nbsp;&nbsp; ![Manaro-Kde](https://github.com/souravdas142/dot_config_shell_files/blob/master/.local/bin/scripts/Ubuntu/image/manjarokde.png)
+&nbsp;&nbsp;&nbsp;&nbsp; ![Manaro-Kde](https://github.com/souravdas142/dot_config_shell_files/blob/master/scripts/Ubuntu/images/manjarokde.png)
 
 &nbsp;&nbsp;&nbsp;**Ubuntu :**<br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp; ![Ubuntu](https://github.com/souravdas142/dot_config_shell_files/blob/master/.local/bin/scripts/Ubuntu/image/ubuntu.png)
+&nbsp;&nbsp;&nbsp;&nbsp; ![Ubuntu](https://github.com/souravdas142/dot_config_shell_files/blob/master/scripts/Ubuntu/images/ubuntu.png)
 
  **i3WM + rofi**	|	**ManjaroXfce**
 :-------------------------------:|:--------------------------:
- ![i3wm](https://github.com/souravdas142/dot_config_shell_files/blob/master/.local/bin/scripts/Ubuntu/image/i3wm.jpg)	|  ![ManjaroXfce](https://github.com/souravdas142/dot_config_shell_files/blob/master/.local/bin/scripts/Ubuntu/image/manjaroXfce.jpg)
+ ![i3wm](https://github.com/souravdas142/dot_config_shell_files/blob/master/scripts/Ubuntu/images/i3wm.jpg)	|  ![ManjaroXfce](https://github.com/souravdas142/dot_config_shell_files/blob/master/scripts/Ubuntu/images/manjaroXfce.jpg)
 
 <br/><br/><br/>
 &nbsp;&nbsp;**For Mobile Phones with termux**<br/>
@@ -47,13 +47,13 @@
 
 ## &nbsp;&nbsp;For Desktop :
 ```bash
-	curl -LJO "https://raw.github.com/chkUbuntuRelease
+	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
 	chmod 755 chkUbuntuRelease
 	./chkUbuntuRelease --desktop
 ```
 &nbsp;&nbsp;**Note 1 :** For Debian like distro you have to build [dunstify](https://github.com/dunst-project/dunst/wiki/Installation) from source. Otherwise you can also download prebuild binary from this repo
 ```bash
-	curl -LJO "https://raw.github.com/dunstify
+	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstify"
 	sudo chmod 755 dunstify
 	sudo cp -v dunstify /usr/local/bin/
 ```
@@ -61,7 +61,7 @@
 &nbsp;&nbsp;**Note 2 :** if you are using any window manager (not DE) and you are using rofi :
 
 ```bash
-	curl -LJO "https://raw.github.com/dunstMenu
+	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstDmenu"
 	chmod 755 dunstMenu
 	cp -v dunstMenu ~/
 ```
@@ -79,7 +79,7 @@
 	termux-setup-storage    	# grant storage permission
 	apt install curl termux-api
 
-	curl -LJO "https://raw.github.com/chkUbuntuRelease
+	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
 	chmod 755 chkUbuntuRelease
 	./chkUbuntuRelease --mobile-phone
 ```
