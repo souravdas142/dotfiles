@@ -1,17 +1,24 @@
 #!/bin/bash
 
-url="https://ubuntu.com/download/desktop"
-ver="19.10"
-dwnUrl="https://ubuntu.osuosl.org/releases/$ver/ubuntu-$ver-desktop-amd64.iso"
+### { 
+
+	# configuration part of this script
+
+	url="https://ubuntu.com/download/desktop"
+	ver="19.10"
+	dwnUrl="https://ubuntu.osuosl.org/releases/$ver/ubuntu-$ver-desktop-amd64.iso"
+	chkFreq=90
+	mode=$1
+
+### } 
 
 id=2004
 
-args=$1
 
 
 main(){
 
-case $args in
+case $mode in
 	"--desktop")
 		desktop
 		;;
@@ -24,7 +31,7 @@ case $args in
 		usage
 		;;
 	*)
-		echo -e "\n\e[1;31m unknown option: $args ?\n\e[0m"
+		echo -e "\n\e[1;31m unknown option: $mode ?\n\e[0m"
 		usage
 		;;
 esac
@@ -40,9 +47,9 @@ mobile-phone(){
 	do
 	
 		count=`curl -s $url | grep -ic $ver`
-		#echo "count = $count"
+		curl -Ifs $dwnUrl > /dev/null 2>&1 && exist=0 || exist=1
 	
-		if [ "$count" != "0" ]; then
+		if [[ "$count" != "0" || "$exist" == "0" ]]; then
 	
 			#echo "After matched count = $count"
 			echo "Ubuntu $ver LTS Launched ..!!" 
@@ -86,7 +93,7 @@ mobile-phone(){
 	
 		fi
 	
-		sleep 120   
+		sleep $chkFreq   
 	
 	done
 	
@@ -102,9 +109,9 @@ desktop(){
 	do
 	
 	    count=`curl -s $url | grep -ic $ver`
-	    #echo "count = $count"
+		curl -Ifs $dwnUrl > /dev/null 2>&1 && exist=0 || exist=1
 	
-	    if [ "$count" != "0" ]; then
+	    if [[ "$count" != "0" || "$exist" == "0" ]]; then
 
 			#echo "After matched count = $count"
 	    	echo -e "\nUbuntu $ver LTS Launched ..!!" 
@@ -137,7 +144,7 @@ desktop(){
 	
 		fi
 
-		sleep 120
+		sleep $chkFreq
 
 	done
 	
@@ -155,4 +162,4 @@ usage(){
 
 }
 
-main $args
+main $mode

@@ -90,4 +90,5 @@
 	
 **TO Do**<br/>
 - [x] termux-wakelock
+- [] run script with `nohup` command
 
