@@ -1,4 +1,4 @@
-## <br/><br/>&nbsp;&nbsp;&nbsp;Ubuntu Release Checker
+## <br/><br/>&nbsp;&nbsp;&nbsp;Ubuntu Release Checker ( FOR DESKTOP & MOBILE PHONES )
 
 ###### &nbsp;&nbsp;Description : 
 <p>
@@ -89,13 +89,13 @@ chmod 755 chkUbuntuRelease
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; offering you download directly with your default download manager<br/>
 
 ### &nbsp;&nbsp;**Configuration**<br/>
-&nbsp;&nbsp;The top most part of the script is reserved to Configure the script behaviour.[Configuration](https://github.com/souravdas142/dot_config_shell_files/blob/c821a7b80eb9f6d0b18e6e704c2c9f25c6de7230/scripts/Ubuntu/chkUbuntuRelease#L2-L14) <br/>
+&nbsp;&nbsp;The top most part of the script is reserved to Configure the script behaviour. [Configuration](https://github.com/souravdas142/dot_config_shell_files/blob/c821a7b80eb9f6d0b18e6e704c2c9f25c6de7230/scripts/Ubuntu/chkUbuntuRelease#L2-L14) <br/>
 |	**Options**	| **Description** |
 |	:---				|		:---	  |
 |	`url` & `dwnUrl` | you can change the url if you want to use differnet flavours (or the vanilla ubuntu) . you can change the dwnUrl to use different server of different flavours. |
 |	`ver`		|	you can change the ver (version) of the ubuntu or its derivative if required.	|
-|	`chkFreq`	|	You can also change the chkFreq [interval or frequency] (i.e. how much time script waits after running once) of the script.  |
-|	`mode`		|	You can change the mode of the script (default is "$1", possible values : "--desktop", "--mobile-phone"), this is usefull unless you want to run it as autostart script, otherwise changing this doesn't make any sense. Configuration |
+|	`chkFreq`	|	You can also change the interval or frequency (i.e. how much time script waits after running once) of the script.  |
+|	`mode`		|	You can change the mode of the script (default is "$1", possible values : "--desktop", "--mobile-phone"), this is usefull unless you want to run it as autostart script, otherwise changing this doesn't make any sense. |
 
 
 ### &nbsp;&nbsp;Example : <br/>
