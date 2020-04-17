@@ -47,48 +47,68 @@
 
 ## &nbsp;&nbsp;For Desktop :
 ```bash
-	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
-	chmod 755 chkUbuntuRelease
-	./chkUbuntuRelease --desktop
+curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
+chmod 755 chkUbuntuRelease
+./chkUbuntuRelease --desktop
 ```
 &nbsp;&nbsp;**Note 1 :** For Debian like distro you have to build [dunstify](https://github.com/dunst-project/dunst/wiki/Installation) from source. Otherwise you can also download prebuild binary from this repo
 ```bash
-	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstify"
-	sudo chmod 755 dunstify
-	sudo cp -v dunstify /usr/local/bin/
+curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstify"
+sudo chmod 755 dunstify
+sudo cp -v dunstify /usr/local/bin/
 ```
 
 &nbsp;&nbsp;**Note 2 :** if you are using any window manager (not DE) and you are using rofi :
 
 ```bash
-	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstDmenu"
-	chmod 755 dunstMenu
-	cp -v dunstMenu ~/
+curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/dunstDmenu"
+chmod 755 dunstMenu
+cp -v dunstMenu ~/
 ```
 <br/> &nbsp;&nbsp;Then go to `~/.config/dunst/dunstrc` edit or add bellow line
 ```bash
-	dmenu=/home/$USER/dunstMenu
+dmenu=/home/$USER/dunstMenu
 ```
  &nbsp;&nbsp; **$USER must be expanded manually**
 
 ## &nbsp;&nbsp;For Mobile Phones
 &nbsp;&nbsp;1. First Install all Dependencies for Mobile phones.<br/>
 &nbsp;&nbsp;2. Update && upgrade all packages in termux<br/>
-&nbsp;&nbsp;3. Do as bellow 
+&nbsp;&nbsp;3. Feed the bellow commands 
 ```bash
-	termux-setup-storage    	# grant storage permission
-	apt install curl termux-api
+termux-setup-storage    	# grant storage permission
+apt install curl termux-api
 
-	curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
-	chmod 755 chkUbuntuRelease
-	./chkUbuntuRelease --mobile-phone
+curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease"
+chmod 755 chkUbuntuRelease
+./chkUbuntuRelease --mobile-phone
 ```
 &nbsp;&nbsp;4. It will alert (By alarm) you when Ubuntu released.<br/>
 &nbsp;&nbsp;5. It will copy download url to your clipboard<br/>
 &nbsp;&nbsp;6. It will show you a download option in notification<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; offering you download directly with your default download manager<br/>
+
+### &nbsp;&nbsp;**Configuration**<br/>
+&nbsp;&nbsp;The top most part of the script is reserved to Configure the script behaviour.[Configuration](https://github.com/souravdas142/dot_config_shell_files/blob/c821a7b80eb9f6d0b18e6e704c2c9f25c6de7230/scripts/Ubuntu/chkUbuntuRelease#L2-L14) <br/>
+|	**Options**	| **Description** |
+|	:---				|		:---	  |
+|	`url` & `dwnUrl` | you can change the url if you want to use differnet flavours (or the vanilla ubuntu) . you can change the dwnUrl to use different server of different flavours. |
+|	`ver`		|	you can change the ver (version) of the ubuntu or its derivative if required.	|
+|	`chkFreq`	|	You can also change the chkFreq [interval or frequency] (i.e. how much time script waits after running once) of the script.  |
+|	`mode`		|	You can change the mode of the script (default is "$1", possible values : "--desktop", "--mobile-phone"), this is usefull unless you want to run it as autostart script, otherwise changing this doesn't make any sense. Configuration |
+
+
+### &nbsp;&nbsp;Example : <br/>
+```bash
+
+./chkUbuntuRelease --desktop & 
+			or,
+./chkUbuntuRelease --mobile-phone &
+
+```
+
 	
 **TO Do**<br/>
 - [x] termux-wakelock
-- [] run script with `nohup` command
+- [x] no need to start with `nohup` - this scrip is immune to stoping
 

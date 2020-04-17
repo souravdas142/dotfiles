@@ -14,7 +14,11 @@
 
 id=2004
 
-
+case $mode in
+	"--desktop"|"--mobile-phone")
+	   	trap 'echo -e " \e[1;31mSignal Recieved SIG$( kill -l $(($? - 128)) ) \e[0m- to exit give the bellow command\n\e[33mkill -SIGKILL $$\e[0m"' SIGHUP  SIGINT SIGTERM SIGUSR1 SIGUSR2 SIGPIPE SIGQUIT EXIT SIGABRT 
+		;;
+esac
 
 main(){
 
@@ -162,4 +166,10 @@ usage(){
 
 }
 
-main $mode
+# { ******************** body of the scripts *******************
+
+
+	main $mode
+
+
+# } ****************** End of the Script *********************
