@@ -6,7 +6,7 @@
 
 	url="https://ubuntu.com/download/desktop"
 	ver="19.10"
-	dwnUrl="https://ubuntu.osuosl.org/releases/$ver/ubuntu-$ver-desktop-amd64.iso"
+	dwnUrl="https://releases.ubuntu.com/$ver/ubuntu-$ver-desktop-amd64.iso"
 	chkFreq=90
 	mode=$1
 
