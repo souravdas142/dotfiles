@@ -1,0 +1,10 @@
+[Unit]
+Description=chkUbuntu Release
+Documentation=https://github.com/souravdas142/dot_config_shell_files/tree/master/scripts/Ubuntu
+
+[Service]
+ExecStart=/usr/local/bin/chkUbuntuRelease --desktop
+Restart=always
+
+[Install]
+WantedBy=default.target

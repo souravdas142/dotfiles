@@ -41,7 +41,7 @@
 
 |  **Dekstop**	| **Mobile Phones** |
 |	  :---      |		:---	    |
-|  <ol><li>cURL</li><li>grep</li><li>dunst</li><li>dunstify</li><li>libnotify</li><li>dmenu compatible<br/> menu (like rofi) [Optional]</li></ol>	|	<ol><li>[termux](https://f-droid.org/en/packages/com.termux/)</li><li>[termux-api](https://f-droid.org/en/packages/com.termux.api/)</li><li>cURL</li><li>grep</li></ol>	|
+|  <ol><li>cURL</li><li>grep</li><li>[dunst](https://github.com/dunst-project/dunst)</li><li>dunstify (follow dunst)</li><li>libnotify</li><li>dmenu compatible<br/> menu (like [rofi](https://github.com/davatorium/rofi)) [Optional]</li></ol>	|	<ol><li>[termux](https://f-droid.org/en/packages/com.termux/)</li><li>[termux-api](https://f-droid.org/en/packages/com.termux.api/)</li><li>[termux-boot](https://f-droid.org/en/packages/com.termux.boot/) (optional)</li><li>cURL</li><li>grep</li></ol>	|
 
 &nbsp;&nbsp;**first install all dependencies otherwise this script will not work.**<br/><br/>
 
@@ -107,6 +107,57 @@ chmod 755 chkUbuntuRelease
 ./chkUbuntuRelease --mobile-phone &
 
 ```
+
+### &nbsp;&nbsp;&nbsp;Autostart<br/>
+
+&nbsp;&nbsp;&nbsp;[**Desktop**]<br/><br/>
+&nbsp;&nbsp;&nbsp;For Desktop There is a serparate service available. To make autostart with boot, do as bellow.<br/>
+
+```bash
+
+curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease.service"
+sudo chmod 644 dunstMenu
+sudo cp -v chkUbuntuRelease.service /etc/systemd/user/
+systemctl --user daemon-reload
+
+```
+
+&nbsp;&nbsp;&nbsp; *Then Enable the service,*
+
+```bash
+
+#(for current user-specific) -
+systemctl --user enable chkUbuntuRelease
+
+#(for all-User) - As root
+systemctl --user --global enable chkUbuntuRelease
+
+#To start the service immidiately,
+systemctl --user start chkUbuntuRelease
+
+#To see the status of the started service,
+systemctl --user status chkUbuntuRelease
+
+```
+
+&nbsp;&nbsp;&nbsp;[**Mobile Phone**]
+
+```bash
+#install termux-boot see dependencies & create directory 
+
+mkdir -p ~/.termux/boot
+
+#move the script to `~/.termux/boot/`
+
+mv -v chkUbuntuRelease ~/.termux/boot/
+
+# Open termux-boot just once form app launcher 
+# icon to grant permission for autostart the app on boot
+# if its not showing you to grant the permission manually do it
+# by going app manager && reboot your phone
+
+```
+
 
 	
 **TO Do**<br/>
