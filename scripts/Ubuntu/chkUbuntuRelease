@@ -5,7 +5,7 @@
 	# configuration part of this script
 
 	url="https://ubuntu.com/download/desktop"
-	ver="19.10"
+	ver="20.04"
 	dwnUrl="https://releases.ubuntu.com/$ver/ubuntu-$ver-desktop-amd64.iso"
 	chkFreq=90
 	mode=$1

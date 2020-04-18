@@ -2,7 +2,8 @@
 
 ###### &nbsp;&nbsp;Description : 
 <p>
-			&nbsp;&nbsp;&nbsp;This script check whether Ubuntu 20.04 is released or not, if released,then it show you a notification with <br /> &nbsp;&nbsp;&nbsp;download button, if you select "Download", script redirect you to your default browser and automatically <br />&nbsp;&nbsp;&nbsp;start download "Ubuntu 20.04" (For Mobile-phones : clicking on "Download" option, will let you directly<br/>&nbsp;&nbsp;&nbsp; download with your default download manager). <br />&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;This script check whether Ubuntu 20.04 is released or not, if released,then it show you a notification with <br /> &nbsp;&nbsp;&nbsp;download button, if you select "Download", script redirect you to your default browser and automatically <br />&nbsp;&nbsp;&nbsp;start download "Ubuntu 20.04" (For Mobile-phones : clicking on "Download" option, will let you directly<br/>&nbsp;&nbsp; download with your default download manager). Script can be used from any distro. Suppose you want to<br/>&nbsp;&nbsp; come back to Ubuntu 20.04 as soon as it will be released or you want to  fresh install upon release or you<br/>&nbsp;&nbsp;&nbsp;want to test the latest release Then the script is for you. The script is far different from `do-release-upgrade`.<br/>&nbsp;&nbsp; So `do-release-upgrade` lacks of feature being checked on every minutes or seconds, but script can do. <br />&nbsp;&nbsp;Another thing, How can you run `do-release-upgrade` if you are in another distro.<br/>
+
 </p>
 
 ###### &nbsp;&nbsp;&nbsp;Usage 
@@ -118,6 +119,11 @@ chmod 755 chkUbuntuRelease
 curl -LJO "https://raw.githubusercontent.com/souravdas142/dot_config_shell_files/master/scripts/Ubuntu/chkUbuntuRelease.service"
 sudo chmod 644 dunstMenu
 sudo cp -v chkUbuntuRelease.service /etc/systemd/user/
+
+# Move the script to `/usr/local/bin/` otherwise it doesn't work. Or you
+# can change the path of the service file, you have to edit then `ExecStart`
+sudo mv -v chkUbuntuRelease /usr/local/bin/
+
 systemctl --user daemon-reload
 
 ```
