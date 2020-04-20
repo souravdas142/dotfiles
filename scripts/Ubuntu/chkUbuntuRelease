@@ -4,7 +4,6 @@
 
 	# configuration part of this script
 
-	url="https://ubuntu.com/download/desktop"
 	ver="20.04"
 	dwnUrl="https://releases.ubuntu.com/$ver/ubuntu-$ver-desktop-amd64.iso"
 	chkFreq=90
@@ -50,12 +49,10 @@ mobile-phone(){
 	while :
 	do
 	
-		count=`curl -s $url | grep -ic $ver`
 		curl -Ifs $dwnUrl > /dev/null 2>&1 && exist=0 || exist=1
 	
-		if [[ "$count" != "0" || "$exist" == "0" ]]; then
+		if [[ "$exist" == "0" ]]; then
 	
-			#echo "After matched count = $count"
 			echo "Ubuntu $ver LTS Launched ..!!" 
 	
 	
@@ -112,12 +109,10 @@ desktop(){
 	while :
 	do
 	
-	    count=`curl -s $url | grep -ic $ver`
 		curl -Ifs $dwnUrl > /dev/null 2>&1 && exist=0 || exist=1
 	
-	    if [[ "$count" != "0" || "$exist" == "0" ]]; then
+	    if [[ "$exist" == "0" ]]; then
 
-			#echo "After matched count = $count"
 	    	echo -e "\nUbuntu $ver LTS Launched ..!!" 
 			echo $dwnUrl | xclip -selection clipboard -i && \
 			echo -e "Download Url Copied to Clipboard\n"
