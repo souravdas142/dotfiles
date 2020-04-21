@@ -1,0 +1,11 @@
+[Unit]
+Description=Update /etc/issue on boot
+Before=getty@tty1.service getty@tty2.service getty@tty3.service getty@tty4.service getty@tty5.service getty@tty6.service 
+
+[Service]
+Type=oneshot
+#RemainAfterExit=true
+ExecStart=/bin/bash -c 'sudo -u nobody neofetch | tee /etc/issue'
+
+[Install]
+WantedBy=multi-user.target
