@@ -121,7 +121,9 @@ URxvt*buffered:         false
 
 !--------------------------- modified by ranger scheme rougarou ----------------------------
 
-
+! fonts
+*faceName: Hack
+*faceSize: 10
 
 ! special
 *.foreground:   #dfdfdf
