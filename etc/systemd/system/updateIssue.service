@@ -5,7 +5,7 @@ Before=getty@tty1.service getty@tty2.service getty@tty3.service getty@tty4.servi
 [Service]
 Type=oneshot
 #RemainAfterExit=true
-ExecStart=/bin/bash -c 'sudo -u nobody echo -e "\n\e[1;36mArch-Linux \e[33m(\l)\e[0m\n\n" > /etc/issue && neofetch --disable title underline uptime packages shell resolution theme icons term | tee -a /etc/issue'
+ExecStart=/bin/bash -c 'sudo -u nobody echo -e "\n\e[1;36m  Arch-Linux \e[33m(\l)\e[0m\n\n" > /etc/issue && neofetch --disable title underline uptime packages shell resolution theme icons term | tee -a /etc/issue'
 
 [Install]
 WantedBy=multi-user.target

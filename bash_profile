@@ -21,7 +21,7 @@ if systemctl -q is-active graphical.target; then
 
 	echo -e "\nstarting startX......($count) "
 
-	exec startx i3 -- -keeptty 2>&1 | tee -a $LogFile
+	exec startx ~/.xinitrc bspwm -- -keeptty 2>&1 | tee -a $LogFile
 	flag2=$?
 	if [ $flag2 -eq 0 ]; then
 		echo -e "\nexecuted startX..."

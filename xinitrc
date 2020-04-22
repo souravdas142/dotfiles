@@ -56,10 +56,8 @@ cmn_progs(){
 
 chsWm(){
 	cmn_progs
-
 	local session=${1:-i3}
-	
-	
+
 	case $session in
 	
 	    i3|i3wm)
@@ -86,7 +84,7 @@ chsWm(){
 	    # No known session, try to run it as command
 	    *)
 			exec $1
-		;;
+			;;
 	
 	esac
 	unset session
@@ -95,6 +93,7 @@ chsWm(){
 chsDE(){
 	local session=${1:-xfce}
 	case $session in
+
 	    xfce|xfce4)
 		   	exec startxfce4
 			;;
@@ -121,5 +120,5 @@ chsDE(){
 
 
 # starting 
-[[ "$isWm" == "0" ]] && chsWm $1 || chsDE $1
+[[ "$isWM" == "0" ]] && chsWm $1 || chsDE $1
 

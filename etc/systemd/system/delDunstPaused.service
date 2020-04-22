@@ -1,0 +1,11 @@
+[Unit]
+Description=Delete Dunst Mute File
+Before= sleep.target suspend.target 
+
+
+[Service]
+ExecStart=rm -f /tmp/dunstpaused.tmp
+Type=oneshot
+
+[Install]
+WantedBy= sleep.target suspend.target 
