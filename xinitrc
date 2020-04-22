@@ -48,60 +48,78 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+isWM=0
 cmn_progs(){
-	picom &
 	[[ -e ~/.fehbg ]] && sh ~/.fehbg &
 
 }
 
+chsWm(){
+	cmn_progs
 
-session=${1:-xfce}
-
-
-case $session in
-
-    i3|i3wm)
-		cmn_progs
-	   	exec i3
+	local session=${1:-i3}
+	
+	
+	case $session in
+	
+	    i3|i3wm)
+		   	exec i3
+			;;
+	    bspwm)
+		   	exec bspwm
+			;;
+		dwm)
+		   	exec dwm
+			;; 
+		awesome) 
+			exec awesome
+			;;
+		openbox)
+		   	exec openbox
+			;;
+		spectrwm)
+		   	exec spectrwm
+			;;
+		xmonad) 
+			exec xmonad
+			;;
+	    # No known session, try to run it as command
+	    *)
+			exec $1
 		;;
-    bspwm)
-		cmn_progs
-	   	exec bspwm
-		;;
-	dwm)
-		cmn_progs
-	   	exec dwm
-		;; 
-	awesome) 
-		cmn_progs
-		exec awesome
-		;;
-	openbox)
-		cmn_progs
-	   	exec openbox
-		;;
-	spectrwm)
-		cmn_progs
-	   	exec spectrwm
-		;;
-	xmonad) 
-		cmn_progs
-		exec xmonad
-		;;
-    xfce|xfce4)
-	   	exec startxfce4
-		;;
-    # No known session, try to run it as command
-    *)
-		exec $1
-	;;
+	
+	esac
+	unset session
+}
 
-esac
+chsDE(){
+	local session=${1:-xfce}
+	case $session in
+	    xfce|xfce4)
+		   	exec startxfce4
+			;;
+		kde)
+			exec startplasma-x11
+			;;
+		gnome)
+			export XDG_SESSION_TYPE=x11
+			export GDK_BACKEND=x11
+			exec gnome-session
+			;;
+		lxde)
+			exec startlxde
+			;;
+	    # No known session, try to run it as command
+	    *)
+			exec $1
+		;;
+	
+	esac
+	unset session
+}
 
 
 
-#twm &
-#xclock -geometry 50x50-1+1 &
-#xterm -geometry 80x50+494+51 &
-#xterm -geometry 80x20+494-0 &
-#exec xterm -geometry 80x66+0+0 -name login
+# starting 
+[[ "$isWm" == "0" ]] && chsWm $1 || chsDE $1
+
