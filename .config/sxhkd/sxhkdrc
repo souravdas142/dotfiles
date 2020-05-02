@@ -7,8 +7,16 @@ super + Return
 	tilix
 
 # program launcher
-super + d
-	rofi -show drun -modi drun
+super + {d,shift+d}
+	~/.config/polybar/modules/sysmenu/{zorin-menu,rofimoji}
+
+# quit/restart bspwm
+super + shift + {e,r}
+	bspc {quit,wm -r}
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -18,9 +26,6 @@ super + Escape
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + shift + {e,r}
-	bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }w
@@ -42,9 +47,6 @@ super + g
 # state/flags
 #
 
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
