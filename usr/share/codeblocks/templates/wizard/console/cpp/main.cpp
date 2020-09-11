@@ -19,12 +19,16 @@ using namespace std;
 #define tr(it,a) for(auto it=a.begin();it!=a.end();it++)
 #define sz(a) (ll)((a).size())
 #define pb push_back
+#define emb emplace_back
+#define emp emplace
 #define fi first
 #define se second
 #define all(x) (x).begin(), (x).end() //Forward traversal
 #define rall(x) (x).rbegin, (x).rend() //reverse traversal
 #define max(a, b) (a < b ? b : a) 
 #define min(a, b) ((a > b) ? b : a) 
+#define deb(x) cout<< #x <<"="<<x<<endl;
+#define deb2(x,y) cout<< #x <<"="<<x<<", "<< #y <<"="<<y<<endl;
 #define mod 1e9 + 7 
 #define PI 3.1415926535897932384626433832795
 

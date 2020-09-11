@@ -529,9 +529,9 @@ exec = $cmModPoly/battery-notify/battery-notify.sh
 
 [module/dunst]
 type=custom/script
-exec="[ -e /tmp/dunstpaused.tmp ] && echo 😴💤 || echo 💬"
-click-left=": >> /tmp/dunstpaused.tmp && killall -SIGUSR1 dunst"
-click-right="rm /tmp/dunstpaused.tmp && killall -SIGUSR2 dunst"
+exec="[ -e /tmp/dunstpaused-$EUID.tmp ] && echo 😴💤 || echo 💬"
+click-left=": >> /tmp/dunstpaused-$EUID.tmp && killall -SIGUSR1 dunst"
+click-right="rm /tmp/dunstpaused-$EUID.tmp && killall -SIGUSR2 dunst"
 interval=1
 
 [settings]
