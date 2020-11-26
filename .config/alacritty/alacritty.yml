@@ -102,7 +102,7 @@ draw_bold_text_with_bright_colors: false
 
 # color_end
  
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -113,7 +113,7 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
-dynamic_title: true
+window.dynamic_title: true
 
 cursor:
   style: Beam
@@ -154,8 +154,8 @@ key_bindings:
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: NumpadAdd,      mods: Control,       action: IncreaseFontSize }
+  - { key: NumpadSubtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
   - { key: Paste,                         action: Paste            }
