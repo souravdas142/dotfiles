@@ -196,8 +196,7 @@ submenu_indentation=""
 is_top_level=true
 while [ "x$list" != "x" ] ; do
   #linux=`version_find_latest $list`
-  #linux=`echo $list | tr ' ' '\n' | sort -V | head -1 | cat`
-  linux="vmlinuz-linux-haswell"
+  linux=`echo $list | tr ' ' '\n' | sort -V | head -1 | cat`
   gettext_printf "Found linux image: %s\n" "$linux" >&2
   basename=`basename $linux`
   dirname=`dirname $linux`
