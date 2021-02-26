@@ -333,6 +333,7 @@ bar-volume-gradient = false
 ;bar-volume-empty = ─
 ;bar-volume-empty-font = 2
 ;bar-volume-empty-foreground = ${colors.foreground-alt}
+click-right = pavucontrol
 
 [module/alsa]
 type = internal/alsa

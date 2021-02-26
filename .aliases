@@ -94,3 +94,6 @@ alias artisan='php artisan'
 alias :q='exit'
 alias help='man'
 alias quit='exit'
+
+# feh
+alias feh='feh -Tdefault'

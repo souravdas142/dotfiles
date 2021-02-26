@@ -10,7 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 ################################### Some startup Applicaltion ############################
-#
+
+
 ###### Polybar Launch ########
 exec_always --no-startup-id ~/.config/polybar/launchPolybar.sh
 ###### Polybar Launch Finished  ########
@@ -18,7 +19,9 @@ exec_always --no-startup-id ~/.config/polybar/launchPolybar.sh
 exec --no-startup-id numlockx on
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id ibus-daemon --xim -d -r
 exec_always --no-startup-id nm-applet --sm-disable
+exec_always --no-startup-id blueman-tray --loglevel 5 --syslog 
 exec --no-startup-id picom
 #exec --no-startup-id copyq
 #exec --no-startup-id quiterss

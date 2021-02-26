@@ -19,10 +19,11 @@ exec --no-startup-id numlockx on
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always --no-startup-id nm-applet --sm-disable
+exec_always --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id picom
 #exec --no-startup-id copyq
 #exec --no-startup-id quiterss
-exec --no-startup-id persepolis --tray
+#exec --no-startup-id persepolis --tray
 exec --no-startup-id dunst
 #exec_always --no-startup-id xdman &
 #
