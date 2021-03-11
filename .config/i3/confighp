@@ -11,25 +11,41 @@
 
 ################################### Some startup Applicaltion ############################
 
+# Launching Compositor
+exec --no-startup-id picom
 
-###### Polybar Launch ########
+# Launching Notification Daemon
+exec --no-startup-id dunst
+
+# Launching Polybar
 exec_always --no-startup-id ~/.config/polybar/launchPolybar.sh
-###### Polybar Launch Finished  ########
 
+# Enbable Numlock on boot
 exec --no-startup-id numlockx on
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id ibus-daemon --xim -d -r
 exec_always --no-startup-id nm-applet --sm-disable
+
+# Enbabling ibus for keyboard layout
+exec_always --no-startup-id ibus-daemon --xim -d -r
+
+# Systray bluetooth connector
 exec_always --no-startup-id blueman-tray --loglevel 5 --syslog 
-exec --no-startup-id picom
+
+# Launching Clipboard manager
 #exec --no-startup-id copyq
+#exec --no-startup-id gpaste-client start
+
+# Launching RSS Feed 
 #exec --no-startup-id quiterss
+
+# Launching Persepolis systray
 #exec --no-startup-id persepolis --tray
-exec --no-startup-id dunst
-exec --no-startup-id gpaste-client start
-#exec --no-startup-id xdman &
-#
+
+# Launching Xdman systray
+#exec_always --no-startup-id xdman &
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 --nofork
@@ -37,6 +53,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur 
 ################################### End of Some startup Applicaltion ############################
 
 ########################################## Some of Variable ######################################
+
 #some color variable
 set $indColor			 #00ff0000
 set $lockColor			 #808080
@@ -47,9 +64,25 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 #end of color variable
 
+# Mod{1,2,3,4}={Alt,,,Super}
 set $mod Mod4
+
 # Set program location
 set $alacritty_colorscheme ~/.local/bin/alacritty-colorscheme
+
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "DlM"
 
 ########################################## End of Some of Variable ######################################
 
@@ -64,14 +97,14 @@ font pango:System San Francisco Display 8
 #################################### Changing Window Behaviour ###################################
 #
 #gaps outer 10
-gaps inner 5
+#gaps inner 5
 #gaps only enable if more than one container available
-smart_gaps on
+#smart_gaps on
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 
-# floating window
+# Rules for window of certain program
 
 for_window [class="^.*"]								border pixel 0
 for_window [window_role="bubble"]                       floating enable 
@@ -80,9 +113,9 @@ for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable 
 for_window [window_type="menu"]                         floating enable
-for_window [class="Org\.gnome\.Nautilus"]				floating enable
-for_window [class="[pP]cmanfm"]				floating enable
+#for_window [class="Org\.gnome\.Nautilus"]				floating enable
 #for_window [class="persepolis"]						floating enable
+#for_window [class="[pP]cmanfm"]                        floating enable
 for_window [class="java-lang-Thread"]					floating enable,resize set 640 480,move absolute position center
 for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
 for_window [class="firefox" window_role="About"]		floating enable
@@ -92,8 +125,9 @@ for_window [class="copyq"]								floating enable,resize set 640 480
 for_window [class="QuiteRss"]							floating enable,resize set 640 480
 for_window [title=".*[Ss]oft\ [kK]eyboard.*"]			floating enable,resize set 645 224
 for_window [class="cb-tty"]								floating enable,resize set 640 480
-#
-#
+
+
+
 # window colors
 # #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color				$indColor
@@ -106,31 +140,38 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$i
 
 ############################## ALL KEY BINDINGS #################################
 
-# start a terminal
+# Launch a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty -e tmux new-session 
+#bindsym $mod+Return exec tilix
 
-# Toggle between light and dark colorscheme
-bindsym $mod+Shift+n exec $alacritty_colorscheme -t solarized-light.yml solarized-dark.yml
+# Launching Nautilus
+# bindsym $mod+Shift+a exec nautilus
 
-# Toggle between all available colorscheme
-bindsym $mod+Shift+m exec $alacritty_colorscheme -T
+# Launching PcmanfmQt
+# bindsym $mod+Shift+z exec pcmanfm --no-desktop
 
-# Get notification with current colorscheme
-bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
+# Clipboard start
+# bindsym $mod+Shift+p exec --no-startup-id gpaste-client ui
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Lock you screen
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
 
 #application launcher
 #bindsym $mod+d exec rofi -show drun -modi drun
 #bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
 bindsym $mod+d exec ~/.config/polybar/modules/sysmenu/zorin-menu
 bindsym $mod+Shift+d exec ~/.config/polybar/modules/sysmenu/rofimoji
-bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+a exec nautilus
-bindsym $mod+Shift+z exec pcmanfm --no-desktop
 
+
+# Launching Browser
+bindsym $mod+Shift+f exec firefox
+
+# Launching Codeblocks
+bindsym Control+Mod1+c exec codeblocks
 
 # change focus
 bindsym $mod+j focus left
@@ -182,18 +223,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "DlM"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -221,8 +250,10 @@ bindsym $mod+Shift+0 move container to workspace		$ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -253,6 +284,7 @@ mode "resize" {
 }
 
 # Use pactl to adjust volume in PulseAudio.
+# DunstifyVolLight a script that control notifications behaviour
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && DunstifyVolLight volUp
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && DunstifyVolLight volMute
@@ -260,30 +292,32 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && DunstifyVolLight brightnessInc 
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && DunstifyVolLight brightnessDec
 
+############################### screenshot bindigs ###############################
 
-# Clipboard Start up
-bindsym $mod+Shift+p exec --no-startup-id gpaste-client ui
-
-
-
-
-#screenshot bindigs
 # imgToClip alias to xclip -selection clipboard image/png -i
 
-bindsym --release Print exec --no-startup-id maim --format png | \
+# Full Screen
+bindsym --release Print exec --no-startup-id maim --format png -m 1 | \
 tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
+# Active Window
 bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png | \
 tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
+# Crosshear Selection
 bindsym --release Shift+Print exec --no-startup-id maim -s --format png | \
 tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
 
+# Full Screen (Fallback)
 bindsym $mod+Shift+Print --release exec --no-startup-id "flameshot full --clipboard --path \
 ~/Pictures/Screenshot/ && flameshot config -t false"
 
-bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
 
+# Toggle between all available colorscheme
+bindsym $mod+Shift+m exec $alacritty_colorscheme -T
+
+# Get notification with current colorscheme
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
 
 
 ################################### END OF ALL KEYBOARD BINDIGS ####################################

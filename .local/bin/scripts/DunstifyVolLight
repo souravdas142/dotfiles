@@ -33,7 +33,7 @@ case $1 in
 		Msg="Brightness"
 		;;
 	volUp)
-		percent=$( amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		percent=$( amixer -D pulse get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
 		setIcon=audio-volume-high
 		notiId=9998
 		appName="ChangevolUp"
@@ -41,7 +41,7 @@ case $1 in
 		Msg="Volume"
 		;;
 	volDwn)
-		percent=$( amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		percent=$( amixer -D pulse get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
 		setIcon=audio-volume-low
 		notiId=9998
 		appName="ChangevolDwn"
@@ -49,7 +49,7 @@ case $1 in
 		Msg="Volume"
 		;;
 	volMute)
-		amixer get Master | tail -1 | grep -ie "\[off\]" > /dev/null
+		amixer -D pulse get Master | tail -1 | grep -ie "\[off\]" > /dev/null
 		exitCode=$?
 		percent=$( [[ $exitCode == 0 ]] && echo "0" || amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
 		setIcon=$( [[ $exitCode == 0 ]] && echo "/usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg" || echo "audio-volume-high" )
