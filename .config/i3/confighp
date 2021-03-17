@@ -18,7 +18,7 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 
 # Launching Polybar
-exec_always --no-startup-id ~/.config/polybar/launchPolybar.sh
+exec_always --no-startup-id ~/.config/polybar/randomLaunch.sh
 
 # Enbable Numlock on boot
 exec --no-startup-id numlockx on
@@ -31,7 +31,7 @@ exec_always --no-startup-id nm-applet --sm-disable
 exec_always --no-startup-id ibus-daemon --xim -d -r
 
 # Systray bluetooth connector
-exec_always --no-startup-id blueman-tray --loglevel 5 --syslog 
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
 
 # Launching Clipboard manager
 #exec --no-startup-id copyq
@@ -163,7 +163,8 @@ bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
 #application launcher
 #bindsym $mod+d exec rofi -show drun -modi drun
 #bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
-bindsym $mod+d exec ~/.config/polybar/modules/sysmenu/zorin-menu
+#bindsym $mod+d exec ~/.config/polybar/modules/sysmenu/zorin-menu
+bindsym $mod+d exec ~/.config/rofi/launchers/colorful/launcher.sh
 bindsym $mod+Shift+d exec ~/.config/polybar/modules/sysmenu/rofimoji
 
 
