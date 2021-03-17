@@ -6,7 +6,7 @@
 
 dir="$HOME/.config/polybar"
 themes=( blocks cuts default forest material shapes colorblocks grayblocks docky panels shades )
-len=10
+len=11
 
 
 killall -q polybar
