@@ -5,17 +5,17 @@
 
 
 dir="$HOME/.config/polybar"
-themes=( blocks cuts default forest material shapes colorblocks grayblocks docky panels shades )
-len=11
+#themes=( blocks cuts default forest material shapes colorblocks grayblocks docky panels shades )
+themes=( cuts default material shapes colorblocks hack docky panels shades )
+len=9
 
+#killall -q polybar
+#while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-killall -q polybar
+select="${themes[$(( $RANDOM % $len ))]}"
+echo "selecting : $select"
+#polybar -q main -c "$dir/$select/config.ini" &
+# we handover to launch script of each theme
 
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-
-
-   select="${themes[$(( $RANDOM % $len ))]}"
-	   echo "selecting : $select"
-		polybar -q main -c "$dir/$select/config.ini" &
+$dir/$select/launch.sh
 

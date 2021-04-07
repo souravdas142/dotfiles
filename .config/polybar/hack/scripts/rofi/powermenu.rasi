@@ -28,22 +28,22 @@ window {
 	border:							2px;
 	border-color:					@ac;
     border-radius:                  0px;
-	width:							130px;
+	width:							300px;
     location:                       North East;
-    x-offset:                       -5;
+    x-offset:                       -10;
     y-offset:                       16;
 }
 
 prompt {
     enabled: 						true;
-    padding:                        1px 1px 4px 0px;
+    padding:                        10px 10px 10px 0px;
 	background-color: 				@al;
 	text-color: 					@ac;
 	font:							"Iosevka Nerd Font 10";
 }
 
 textbox-prompt-colon {
-	padding: 						0px 7px 4px 10px;
+	padding: 						10px 15px 10px 15px;
 	font:							"Iosevka Nerd Font 10";
 	background-color: 				@al;
 	text-color: 					@ac;
@@ -79,7 +79,7 @@ listview {
     padding:                        0px;
     columns:                        1;
     lines:                          5;
-    spacing:                        2px;
+    spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -91,8 +91,8 @@ mainbox {
     border-radius:                  0px;
 	border-color:					@ac;
     children:                       [ inputbar, listview ];
-    spacing:                       	0px;
-    padding:                        2px 1px 1px 1px;
+    spacing:                       	10px;
+    padding:                        2px 10px 10px 10px;
 }
 
 element {
@@ -100,7 +100,7 @@ element {
     text-color:                     @fg;
     orientation:                    horizontal;
     border-radius:                  0px;
-    padding:                        1px 1px 1px -16px;
+    padding:                        8px 8px 8px -16px;
 }
 
 element-icon {

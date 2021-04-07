@@ -5,13 +5,15 @@ SDIR="$HOME/.config/polybar/shapes/scripts"
 # Launch Rofi
 MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 -theme $SDIR/rofi/styles.rasi \
-<<< "♥ amber|♥ blue|♥ blue-gray|♥ brown|♥ cyan|♥ deep-orange|\
+<<< "♥ random|♥ amber|♥ blue|♥ blue-gray|♥ brown|♥ cyan|♥ deep-orange|\
 ♥ deep-purple|♥ green|♥ gray|♥ indigo|♥ blue-light|♥ green-light|\
 ♥ lime|♥ orange|♥ pink|♥ purple|♥ red|♥ teal|♥ yellow|♥ amber-dark|\
 ♥ blue-dark|♥ blue-gray-dark|♥ brown-dark|♥ cyan-dark|♥ deep-orange-dark|\
 ♥ deep-purple-dark|♥ green-dark|♥ gray-dark|♥ indigo-dark|♥ blue-light-dark|\
 ♥ green-light-dark|♥ lime-dark|♥ orange-dark|♥ pink-dark|♥ purple-dark|♥ red-dark|♥ teal-dark|♥ yellow-dark|")"
             case "$MENU" in
+				##random
+				*random) "$SDIR"/random.sh ;;
 				## Light Colors
 				*amber) "$SDIR"/colors-light.sh --amber ;;
 				*blue) "$SDIR"/colors-light.sh --blue ;;

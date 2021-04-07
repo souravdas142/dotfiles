@@ -6,8 +6,8 @@
 ## Twitter : @adi1090x
 
 dir="~/.config/polybar/hack/scripts/rofi"
-#uptime=$(uptime -p | sed -e 's/up //g')
-uptime=`_uptime`
+uptime=$(uptime -p | sed -e 's/up //g')
+#uptime=`_uptime`
 
 rofi_command="rofi -theme $dir/powermenu.rasi"
 
@@ -19,12 +19,17 @@ suspend=" Sleep"
 logout=" Logout"
 
 # Confirmation
-confirm_exit() {
-	rofi -dmenu\
-		-i\
-		-no-fixed-num-lines\
-		-p "Are You Sure? : "\
-		-theme $dir/confirm.rasi
+#confirm_exit() {
+#	rofi -dmenu\
+#		-i\
+#		-no-fixed-num-lines\
+#		-p "Are You Sure? : "\
+#		-theme $dir/confirm.rasi
+#}
+
+# We are bypassing confirm_exit
+confirm_exit(){
+	echo "yes"
 }
 
 # Message
@@ -58,11 +63,14 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
+		betterlockscreen -l blur --off 15 && echo "" || i3lock
+
+
+#		if [[ -f /usr/bin/i3lock ]]; then
+#			i3lock
+#		elif [[ -f /usr/bin/betterlockscreen ]]; then
+#			betterlockscreen -l
+#		fi
         ;;
     $suspend)
 		ans=$(confirm_exit &)
