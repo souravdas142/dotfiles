@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "320x5-15+15"
+    geometry = "320x5-15+17"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -42,7 +42,8 @@
 #	dmenu=/usr/bin/rofi -dmenu -p 'dunst: '
 #	dmenu=/usr/bin/rofi -no-config -no-lazy-grab  -dmenu -p 'dunst' -hide-scrollbar true -bw 0 -lines 6  -padding 20 -width 15 -xoffset -2 -yoffset 16 -location 0 -columns 2 -font "Hack Regular 9"
 
-	dmenu=~/.local/bin/dunstDmenu
+#	dmenu=~/.local/bin/dunstDmenu
+	dmenu=/home/sourav/.local/bin/dunstDmenu
 
 [shortcuts]
     close = ctrl+space

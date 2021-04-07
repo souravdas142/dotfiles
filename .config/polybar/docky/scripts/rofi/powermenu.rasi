@@ -31,7 +31,7 @@ window {
 	width:							250;
     location:                       North East;
     x-offset:                       -5;
-    y-offset:                       15;
+    y-offset:                       17;
 }
 
 prompt {

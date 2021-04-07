@@ -29,9 +29,9 @@ window {
 	border-color:					@bg1;
     border-radius:                  0px;
 	width:							300px;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
+    location:                       North East;
+    x-offset:                       -350;
+    y-offset:                       17;
 }
 
 prompt {
