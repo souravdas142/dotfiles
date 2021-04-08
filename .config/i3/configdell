@@ -170,7 +170,7 @@ bindsym $mod+Shift+d exec ~/.config/rofi/launchers/colorful/rofimoji
 
 # Launching Browser
 #bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec brave
 
 # Launching Codeblocks
 bindsym Control+Mod1+c exec codeblocks
