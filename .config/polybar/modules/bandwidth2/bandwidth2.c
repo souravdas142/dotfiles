@@ -208,7 +208,9 @@ int main(int argc, char *argv[])
 
     rx = (received - received_old) / (float)(s - s_old);
     tx = (sent - sent_old) / (float)(s - s_old);
+	printf("");
     display(unit, divisor, rx, warningrx, criticalrx);
+	printf("  ");
     display(unit, divisor, tx, warningtx, criticaltx);
     printf("\n");
     fflush(stdout);

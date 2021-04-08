@@ -4,17 +4,16 @@ exec tail -n +3 $0
 # menu entries you want to add after this comment.  Be careful not to change
 # the 'exec tail' line above.
 
+submenu --class shutdown "Reboot / Poweroff..." {
 
-menuentry 'Windows Boot Manager (on /dev/sda1)' --class windows --class os $menuentry_id_option 'osprober-efi-3C47-103B' {
-	insmod part_gpt
-	insmod fat
-	set root='hd0,gpt1'
-	if [ x$feature_platform_search_hint = xy ]; then
-	  search --no-floppy --fs-uuid --set=root --hint-ieee1275='ieee1275//disk@0,gpt1' --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  3C47-103B
-	else
-	  search --no-floppy --fs-uuid --set=root 3C47-103B
-	fi
-	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+	menuentry --class shutdown "Poweroff" {
+		echo "Going to be poweroff..."
+		halt
+	}
+	
+	menuentry --class restart "Reboot" {
+		echo "Going to be reboot..."
+		reboot
+	}
+
 }
-
-
