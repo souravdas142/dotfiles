@@ -1,0 +1,11 @@
+user.name=souravdas142
+user.email=souravdas142@gmail.com
+core.compression=9
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:dexpota/kitty-themes.git
+remote.origin.fetch=+refs/heads/master:refs/remotes/origin/master
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
