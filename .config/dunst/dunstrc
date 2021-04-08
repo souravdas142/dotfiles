@@ -10,8 +10,8 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 1
-    #frame_color = "#232323"
-    #separator_color = frame
+    frame_color = "#232323"
+    separator_color = frame
     sort = yes
     idle_threshold = 120
     font = Source Sans Pro 10
@@ -45,23 +45,25 @@
 #	dmenu=~/.local/bin/dunstDmenu
 	dmenu=/home/sourav/.local/bin/dunstDmenu
 
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
 
+[urgency_low]
+    background = "#232323"
+    foreground = "#a8a8a8"
+    timeout = 10
 
+[urgency_normal]
+    background = "#232323"
+    foreground = "#a8a8a8"
+    timeout = 10
 
-frame_color = "#5e6687"
-separator_color = "#5e6687"
-
-[base16_low]
-    msg_urgency = low
-    background = "#dfe2f1"
-    foreground = "#898ea4"
-
-[base16_normal]
-    msg_urgency = normal
-    background = "#979db4"
-    foreground = "#5e6687"
-
-[base16_critical]
-    msg_urgency = critical
-    background = "#c94922"
-    foreground = "#293256"
+[urgency_critical]
+    background = "#d64e4e"
+    foreground = "#f0e0e0"
+    frame_color = "#d64e4e"
+    timeout = 0
+    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
