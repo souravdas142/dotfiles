@@ -114,11 +114,11 @@ elif  [[ $1 = "--yellow" ]]; then
 	change_color
 elif  [[ $1 = "--alternating" ]]; then
 	SH1="#668bd7"	SH2="#8d62a9"	SH3="#668bd7"	SH4="#8d62a9"
-	SH5="#668bd7"	SH6="#8d62a9"	SH7="#668bd7"	SH8="#8d62a9"
+	SH5="#668bd7"	SH6="#8d62a9"	SH7="#8d62a9"	SH8="#8d62a9"
 	change_color
 elif  [[ $1 = "--alternating-alt" ]]; then
 	SH1="#8d62a9"	SH2="#668bd7"	SH3="#8d62a9"	SH4="#668bd7"
-	SH5="#8d62a9"	SH6="#668bd7"	SH7="#8d62a9"	SH8="#668bd7"
+	SH5="#8d62a9"	SH6="#668bd7"	SH7="#668bd7"	SH8="#668bd7"
 	change_color
 else
 	cat <<- _EOF_
