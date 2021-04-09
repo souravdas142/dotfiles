@@ -10,7 +10,7 @@ MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 ♥ lime|♥ orange|♥ pink|♥ purple|♥ red|♥ teal|♥ yellow|♥ amber-dark|\
 ♥ blue-dark|♥ blue-gray-dark|♥ brown-dark|♥ cyan-dark|♥ deep-orange-dark|\
 ♥ deep-purple-dark|♥ green-dark|♥ gray-dark|♥ indigo-dark|♥ blue-light-dark|\
-♥ green-light-dark|♥ lime-dark|♥ orange-dark|♥ pink-dark|♥ purple-dark|♥ red-dark|♥ teal-dark|♥ yellow-dark|")"
+♥ green-light-dark|♥ lime-dark|♥ orange-dark|♥ pink-dark|♥ purple-dark|♥ red-dark|♥ teal-dark|♥ yellow-dark|♥ alternating|♥ alternating-alt|")"
             case "$MENU" in
 				##random
 				*random) "$SDIR"/random.sh ;;
@@ -53,5 +53,7 @@ MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 				*purple-dark) "$SDIR"/colors-dark.sh --purple ;;
 				*red-dark) "$SDIR"/colors-dark.sh --red ;;
 				*teal-dark) "$SDIR"/colors-dark.sh --teal ;;
-				*yellow-dark) "$SDIR"/colors-dark.sh --yellow				
+				*yellow-dark) "$SDIR"/colors-dark.sh --yellow ;;		
+				*alternating) "$SDIR"/colors-dark.sh --alternating ;;
+				*alternating-alt) "$SDIR"/colors-dark.sh --alternating-alt ;;
             esac
