@@ -48,7 +48,9 @@ exec --no-startup-id gpaste-client start
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 --nofork
+# you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
+# After "--" `betterlockscreen Assumes all are `i3locks` options.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 --nofork -- --pass-power-keys  --pass-volume-keys
 
 ################################### End of Some startup Applicaltion ############################
 
@@ -159,7 +161,8 @@ bindsym $mod+Shift+p exec --no-startup-id gpaste-client ui
 bindsym $mod+Shift+q kill
 
 # Lock you screen
-bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15 -- --pass-power-keys  --pass-volume-keys
 
 #application launcher
 #bindsym $mod+d exec rofi -show drun -modi drun
@@ -259,6 +262,13 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Sometimes Accidently you poweroff your system at lockscreen instead of unlocking. Below will overide this behaviour.
+# To Enable below, You have to set "HandlePowerKey=ignore" at "/etc/systemd/logind.conf"
+# you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+# It will disable your physical power button and mimic the same behaviour with "mod+XF86PowerOff"
+bindsym $mod+XF86PowerOff  exec --no-startup-id /sbin/poweroff
+
 # resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -323,15 +333,6 @@ bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colors
 
 
 ################################### END OF ALL KEYBOARD BINDIGS ####################################
-
-
-
-
-
-
-
-
-
 
 
 
