@@ -195,8 +195,21 @@ submenu_indentation=""
 
 is_top_level=true
 while [ "x$list" != "x" ] ; do
-  #linux=`version_find_latest $list`
-  linux=`echo $list | tr ' ' '\n' | sort -V | head -1 | cat`
+  linux=`version_find_latest $list`
+  
+  # If you want `linux` should boot by default and `linux-lts`
+  # is fallback, uncomment below line. You can use differnet
+  # sorting technique to change sorting behaviour, see `man sort`
+  # For more, see at https://bugs.archlinux.org/task/28081 on archive.org
+  #linux=`echo $list | tr ' ' '\n' | sort -V | head -1 | cat`
+
+  # If you want `linux` should boot by default and `linux-lts`
+  # is fallback, uncomment below line. You can use differnet
+  # sorting technique to change sorting behaviour, see `man sort`
+  # For more, see at https://bugs.archlinux.org/task/28081 on archive.org
+  #linux=`echo $list | tr ' ' '\n' | sort -Vr | head -1 | cat`
+
+
   gettext_printf "Found linux image: %s\n" "$linux" >&2
   basename=`basename $linux`
   dirname=`dirname $linux`
