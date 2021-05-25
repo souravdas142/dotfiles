@@ -17,7 +17,8 @@ flag=1
 Msg=
 case $1 in
 	brightnessInc)
-		percent=$(xbacklight -get | roundoff )
+		#percent=$(xbacklight -get | roundoff )
+		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
 		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
 		notiId=9999
 		appName="changeBrightness-Up" 
@@ -25,7 +26,8 @@ case $1 in
 		Msg="Brightness"
 		;;
 	brightnessDec)
-		percent=$(xbacklight -get | roundoff )
+		#percent=$(xbacklight -get | roundoff )
+		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
 		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
 		notiId=9999
 		appName="changeBrightnessDwn"
