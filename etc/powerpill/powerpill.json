@@ -18,7 +18,7 @@
     "path": "/usr/bin/aria2c"
   },
   "pacman": {
-    "config": "/etc/pacman.conf",
+    "config": "/etc/powerpill_pacman.conf",
     "path": "/usr/bin/pacman"
   },
   "pacserve": {
@@ -30,20 +30,10 @@
   },
   "reflector": {
     "args.unused": [
-      "--latest",
-      "200",
-	  "--number",
-	  "10",
-      "--protocol",
-      "https",
       "--protocol",
       "http",
-      "--protocol",
-      "rsync",
-	  "--completion-percent",
-	  "100",
-	  "--sort",
-	  "rate"
+      "--latest",
+      "50"
     ]
   },
   "rsync": {
