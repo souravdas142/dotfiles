@@ -52,6 +52,6 @@ EOF
 
 # comment these lines to disable random style
 #themes=($(ls -p --hide="launcher.sh" --hide="colors.rasi" $dir))
-themes=( ribbon_top_round zorin_menu style_{1,5,7,9,11,12}.rasi )
-theme="${themes[$(( $RANDOM % 8 ))]}"
-[[ "$theme" == "zorin_menu" ]] && $HOME/.config/rofi/launchers/colorful/zorin_menu ||  rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
+themes=( ribbon_top_round style_{1,5,7,9,11,12}.rasi )
+theme="${themes[$(( $RANDOM % 7 ))]}"
+rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
