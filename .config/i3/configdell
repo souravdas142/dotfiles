@@ -171,7 +171,6 @@ bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15 -- -
 #bindsym $mod+d exec rofi -show drun -modi drun
 #bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
 bindsym $mod+d exec ~/.config/rofi/launchers/colorful/launcher.sh
-bindsym $mod+Shift+d exec ~/.config/rofi/launchers/colorful/rofimoji
 
 
 # Launching Browser

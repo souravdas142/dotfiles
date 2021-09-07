@@ -50,7 +50,7 @@ exec_always --no-startup-id blueman-applet --loglevel 5 --syslog
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
 # After "--" `betterlockscreen Assumes all are `i3locks` options.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 --nofork -- --pass-power-keys  --pass-volume-keys
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 -- --pass-power-keys  --pass-volume-keys
 
 ################################### End of Some startup Applicaltion ############################
 
@@ -168,7 +168,6 @@ bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15 -- -
 #bindsym $mod+d exec rofi -show drun -modi drun
 #bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
 bindsym $mod+d exec ~/.config/rofi/launchers/colorful/launcher.sh
-bindsym $mod+Shift+d exec ~/.config/rofi/launchers/colorful/rofimoji
 
 
 # Launching Browser
