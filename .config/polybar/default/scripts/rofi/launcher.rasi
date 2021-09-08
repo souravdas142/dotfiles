@@ -23,29 +23,21 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px 0px 1px 1px;
-	border-color:					@bd;
-    border-radius:                  0px 0px 0px 10px;
-	width:							300px;
-    location:                       northeast;
+	border:							0px 0px 0px 0px;
+	border-color:					@ac;
+    border-radius:                  0px;
+	width:							550px;
+    location:                       North West;
     x-offset:                       5;
-    y-offset:                       15;
+    y-offset:                       18;
 }
 
 prompt {
     enabled: 						true;
-	padding: 						0px 0px 0px 10px;
-	background-color: 				@al;
+	padding: 						6px 7px 4px 7px;
+	background-color: 				@ac;
 	text-color: 					@fg;
-}
-
-textbox-prompt-colon {
-	padding: 						1px 0px 0px 0px;
-	background-color: 				@al;
-	text-color: 					@fg;
-	expand: false;
-	str: "";
-	font:							"feather 10";
+	font:							"feather 12";
 }
 
 entry {
@@ -54,29 +46,29 @@ entry {
     placeholder-color:              @fg;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search";
-    padding:                        0px 0px 0px 10px;
+    placeholder:                    "Search...";
+	padding: 						6px;
     blink:                          true;
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, entry ];
-    background-color:               @bg;
+	children: 						[ prompt, entry ];
+    background-color:               @bga;
     text-color:                     @fg;
     expand:                         false;
-	border:							1px;
-    border-radius:                  10px;
-	border-color:					@bd;
+	border:							0px;
+    border-radius:                  0px;
+	border-color:					@ac;
     margin:                         0px;
-    padding:                        10px;
+    padding:                        0px;
 }
 
 listview {
     background-color:               @al;
     padding:                        0px;
-    columns:                        1;
-    lines:                          5;
-    spacing:                        5px;
+    columns:                        2;
+    lines:                          8;
+    spacing:                        6px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -87,17 +79,17 @@ mainbox {
 	border:							0px;
     border-radius:                  0px;
 	border-color:					@ac;
-    children:                       [ listview, inputbar ];
-    spacing:                       	10px;
-    padding:                        10px;
+    children:                       [ inputbar, listview ];
+    spacing:                       	6px;
+    padding:                        6px;
 }
 
 element {
     background-color:               @al;
-    text-color:                     @fg;
+    text-color:                     @fga;
     orientation:                    horizontal;
     border-radius:                  0px;
-    padding:                        8px 8px 8px -21px;
+	padding: 						3px;
 }
 
 element-icon {
@@ -119,9 +111,9 @@ element-text {
 }
 
 element selected {
-    background-color:               @bg;
-    text-color:                     @fg;
-	border:							1px;
-    border-radius:                  10px;
-    border-color:                  	@bd;
+    background-color:               @se;
+    text-color:                     @fga;
+	border:							0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                  	@ac;
 }

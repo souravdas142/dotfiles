@@ -14,8 +14,6 @@ configuration {
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
 }
 
@@ -95,6 +93,10 @@ mainbox {
 }
 
 element {
+    background-color:				inherit;
+    text-color:						inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
     background-color:               @al;
     text-color:                     @fg;
     orientation:                    horizontal;
@@ -103,6 +105,8 @@ element {
 }
 
 element-icon {
+    background-color:				@al;
+    text-color:						inherit;
     size:                           24px;
     border:                         0px;
 }
