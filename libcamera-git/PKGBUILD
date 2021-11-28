@@ -51,19 +51,16 @@ pkgver() {
 }
 
 build() {
-    cd "$_pkgname"
-
+    cd "$srcdir/$_pkgname"
     arch-meson build \
-        --prefix        /usr \
-        --buildtype     plain \
         -D              werror=false \
         -D              documentation=disabled \
         -D              tracing=disabled
-    meson compile -C build
+    ninja -C build
 }
 
 check() {
-    cd "$_pkgname"
+    cd "$srcdir/$_pkgname"
     ninja -C build test
 }
 
