@@ -1,6 +1,6 @@
-diff -up a/gtest.wrap b/gtest.wrap
---- a/gtest.wrap	2021-11-27 14:00:39.942962128 +0530
-+++ b/gtest.wrap	2021-11-27 14:02:01.369372917 +0530
+diff -up a/subprojects/gtest.wrap b/subprojects/gtest.wrap
+--- a/subprojects/gtest.wrap	2021-11-27 14:00:39.942962128 +0530
++++ b/subprojects/gtest.wrap	2021-11-27 14:02:01.369372917 +0530
 @@ -1,10 +1,10 @@
  [wrap-file]
  directory = googletest-release-1.11.0

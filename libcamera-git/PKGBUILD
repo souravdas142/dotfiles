@@ -52,9 +52,8 @@ pkgver() {
 
 prepare(){
 	
-	cd "$srcdir/$_pkgname/subprojects"
-	patch -p1 -i ../../gtest_offline_wrap-file.patch
-    cd ..
+	cd "$srcdir/$_pkgname"
+	patch -p1 -i ../gtest_offline_wrap-file.patch
     mkdir -p subprojects/packagefiles
     cp -va ../gtest_1.11.0-1_patch.zip ../gtest-1.11.0.zip subprojects/packagefiles/ 
 
@@ -64,7 +63,6 @@ build() {
     cd "$srcdir/$_pkgname"
     arch-meson build \
         -D				b_lto=false \
-        -D				b_pie=false \
         -D              werror=false \
         -D              documentation=disabled \
         -D              tracing=disabled
