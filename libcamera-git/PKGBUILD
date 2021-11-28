@@ -1,7 +1,7 @@
 pkgname=libcamera-git
 _pkgname=libcamera
-pkgver=r3240.f2a18172
-pkgrel=3
+pkgver=r3267.cb1de399
+pkgrel=1
 pkgdesc='A complex camera support library for Linux, Android, and ChromeOS'
 arch=('x86_64' 'i686' 'aarch64' )
 url='http://libcamera.org/'
@@ -51,9 +51,10 @@ pkgver() {
 }
 
 prepare(){
-
-	cd "$srcdir/$_pkgname"
-	patch -p1 -i ../gtest_offline_wrap-file.patch
+	
+	cd "$srcdir/$_pkgname/subprojects"
+	patch -p1 -i ../../gtest_offline_wrap-file.patch
+    cd ..
     mkdir -p subprojects/packagefiles
     cp -va ../gtest_1.11.0-1_patch.zip ../gtest-1.11.0.zip subprojects/packagefiles/ 
 
@@ -62,10 +63,12 @@ prepare(){
 build() {
     cd "$srcdir/$_pkgname"
     arch-meson build \
+        -D				b_lto=false \
+        -D				b_pie=false \
         -D              werror=false \
         -D              documentation=disabled \
         -D              tracing=disabled
-    ninja -C build
+    meson compile -C build
 }
 
 check() {
