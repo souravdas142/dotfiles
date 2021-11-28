@@ -1,0 +1,76 @@
+pkgname=libcamera-git
+_pkgname=libcamera
+pkgver=r3240.f2a18172
+pkgrel=3
+pkgdesc='A complex camera support library for Linux, Android, and ChromeOS'
+arch=('x86_64' 'i686' 'aarch64' )
+url='http://libcamera.org/'
+makedepends=(
+    "boost"
+    "gcc"
+    "git"
+    "gnutls"
+    "lttng-ust"
+    "meson"
+    "openssl"
+    "python-jinja"
+    "python-ply"
+    "python-yaml"
+)
+optdepends=(
+    "doxygen"
+    "graphviz"
+    "gstreamer"
+    "libevent"
+    "libtiff"
+    "python-sphinx"
+    "qt5-base"
+    "qt5-tools"
+    "udev"
+)
+license=('LGPL2.1')
+options=('!buildflags')
+source=(
+	'git://linuxtv.org/libcamera.git/'
+	'gtest_offline_wrap-file.patch'
+    'gtest_1.11.0-1_patch.zip' 
+	'gtest-1.11.0.zip'
+)
+md5sums=('SKIP'
+         'f324911f9a27472984ae79e2b18a4cc8'
+         '6008e7d9e573b9aabc43874a61a55b47'
+         '52943a59cefce0ae0491d4d2412c120b'
+)
+
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+
+pkgver() {
+    cd "$_pkgname"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd "$_pkgname"
+
+    arch-meson build \
+        --prefix        /usr \
+        --buildtype     plain \
+        -D              werror=false \
+        -D              documentation=disabled \
+        -D              tracing=disabled
+    meson compile -C build
+}
+
+check() {
+    cd "$_pkgname"
+    ninja -C build test
+}
+
+package() {
+    cd "$_pkgname"
+    DESTDIR="$pkgdir" ninja -C build install
+    install -d -m 755 "$pkgdir"/usr/share/licenses/"$_pkgname"
+    install -D -m 644 ./LICENSES/* "$pkgdir"/usr/share/licenses/"$_pkgname"/
+    rm -rf "$pkgdir"/usr/share/doc/libcamera-0.0.0/html/.doctrees/
+}
