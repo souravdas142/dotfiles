@@ -37,7 +37,7 @@ source=(
 	'gtest-1.11.0.zip'
 )
 md5sums=('SKIP'
-         'f324911f9a27472984ae79e2b18a4cc8'
+         'SKIP'
          '6008e7d9e573b9aabc43874a61a55b47'
          '52943a59cefce0ae0491d4d2412c120b'
 )
@@ -48,6 +48,15 @@ conflicts=("$_pkgname")
 pkgver() {
     cd "$_pkgname"
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare(){
+
+	cd "$srcdir/$_pkgname"
+	patch -p1 -i ../gtest_offline_wrap-file.patch
+    mkdir -p subprojects/packagefiles
+    cp -va ../gtest_1.11.0-1_patch.zip ../gtest-1.11.0.zip subprojects/packagefiles/ 
+
 }
 
 build() {
