@@ -1,0 +1,8 @@
+
+# The scripts must run by user who also start pipewire otherwise it wouldn't work
+# here we run the script by the user who also start x-server
+
+ACTION=="add", KERNEL=="pcmC2D0c", SUBSYSTEM=="sound", ATTRS{idProduct}=="0012", ATTRS{idVendor}=="0d8c", RUN+="su - $ENV{XUSER} -c '/usr/local/bin/redgear7 add'"
+
+
+ACTION=="remove", KERNEL=="pcmC2D0c", SUBSYSTEM=="sound", ATTRS{idProduct}=="0012", ATTRS{idVendor}=="0d8c", RUN+="su - $ENV{XUSER} -c '/usr/local/bin/redgear7 remove'"
