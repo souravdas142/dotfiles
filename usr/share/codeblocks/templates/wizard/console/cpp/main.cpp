@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define fio ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr)
 #define ull unsigned long long
 #define ll long long
 #define dd double
@@ -49,9 +49,10 @@ void solve(){
 int main(){
 	fio;
 	
-	ll tc;
-//	tc=1;
+	ll tc = 1;
+
 	cin>>tc;
+
 	while(tc--){
 		solve();
 	}
