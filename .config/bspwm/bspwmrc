@@ -1,11 +1,5 @@
 #! /bin/sh
 
-[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
-pgrep -x panel > /dev/null || panel &
-
-$HOME/.config/polybar/launchPolybar.sh
-
-#! /bin/sh
 #  ____ _____ 
 # |  _ \_   _|  Derek Taylor (DistroTube)
 # | | | || |  	http://www.youtube.com/c/DistroTube
@@ -16,29 +10,60 @@ $HOME/.config/polybar/launchPolybar.sh
 # https://github.com/baskerville/sxhkd
 # https://github.com/baskerville/bspwm
 
-#### AUTOSTART ####
-sxhkd &
-picom &
-#nitrogen --restore &
-#./.config/bspwm/panel.sh &
 #Load bitmap fonts
 xset fp+ ~/.fonts/misc &
-#network applet
-nm-applet &
-~/.fehbg
-## reload the cursor theme
+
+#[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
+#pgrep -x panel > /dev/null || panel &
+
+
+# seting the ponter name
+
 xsetroot -cursor_name left_ptr
 
+# polybar
+
+bash ~/.config/polybar/randomLaunch.sh
+
+#### AUTOSTART ####
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x picom > /dev/null || picom &
+pgrep -x dunst > /dev/null || dunst &
+
+
+# Enbable Numlock on boot
+numlockx on &
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+nm-applet --sm-disable &
+
+# Enbabling ibus for keyboard layout
+ibus-daemon --xim -d -r &
+
+# Systray bluetooth connector
+blueman-applet --loglevel 5 --syslog &
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+# you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
+# After "--" `betterlockscreen Assumes all are `i3locks` options.
+xss-lock --transfer-sleep-lock -- betterlockscreen -l blur --off 15 -- --pass-power-keys  --pass-volume-keys &
+
+# nitrogen --restore &
+./.config/bspwm/launch.sh &
+
 #### MONITORS ####
-bspc monitor DisplayPort-0 -d 1 2 3 4 5 6 7 8 9
-bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8 9
-bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
+bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor DisplayPort-0 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
 
 #### BSPWM configuration ####
 #bspc config border_radius                8
-bspc config border_width                  2
-bspc config window_gap                    5
-bspc config top_padding                   5
+bspc config border_width                  0
+bspc config window_gap                    1
+bspc config top_padding                   0
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
@@ -66,12 +91,18 @@ bspc config urgent_border_color 	      "#dd2727"
 
 #polybar hidden when fullscreen for vlc, youtube, mpv ...
 #find out the name of your monitor with xrandr
-xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_DisplayPort-0)
-xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_DisplayPort-1)
-xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_HDMI-A-0)
+#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_eDP-1)
+#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_DisplayPort-1)
+#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_HDMI-A-0)
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+#bspc rule -a vlc:vlc layer=normal border=off
+
+bspc config external_rules_command ${HOME}/.config/bspwm/vlc.sh
+
+

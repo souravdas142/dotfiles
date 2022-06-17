@@ -1,35 +1,30 @@
-#
-# wm independent hotkeys
-#
+#  ____ _____ 
+# |  _ \_   _|  Derek Taylor (DistroTube)
+# | | | || |  	http://www.youtube.com/c/DistroTube
+# | |_| || |  	http://www.gitlab.com/dwt1/ 
+# |____/ |_|  	
+#        
+# A customized sxhkdrc for the bspwm window manager.
+# https://github.com/baskerville/sxhkd
+# https://github.com/baskerville/bspwm
 
-# terminal emulator
-super + Return
-	tilix
 
-# program launcher
-super + {d,shift+d}
-	~/.config/polybar/modules/sysmenu/{zorin-menu,rofimoji}
-
-# quit/restart bspwm
-super + shift + {e,r}
-	bspc {quit,wm -r}
-
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# WM INDEPENDENT KEYBINDINGS
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
 
+# BSPWM HOTKEYS
+
+# quit/restart bspwm
+super + shift + {e,r}
+	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
-	bspc node -{c,q}
+super + shift + q
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
@@ -43,18 +38,19 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
 
+# STATE/FLAGS
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
+
+# FOCUS/SWAP
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -65,7 +61,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+super + {_,shift + }n
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -84,11 +80,10 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
-#
-# preselect
-#
+
+# PRESELECT
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -106,18 +101,159 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+
+# MOVE/RESIZE
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+ctrl + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+ctrl + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+# APPLICATION KEYBINDINGS (Super + Alt + Key)
+
+# terminal emulator
+super + Return
+	alacritty -e tmux new-session
+# launch ncpamixer
+super + alt + a
+    st -e ncpamixer
+# launch surf browser
+super + alt + b
+    surf www.youtube.com/c/DistroTube
+
+# launch google-chrome
+super + shift + f
+	google-chrome-stable
+
+# launch cmus
+super + alt + c
+    st -e cmus
+# launch lynx web browser
+super + alt + l
+    st -e lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys gopher://distro.tube
+# launch irssi chat client
+super + alt + i
+    st -e irssi
+# launch joplin
+super + alt + j
+    st -e joplin
+# launch toot cli
+super + alt + m
+    st -e toot curses
+# launch newsboat feed reeder
+super + alt + n
+    st -e newsboat
+# launch pianobar
+super + alt + p
+    st -e pianobar
+# launch rtv
+super + alt + r
+    st -e rtv
+# launch vifm file manager
+super + alt + v
+    st -e ./.config/vifm/scripts/vifmrun
+# launch wopr
+super + alt + w
+    st -e wopr report.xml
+# launch youtube viewer
+super + alt + y
+    st -e youtube-viewer
+
+# Lock you screen
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+super + shift + x 
+	betterlockscreen -l blur --off 15 -- --pass-power-keys  --pass-volume-keys
+
+
+#application launcher
+#bindsym $mod+d exec rofi -show drun -modi drun
+#bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
+super + {d,shift + d} 
+	~/.config/rofi/launchers/colorful/{launcher.sh,rofimoji}
+
+############################ screenshot bindigs #############################
+#
+
+## imgToClip alias to xclip -selection clipboard image/png -i
+
+## Full Screen
+Print
+	maim --format png -m 1 | \
+	tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
+
+# Active Window
+super + Print
+	maim -i $(xdotool getactivewindow) --format png -m 1 | \
+	tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
+
+## Crosshear Selection
+shift + Print
+	maim -s --format png -m 1 | \
+	tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
+
+## Full Screen (Fallback)
+super + shift + Print
+	flameshot full --clipbcoard --path \
+	~/Pictures/Screenshot/ && flameshot config -t false
+
+
+#
+############################ END OF ALL KEYBOARD BINDIGS ####################
+
+
+# Sometimes Accidently you poweroff your system at lockscreen instead of unlocking. Below will overide this behaviour.
+# To Enable below, You have to set "HandlePowerKey=ignore" at "/etc/systemd/logind.conf"
+# you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+# It will disable your physical power button and mimic the same behaviour with "mod+XF86PowerOff"
+super + XF86PowerOff  
+	/sbin/poweroff
+    
+
+# Use pactl to adjust volume in PulseAudio.
+# DunstifyVolLight a script that control notifications behaviour
+XF86AudioRaiseVolume 
+	pactl set-sink-volume @DEFAULT_SINK@ +5% && DunstifyVolLight volUp
+XF86AudioLowerVolume 
+	pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
+XF86AudioMute 
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && DunstifyVolLight volMute
+XF86AudioMicMute  
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+XF86MonBrightnessUp  
+	brightnessctl s +5% && DunstifyVolLight brightnessInc
+XF86MonBrightnessDown  
+	brightnessctl s 5%- && DunstifyVolLight brightnessDec
+
+    
+## DMENU SCRIPTS (Alt+Ctrl+Key)
+#
+## run program launcher
+#alt + ctrl + Return
+#	dmenu_run
+## edit common config files
+#alt + ctrl + e
+#   ~/.dmenu/dmenu-edit-configs.sh
+## surfraw
+#alt + ctrl + s
+#   ~/.dmenu/dmenu-surfraw.sh 
+## common system montoring programs
+#alt + ctrl + m
+#   ~/.dmenu/dmenu-sysmon.sh 
+## passmenu
+#alt + ctrl + p
+#   exec passmenu 
+## reddio Reddit viewer
+#alt + ctrl + r
+#   ~/.dmenu/dmenu-reddio.sh 
+## stock trading programs
+#alt + ctrl + t
+#   ~/.dmenu/dmenu-trading.sh 
