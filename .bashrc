@@ -7,6 +7,8 @@
 
 
 
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -21,7 +23,7 @@
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=-1
 export HISTFILESIZE=-1
-HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTTIMEFORMAT="%d/%m/%y %T "
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=erasedups:ignoredups:ignorespace
@@ -129,3 +131,8 @@ fi
 
 #alacricity-color-scheme path
 export cmModPoly=$HOME/.config/polybar/modules
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
+
