@@ -1,0 +1,57 @@
+#!/bin/bash
+
+YouTube_original_name="YouTube_v17.33.42_apkpure.com.apk"
+
+patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases/latest | jq '.assets[] | select(.name|startswith("revanced-patches")) | .browser_download_url')
+patches_name=$(echo $patches_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+
+cli_url=$(curl -s  https://api.github.com/repos/revanced/revanced-cli/releases/latest | jq '.assets[] | select(.name|startswith("revanced-cli")) | .browser_download_url')
+cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|startswith("app-release-unsigned")) | .browser_download_url')
+integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+echo -e "\n Revanced-Patches_name = $patches_name \nRevanced-Patches_url = $patches_url \
+	\n\n Revanced-cli_name = $cli_name \nRevanced-cli_url = $cli_url \
+	\n\n Revanced-integrations_name = $integrations_name \nRevanced-integrations_url = $integrations_url"
+
+urls=(
+	$patches_url
+	$cli_url
+	$integrations_url
+)
+
+function download_all() {
+
+	if [[ "$1" == "-d" ]]; then
+
+		echo -e "\n\n\n"
+		for i in ${urls[@]};
+		do
+			echo -e "Downloading ${i} ...\n"
+			echo ${i} | xargs curl -LJO
+		done
+	elif [[ "$1" == "" ]]; then
+		echo -e "\nSkip Downloading...\n"
+	else
+		echo -e "\nThe options are:\n\n\t-d : Download all resourses\n"
+		exit
+	fi
+
+}
+
+download_all $1
+
+echo -e "\n\n\n"
+
+java -jar ${cli_name} \
+	-a ${YouTube_original_name} -c \
+	-o revanced-${YouTube_original_name}_f.apk \
+	-b ${patches_name} \
+	-m ${integrations_name} \
+	--keystore ./prev_key.keystore \
+	-e swipe-controls
