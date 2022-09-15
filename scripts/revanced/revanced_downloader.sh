@@ -38,7 +38,19 @@ function download_all() {
 			echo ${i} | xargs curl -LJO
 		done
 	elif [[ "$1" == "" ]]; then
+
 		echo -e "\nSkip Downloading...\n"
+
+		[[ ! -e "${YouTube_original_name}" ]] && echo -e "There is no YouTube original apk in current dir\n" && exit
+
+		if [[ -e ${cli_name} && -e ${patches_name} && -e ${integrations_name} ]]; then
+			echo -e "\nbuilding...\n"
+		else
+			echo -e "\nFiles are missing to build, Please provide below option:\n"
+			echo -e "\nThe options are:\n\n\t-d : Download all resourses\n"
+			exit
+		fi
+
 	else
 		echo -e "\nThe options are:\n\n\t-d : Download all resourses\n"
 		exit
