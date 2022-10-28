@@ -1,7 +1,8 @@
 #!/bin/bash
 
-YouTube_original_name="YouTube_v17.33.42_apkpure.com.apk"
-ver="v17.33.42"
+version="$(\cat ./version)"
+YouTube_original_name="youtube_${version}.apk"
+ver="v${version}"
 revanced_name="ReVancedYT-${ver}-$(date "+%Y_%m_%d_%H_%M").apk"
 
 patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases/latest | jq '.assets[] | select(.name|startswith("revanced-patches")) | .browser_download_url')
@@ -67,5 +68,4 @@ java -jar ${cli_name} \
 	-o ${revanced_name} \
 	-b ${patches_name} \
 	-m ${integrations_name} \
-	--keystore ./prev_key.keystore \
-	-e swipe-controls
+	--keystore ./prev_key.keystore 
