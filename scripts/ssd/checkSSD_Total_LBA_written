@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+if [[ "$EUID" != 0 ]]; then
+	echo -e "\n[*] Run with root permission:\n";
+	exit
+fi
+
+LBA=$(sudo smartctl -a /dev/sda | grep "Total_LBAs_Written" | cut -d" " -f38)
+
+calc=$(echo "scale=2; (${LBA} * 512) / (1024 * 1024 * 1024.0)" | bc -l)
+
+echo "${calc}GiB Written / 307200Gib (300TiB)"
