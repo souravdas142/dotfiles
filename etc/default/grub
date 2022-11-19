@@ -1,9 +1,13 @@
 # GRUB boot loader configuration
 
 GRUB_DEFAULT=0
-GRUB_TIMEOUT=0
-GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 radeon.si_support=0 amdgpu.si_support=1 radeon.cik_support=0 amdgpu.cik_support=1 radeon.modset=0" 
+GRUB_HIDDEN_TIMEOUT=0
+GRUB_TIMEOUT=10
+# Doing dualboot with Arch+Arch `GRUB_DISTRIBUTOR` should be different
+# Otherwise `os-prober` confused and do nasty things.
+GRUB_DISTRIBUTOR="Arch-ssd"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
+# GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 radeon.si_support=0 amdgpu.si_support=1 radeon.cik_support=0 amdgpu.cik_support=1 radeon.modset=0" 
 GRUB_CMDLINE_LINUX=""
 GRUB_DISABLE_OS_PROBER=false
 #GRUB_DISABLE_SUBMENU=y
@@ -14,9 +18,10 @@ GRUB_PRELOAD_MODULES="part_gpt part_msdos"
 # Uncomment to enable booting from LUKS encrypted devices
 #GRUB_ENABLE_CRYPTODISK=y
 
-# Set to 'countdown' or 'hidden' to change timeout behavior,
+# Set to 'countdown' or 'hidden' or 'menu' to change timeout behavior,
 # press ESC key to display menu.
-GRUB_TIMEOUT_STYLE=menu
+#GRUB_TIMEOUT_STYLE=menu
+
 
 # Uncomment to use basic console
 GRUB_TERMINAL_INPUT=console
@@ -53,4 +58,7 @@ GRUB_DISABLE_RECOVERY=true
 # Uncomment to make GRUB remember the last selection. This requires
 # setting 'GRUB_DEFAULT=saved' above.
 #GRUB_SAVEDEFAULT="true"
-GRUB_THEME="/usr/share/grub/themes/Tela/theme.txt"
+
+# Theme url : https://github.com/VandalByte/dedsec-grub2-theme
+# or, https://gitlab.com/VandalByte/dedsec-grub-theme (currently develop)
+GRUB_THEME="/boot/grub/themes/dedsec/theme.txt"
