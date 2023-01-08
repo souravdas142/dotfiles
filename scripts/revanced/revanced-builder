@@ -14,7 +14,7 @@ cli_url=$(curl -s  https://api.github.com/repos/revanced/revanced-cli/releases/l
 cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
 
 
-integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|startswith("app-release-unsigned")) | .browser_download_url')
+integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|startswith("revanced-integrations")) | .browser_download_url')
 integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
 
 
