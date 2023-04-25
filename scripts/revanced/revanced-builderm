@@ -1,0 +1,71 @@
+#!/bin/bash
+
+version="$(\cat ./mversion)"
+YouTube_original_name="youtube_music_${version}.apk"
+ver="v${version}"
+revanced_name="ReVancedYTM-${ver}-$(date "+%Y_%m_%d_%H_%M").apk"
+
+patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases/latest | jq '.assets[] | select(.name|startswith("revanced-patches")) | .browser_download_url')
+patches_name=$(echo $patches_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+
+cli_url=$(curl -s  https://api.github.com/repos/revanced/revanced-cli/releases/latest | jq '.assets[] | select(.name|startswith("revanced-cli")) | .browser_download_url')
+cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|startswith("revanced-integrations")) | .browser_download_url')
+integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+echo -e "\n Revanced-Patches_name = $patches_name \nRevanced-Patches_url = $patches_url \
+	\n\n Revanced-cli_name = $cli_name \nRevanced-cli_url = $cli_url \
+	\n\n Revanced-integrations_name = $integrations_name \nRevanced-integrations_url = $integrations_url"
+
+urls=(
+	$patches_url
+	$cli_url
+	$integrations_url
+)
+
+function download_all() {
+
+	if [[ "$1" == "-d" ]]; then
+
+		echo -e "\n\n\n"
+		for i in ${urls[@]};
+		do
+			echo -e "Downloading ${i} ...\n"
+			echo ${i} | xargs curl -LJO
+		done
+	elif [[ "$1" == "" ]]; then
+
+		echo -e "\nSkip Downloading...\n"
+
+		[[ ! -e "${YouTube_original_name}" ]] && echo -e "There is no YouTube original apk in current dir\n" && exit
+
+		if [[ -e ${cli_name} && -e ${patches_name} && -e ${integrations_name} ]]; then
+			echo -e "\nbuilding...\n"
+		else
+			echo -e "\nFiles are missing to build, Please provide below option:\n"
+			echo -e "\nThe options are:\n\n\t-d : Download all resourses\n"
+			exit
+		fi
+
+	else
+		echo -e "\nThe options are:\n\n\t-d : Download all resourses\n"
+		exit
+	fi
+
+}
+
+download_all $1
+
+echo -e "\n\n\n"
+
+java -jar ${cli_name} \
+	-a ${YouTube_original_name} -c \
+	-o ${revanced_name} \
+	-b ${patches_name} \
+	-m ${integrations_name} \
+	--keystore ./prev_key.keystore 
