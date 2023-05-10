@@ -20,7 +20,7 @@ msg=${msg}$(printf "%${NOT_FILLED_ITEMS}s" | sed "s| |${NOT_FILLED_ITEM}|g")
 echo "$msg"
 
 #dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
-#    "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " " $volume)"
+#    "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " ◯ " $volume)"
 
 
 

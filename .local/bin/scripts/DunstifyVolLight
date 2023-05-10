@@ -35,7 +35,7 @@ case $1 in
 		Msg="Brightness"
 		;;
 	volUp)
-		percent=$( amixer -D default get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		percent=$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f2) * 100 / 1" | bc -l )
 		setIcon=audio-volume-high
 		notiId=9998
 		appName="ChangevolUp"
@@ -43,7 +43,7 @@ case $1 in
 		Msg="Volume"
 		;;
 	volDwn)
-		percent=$( amixer -D default get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		percent=$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f2) * 100 / 1" | bc -l )
 		setIcon=audio-volume-low
 		notiId=9998
 		appName="ChangevolDwn"
@@ -51,9 +51,9 @@ case $1 in
 		Msg="Volume"
 		;;
 	volMute)
-		amixer -D default get Master | tail -1 | grep -ie "\[off\]" > /dev/null
+		wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -ie "\[MUTED\]" > /dev/null
 		exitCode=$?
-		percent=$( [[ $exitCode == 0 ]] && echo "0" || amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		percent=$( [[ $exitCode == 0 ]] && echo "0" || $( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2) * 100 / 1" | bc -l )
 		setIcon=$( [[ $exitCode == 0 ]] && echo "/usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg" || echo "audio-volume-high" )
 		notiId=9998 
 		appName="toogleVolMute"
@@ -65,7 +65,8 @@ case $1 in
 esac
 
 if [[ $flag == 0 ]]; then
-	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
+	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" "<b>◯ </b>" $percent )"
+	#dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
 	flag=1
 fi
 
