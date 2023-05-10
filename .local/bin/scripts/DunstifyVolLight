@@ -4,11 +4,11 @@
 #																#
 #			Maintainer : Sourav Das								#
 #			GitRepo : github.com/souravdas142					#
-#																#	
+#																#
 #					Dunstify:									#
 #							brightnessNotification				#
-#							volumeNotification					#	
-#							maybe some other on					#	
+#							volumeNotification					#
+#							maybe some other on					#
 #							another day :)						#
 #																#
 ##################################################################
@@ -19,16 +19,16 @@ case $1 in
 	brightnessInc)
 		#percent=$(xbacklight -get | roundoff )
 		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
-		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
+		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg"
 		notiId=9999
-		appName="changeBrightness-Up" 
+		appName="changeBrightness-Up"
 		flag=0
 		Msg="Brightness"
 		;;
 	brightnessDec)
 		#percent=$(xbacklight -get | roundoff )
 		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
-		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
+		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg"
 		notiId=9999
 		appName="changeBrightnessDwn"
 		flag=0
@@ -53,11 +53,14 @@ case $1 in
 	volMute)
 		wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -ie "\[MUTED\]" > /dev/null
 		exitCode=$?
-		percent=$( [[ $exitCode == 0 ]] && echo "0" || $( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2) * 100 / 1" | bc -l )
+		#percent=$( [[ $exitCode == 0 ]] && echo "0" || $( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2) * 100 / 1" | bc -l )
+
+		percent=$( [[ $exitCode == 0 ]] && echo "0" || echo "$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2) * 100 / 1" | bc -l )")
+
 		setIcon=$( [[ $exitCode == 0 ]] && echo "/usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg" || echo "audio-volume-high" )
-		notiId=9998 
+		notiId=9998
 		appName="toogleVolMute"
-		flag=0 
+		flag=0
 		Msg=$( [[ $exitCode == 0 ]] && echo "Volume Muted" || echo "Volume Unmuted" )
 		;;
 	*)
