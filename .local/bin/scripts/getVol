@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+
+getVol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+echo ${getVol} | grep -ie "\[MUTED\]" > /dev/null
+exitCode=$?
+
+if [[ $exitCode -eq 0 ]]; then
+	msgString="婢 Muted"
+else
+
+	volPercent=$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f2) * 100 / 1" | bc -l )
+
+	if [[ $volPercent -gt 50 ]]; then
+
+		msgString=" ${volPercent}%"
+	elif [[ $volPercent -gt 25 ]]; then
+		msgString=" ${volPercent}%"
+	elif [[ $volPercent -gt 0 ]]; then
+		msgString=" ${volPercent}%"
+	else
+		msgString="婢 0"
+	fi
+fi
+
+echo "${msgString}"
