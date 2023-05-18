@@ -1,11 +1,12 @@
 env:
   TERM: xterm-256color
-  WINIT_HIDPI_FACTOR: "1"
+  WINIT_HIDPI_FACTOR: '1'
 
 window:
   dimensions:
     columns: 80
     lines: 24
+  opacity: 0.95
 
   padding:
     x: 10
@@ -34,19 +35,19 @@ scrolling:
 
 font:
   normal:
-    family: Hack
+    family: Hack Nerd Font
     style: Regular
 
   bold:
-    family: Hack
+    family: Hack Nerd Font
     style: Bold
 
   italic:
-    family: Hack
+    family: Hack Nerd Font
     style: Italic
 
   bold_italic:
-    family: Hack
+    family: Hack Nerd Font
     style: Bold Italic
 
   size: 9.5
@@ -59,6 +60,47 @@ font:
     x: 0
     y: 0
 
+
+
+
+
+    ## Font configuration (changes require restart)
+    #font:
+    #  # Normal (roman) font face
+    #  normal:
+    #    family: JetBrains Mono
+    #    # The `style` can be specified to pick a specific face.
+    #    style: Regular
+    #
+    #  # Bold font face
+    #  bold:
+    #    family: JetBrains Mono
+    #    # The `style` can be specified to pick a specific face.
+    #    style: Bold
+    #
+    #  # Italic font face
+    #  italic:
+    #    family: JetBrains Mono
+    #    # The `style` can be specified to pick a specific face.
+    #    style: Italic
+    #
+    #  # Point size of the font
+    #  size: 10.0
+    #
+    #  # Offset is the extra space around each character. `offset.y` can be thought of
+    #  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+    #  offset:
+    #    x: 0
+    #    y: 0
+    #
+    #  # Glyph offset determines the locations of the glyphs within their cells with
+    #  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+    #  # increasing `y` moves the glyph upwards.
+    #  glyph_offset:
+    #    x: 0
+    #    y: 0
+    #
+
     #draw_bold_text_with_bright_colors: true
 
 # color_start
@@ -66,49 +108,56 @@ font:
 # Base16 Brewer - alacritty color config
 # Timothée Poisot (http://github.com/tpoisot)
 colors:
+  # COLORSCHEME: base16-gruvbox-dark-hard-256.yml
   # Default colors
   primary:
-    background: '0x0c0d0e'
-    foreground: '0xb7b8b9'
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x0c0d0e'
-    cursor: '0xb7b8b9'
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
 
   # Normal colors
   normal:
-    black:   '0x0c0d0e'
-    red:     '0xe31a1c'
-    green:   '0x31a354'
-    yellow:  '0xdca060'
-    blue:    '0x3182bd'
-    magenta: '0x756bb1'
-    cyan:    '0x80b1d3'
-    white:   '0xb7b8b9'
+    black: '0x1d2021'
+    red: '0xfb4934'
+    green: '0xb8bb26'
+    yellow: '0xfabd2f'
+    blue: '0x83a598'
+    magenta: '0xd3869b'
+    cyan: '0x8ec07c'
+    white: '0xd5c4a1'
 
   # Bright colors
   bright:
-    black:   '0x737475'
-    red:     '0xe6550d'
-    green:   '0x2e2f30'
-    yellow:  '0x515253'
-    blue:    '0x959697'
-    magenta: '0xdadbdc'
-    cyan:    '0xb15928'
-    white:   '0xfcfdfe'
+    black: '0x665c54'
+    red: '0xfb4934'
+    green: '0xb8bb26'
+    yellow: '0xfabd2f'
+    blue: '0x83a598'
+    magenta: '0xd3869b'
+    cyan: '0x8ec07c'
+    white: '0xfbf1c7'
 
+  indexed_colors:
+    - {index: 16, color: '0xfe8019'}
+    - {index: 17, color: '0xd65d0e'}
+    - {index: 18, color: '0x3c3836'}
+    - {index: 19, color: '0x504945'}
+    - {index: 20, color: '0xbdae93'}
+    - {index: 21, color: '0xebdbb2'}
 draw_bold_text_with_bright_colors: false
 
 # color_end
- 
 bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
 
-window:
-  opacity: 0.95
+  #window:
+  #opacity: 0.95
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -125,7 +174,7 @@ live_config_reload: true
 
 working_directory: None
 
-alt_send_esc: true
+  #alt_send_esc: true
 
 debug:
   render_timer: false
@@ -135,8 +184,8 @@ debug:
   ref_test: false
 
 mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  double_click: {threshold: 300}
+  triple_click: {threshold: 300}
 
   hide_when_typing: false
 
@@ -147,23 +196,23 @@ mouse:
     #   modifiers: None
 
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+  - {mouse: Middle, action: PasteSelection}
 
 key_bindings:
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: NumpadAdd,      mods: Control,       action: IncreaseFontSize }
-  - { key: NumpadSubtract, mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Return,   mods: Alt,           action: ToggleFullscreen }
-  - { key: Paste,                         action: Paste            }
-  - { key: Copy,                          action: Copy             }
-  - { key: L,        mods: Control,       action: ClearLogNotice   }
-  - { key: L,        mods: Control,       chars: "\x0c"            }
-  - { key: PageUp,   mods: Shift,         action: ScrollPageUp,   mode: ~Alt }
-  - { key: PageDown, mods: Shift,         action: ScrollPageDown, mode: ~Alt }
-  - { key: Home,     mods: Shift,         action: ScrollToTop,    mode: ~Alt }
-  - { key: End,      mods: Shift,         action: ScrollToBottom, mode: ~Alt }
+  - {key: V, mods: Control|Shift, action: Paste}
+  - {key: C, mods: Control|Shift, action: Copy}
+  - {key: Insert, mods: Shift, action: PasteSelection}
+  - {key: Key0, mods: Control, action: ResetFontSize}
+  - {key: Equals, mods: Control, action: IncreaseFontSize}
+  - {key: NumpadAdd, mods: Control, action: IncreaseFontSize}
+  - {key: NumpadSubtract, mods: Control, action: DecreaseFontSize}
+  - {key: Minus, mods: Control, action: DecreaseFontSize}
+  - {key: Return, mods: Alt, action: ToggleFullscreen}
+  - {key: Paste, action: Paste}
+  - {key: Copy, action: Copy}
+  - {key: L, mods: Control, action: ClearLogNotice}
+  - {key: L, mods: Control, chars: "\f"}
+  - {key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt}
+  - {key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt}
+  - {key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt}
+  - {key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt}
