@@ -63,9 +63,21 @@ download_all $1
 
 echo -e "\n\n\n"
 
-java -jar ${cli_name} \
-	-a ${YouTube_original_name} -c \
-	-o ${revanced_name} \
-	-b ${patches_name} \
-	-m ${integrations_name} \
-	--keystore ./prev_key.keystore 
+#java -jar ${cli_name} \
+#	-a ${YouTube_original_name} -c \
+#	-o ${revanced_name} \
+#	-b ${patches_name} \
+#	-m ${integrations_name} \
+#	--keystore ./prev_key.keystore
+
+
+
+
+java -jar ${cli_name} patch \
+	--patch-bundle ${patches_name} \
+	-i "Custom branding" \
+	-i "Remove player controls background" \
+	--merge ${integrations_name} \
+	--out ${revanced_name} \
+	--keystore ./prev_key.keystore --alias=alias --keystore-entry-password=ReVanced --keystore-password=ReVanced \
+	${YouTube_original_name}
