@@ -5,32 +5,129 @@ YouTube_original_name="youtube_${version}.apk"
 ver="v${version}"
 revanced_name="ReVancedYT-${ver}-$(date "+%Y_%m_%d_%H_%M").apk"
 
-patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases/latest | jq '.assets[] | select(.name|startswith("revanced-patches")) | .browser_download_url')
-patches_name=$(echo $patches_url | awk -F/ '{print $NF}' | tr -d '"')
+function release_dl() {
+
+	patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases/latest | jq '.assets[] | select(.name|endswith("jar")) | .browser_download_url')
+	patches_name=$(echo $patches_url | awk -F/ '{print $NF}' | tr -d '"')
 
 
 
-cli_url=$(curl -s  https://api.github.com/repos/revanced/revanced-cli/releases/latest | jq '.assets[] | select(.name|startswith("revanced-cli")) | .browser_download_url')
-cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
+	cli_url=$(curl -s  https://api.github.com/repos/revanced/revanced-cli/releases/latest | jq '.assets[] | select(.name|endswith("jar")) | .browser_download_url')
+	cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
 
 
-integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|startswith("revanced-integrations")) | .browser_download_url')
-integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
+	integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases/latest | jq '.assets[] | select(.name|endswith("apk")) | .browser_download_url')
+	integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
 
 
-echo -e "\n Revanced-Patches_name = $patches_name \nRevanced-Patches_url = $patches_url \
-	\n\n Revanced-cli_name = $cli_name \nRevanced-cli_url = $cli_url \
-	\n\n Revanced-integrations_name = $integrations_name \nRevanced-integrations_url = $integrations_url"
+	urls=(
+		$patches_url
+		$cli_url
+		$integrations_url
+	)
 
-urls=(
-	$patches_url
-	$cli_url
-	$integrations_url
-)
+
+}
+
+
+#######################################################
+
+
+function devel_dl() {
+
+	patches_url=$(curl -s  https://api.github.com/repos/revanced/revanced-patches/releases | jq -r 'map(select(.prerelease)) | first | .assets[] | select(.name|endswith("jar")) | .browser_download_url')
+	patches_name=$(echo $patches_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+
+	cli_url=$(curl -s https://api.github.com/repos/revanced/revanced-cli/releases | jq -r 'map(select(.prerelease)) | first | .assets[] | select(.name|endswith("jar")) | .browser_download_url')
+	cli_name=$(echo $cli_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+	integrations_url=$(curl -s  https://api.github.com/repos/revanced/revanced-integrations/releases | jq -r 'map(select(.prerelease)) | first | .assets[] | select(.name|endswith("apk")) | .browser_download_url')
+	integrations_name=$(echo $integrations_url | awk -F/ '{print $NF}' | tr -d '"')
+
+
+	urls=(
+		$patches_url
+		$cli_url
+		$integrations_url
+	)
+
+
+}
+
+function offline_dl() {
+
+
+		patches_name_devel=`ls revanced-patches*dev*`
+		cli_name_devel=`ls revanced-cli*dev*`
+		integrations_name_devel=`ls revanced-integrations*dev*`
+		patches_name_release=`ls revanced-patches* | grep -v dev`
+		cli_name_release=`ls revanced-cli* | grep -v dev`
+		integrations_name_release=`ls revanced-integrations* | grep -v dev`
+
+		if [[ -n "$patches_name_devel" && -n "$patches_name_release" ]]; then
+
+
+			read -p "both devel and release available choose one [r,d] ? " input
+
+			if [[ "$input" == "r" ]]; then
+				patches_name=$patches_name_release
+				cli_name=$cli_name_release
+				integrations_name=$integrations_name_release
+			elif [[ "$input" == "d" ]]; then
+				patches_name=$patches_name_devel
+				cli_name=$cli_name_devel
+				integrations_name=$integrations_name_devel
+			else
+				echo -e "Didn't understand \n"
+			fi
+
+		elif [[ -n "$patches_name_devel" ]]; then
+
+				patches_name=$patches_name_devel
+				cli_name=$cli_name_devel
+				integrations_name=$integrations_name_devel
+
+		elif [[ -n "$patches_name_release" ]]; then
+
+				patches_name=$patches_name_release
+				cli_name=$cli_name_release
+				integrations_name=$integrations_name_release
+
+		else
+			echo -e "There is no patches available offline\n please see other options\n"
+
+		fi
+
+
+
+	echo -e "$patches_name, $cli_name, $integrations_name\n"
+
+	[[ -z $patches_name && -z $cli_name && -z $integrations_name ]] && echo -e "files doesn't exists\n" && exit
+
+}
+
+
+
 
 function download_all() {
 
 	if [[ "$1" == "-d" ]]; then
+
+		devel_dl
+
+		echo -e "devel downloading...\n\n\n"
+		for i in ${urls[@]};
+		do
+			echo -e "Downloading ${i} ...\n"
+			echo ${i} | xargs curl -LJO
+		done
+
+	elif [[ "$1" == "-r" ]]; then
+
+		release_dl
 
 		echo -e "\n\n\n"
 		for i in ${urls[@]};
@@ -38,7 +135,11 @@ function download_all() {
 			echo -e "Downloading ${i} ...\n"
 			echo ${i} | xargs curl -LJO
 		done
-	elif [[ "$1" == "" ]]; then
+
+
+	elif [[ "$1" == "-o" ]]; then
+
+		offline_dl
 
 		echo -e "\nSkip Downloading...\n"
 
@@ -59,7 +160,12 @@ function download_all() {
 
 }
 
-download_all $1
+
+download_all $1 $2
+
+echo -e "\n Revanced-Patches_name = $patches_name \nRevanced-Patches_url = $patches_url \
+	\n\n Revanced-cli_name = $cli_name \nRevanced-cli_url = $cli_url \
+	\n\n Revanced-integrations_name = $integrations_name \nRevanced-integrations_url = $integrations_url"
 
 echo -e "\n\n\n"
 
@@ -69,15 +175,46 @@ echo -e "\n\n\n"
 #	-b ${patches_name} \
 #	-m ${integrations_name} \
 #	--keystore ./prev_key.keystore
+#
+
+include_patch=(
+	-i "Custom branding"
+	-i "Remove player controls background"
+	-i "Change header"
+	-i "Enable slide to seek"
+	-i "Change package name"
+	-i "Predictive back gesture"
+)
+
+#exclude_patch=(
+#	-e "Alternative thumbnails"
+#	-e "Always repeat"
+#)
 
 
+echo -e " command run: \n
+java -jar ${cli_name} patch \\
+	--patch-bundle ${patches_name} \\ \n
+	"${include_patch[@]}" \\ \n
+	"${exclude_patch[@]}" \\ \n
+	--merge ${integrations_name} \\
+	--out ${revanced_name} \\
+	--keystore ./prev_key.keystore \\
+	--keystore-entry-alias=alias \\
+	--keystore-entry-password=ReVanced \\
+	--keystore-password=ReVanced \\
+	${YouTube_original_name} \n
+"
 
 
 java -jar ${cli_name} patch \
 	--patch-bundle ${patches_name} \
-	-i "Custom branding" \
-	-i "Remove player controls background" \
+	"${include_patch[@]}" \
+	"${exclude_patch[@]}" \
 	--merge ${integrations_name} \
 	--out ${revanced_name} \
-	--keystore ./prev_key.keystore --alias=alias --keystore-entry-password=ReVanced --keystore-password=ReVanced \
+	--keystore ./prev_key.keystore \
+	--keystore-entry-alias=alias \
+	--keystore-entry-password=ReVanced \
+	--keystore-password=ReVanced \
 	${YouTube_original_name}
