@@ -4,8 +4,27 @@ exec tail -n +3 $0
 # menu entries you want to add after this comment.  Be careful not to change
 # the 'exec tail' line above.
 
+menuentry 'Windows Boot Manager (on /dev/sda1)' --class windows --class os $menuentry_id_option 'osprober-efi-F548-1EAF' {
+	insmod part_gpt
+	insmod fat
+	set root='hd0,gpt1'
+	if [ x$feature_platform_search_hint = xy ]; then
+	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  F548-1EAF
+	else
+	  search --no-floppy --fs-uuid --set=root F548-1EAF
+	fi
+	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+}
 
-# The menu/submenu Icon classified by `class name`.
+menuentry 'Arch Linux (rolling) (on /dev/sda5)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-24811c53-8920-4c58-9e53-c8e59f9f9f9d' {
+	insmod part_gpt
+	insmod fat
+	insmod chain
+	insmod search_fs_uuid
+	search --fs-uuid --no-floppy --set=root 9379-C7AB
+	chainloader ($root)/EFI/Arch-Linux-ssd/grubx64.efi
+}
+
 submenu --class shutdown "Reboot / Poweroff..." {
 
 	menuentry --class shutdown "Poweroff" {
@@ -19,3 +38,30 @@ submenu --class shutdown "Reboot / Poweroff..." {
 	}
 
 }
+#menuentry "Arch-Linux-ssd" {
+#	insmod part_gpt
+#	insmod fat
+#	insmod chain
+#	insmod search_fs_uuid
+#	search --fs-uuid --no-floppy --set=root 9379-C7AB
+#	chainloader ($root)/EFI/Arch-Linux-ssd/grubx64.efi
+#}
+#menuentry "Arch-Linux-ssd chainLoader1" {
+#	insmod part_gpt
+#	insmod fat
+#	insmod chain
+#	chainloader (hd0,7)+1
+#}
+#menuentry "Arch-Linux-ssd configLoading1" {
+#	insmod part_gpt
+#	insmod fat
+#	insmod chain
+#	chainloader (hd0,7)+1
+#}
+#menuentry "Arch-Linux-ssd configLoading2" {
+#	set root='hd0,gpt7'
+#	configfile ($root)/EFI/Arch-Linux-ssd/grubx64.efi
+#}
+#menuentry "Arch-Linux-ssd configLoading3" {
+#configfile (hd0,gpt7)/EFI/Arch-Linux-ssd/grubx64.efi
+#}
