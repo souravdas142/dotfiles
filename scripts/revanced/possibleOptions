@@ -1,0 +1,1269 @@
+INFO: Index: 0
+Name: Export all activities
+Description: Makes all app activities exportable.
+Enabled: false
+
+Index: 1
+Name: Spoof build info
+Description: Spoof the information about the current build.
+Enabled: false
+Options:
+	Title: Board
+	Description: The name of the underlying board, like "goldfish".
+	Required: false
+	Key: board
+	Type: kotlin.String
+	
+	Title: Bootloader
+	Description: The system bootloader version number.
+	Required: false
+	Key: bootloader
+	Type: kotlin.String
+	
+	Title: Brand
+	Description: The consumer-visible brand with which the product/hardware will be associated, if any.
+	Required: false
+	Key: brand
+	Type: kotlin.String
+	
+	Title: CPU ABI
+	Description: This field was deprecated in API level 21. Use SUPPORTED_ABIS instead.
+	Required: false
+	Key: cpu-abi
+	Type: kotlin.String
+	
+	Title: CPU ABI 2
+	Description: This field was deprecated in API level 21. Use SUPPORTED_ABIS instead.
+	Required: false
+	Key: cpu-abi-2
+	Type: kotlin.String
+	
+	Title: Device
+	Description: The name of the industrial design.
+	Required: false
+	Key: device
+	Type: kotlin.String
+	
+	Title: Display
+	Description: A build ID string meant for displaying to the user.
+	Required: false
+	Key: display
+	Type: kotlin.String
+	
+	Title: Fingerprint
+	Description: A string that uniquely identifies this build.
+	Required: false
+	Key: fingerprint
+	Type: kotlin.String
+	
+	Title: Hardware
+	Description: The name of the hardware (from the kernel command line or /proc).
+	Required: false
+	Key: hardware
+	Type: kotlin.String
+	
+	Title: Host
+	Description: The host.
+	Required: false
+	Key: host
+	Type: kotlin.String
+	
+	Title: ID
+	Description: Either a changelist number, or a label like "M4-rc20".
+	Required: false
+	Key: id
+	Type: kotlin.String
+	
+	Title: Manufacturer
+	Description: The manufacturer of the product/hardware.
+	Required: false
+	Key: manufacturer
+	Type: kotlin.String
+	
+	Title: Model
+	Description: The end-user-visible name for the end product.
+	Required: false
+	Key: model
+	Type: kotlin.String
+	
+	Title: ODM SKU
+	Description: The SKU of the device as set by the original design manufacturer (ODM).
+	Required: false
+	Key: odm-sku
+	Type: kotlin.String
+	
+	Title: Product
+	Description: The name of the overall product.
+	Required: false
+	Key: product
+	Type: kotlin.String
+	
+	Title: Radio
+	Description: This field was deprecated in API level 15. The radio firmware version is frequently not available when this class is initialized, leading to a blank or "unknown" value for this string. Use getRadioVersion() instead.
+	Required: false
+	Key: radio
+	Type: kotlin.String
+	
+	Title: Serial
+	Description: This field was deprecated in API level 26. Use getSerial() instead.
+	Required: false
+	Key: serial
+	Type: kotlin.String
+	
+	Title: SKU
+	Description: The SKU of the hardware (from the kernel command line).
+	Required: false
+	Key: sku
+	Type: kotlin.String
+	
+	Title: SOC Manufacturer
+	Description: The manufacturer of the device's primary system-on-chip.
+	Required: false
+	Key: soc-manufacturer
+	Type: kotlin.String
+	
+	Title: SOC Model
+	Description: The model name of the device's primary system-on-chip.
+	Required: false
+	Key: soc-model
+	Type: kotlin.String
+	
+	Title: Tags
+	Description: Comma-separated tags describing the build, like "unsigned,debug".
+	Required: false
+	Key: tags
+	Type: kotlin.String
+	
+	Title: Time
+	Description: The time at which the build was produced, given in milliseconds since the UNIX epoch.
+	Required: false
+	Key: time
+	Type: kotlin.Long
+	
+	Title: Type
+	Description: The type of build, like "user" or "eng".
+	Required: false
+	Key: type
+	Type: kotlin.String
+	
+	Title: User
+	Description: The user.
+	Required: false
+	Key: user
+	Type: kotlin.String
+
+Index: 2
+Name: Hide mock location
+Description: Prevents the app from knowing the device location is being mocked by a third party app.
+Enabled: false
+
+Index: 3
+Name: Spoof SIM country
+Description: Spoofs country information returned by the SIM card provider.
+Enabled: false
+Options:
+	Title: Network ISO Country Code
+	Description: ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.
+	Required: false
+	Key: networkCountryIso
+	Possible values:
+		AD (Andorra)
+		AE (United Arab Emirates)
+		AF (Afghanistan)
+		AG (Antigua & Barbuda)
+		AI (Anguilla)
+		AL (Albania)
+		AM (Armenia)
+		AO (Angola)
+		AQ (Antarctica)
+		AR (Argentina)
+		AS (American Samoa)
+		AT (Austria)
+		AU (Australia)
+		AW (Aruba)
+		AX (Åland Islands)
+		AZ (Azerbaijan)
+		BA (Bosnia & Herzegovina)
+		BB (Barbados)
+		BD (Bangladesh)
+		BE (Belgium)
+		BF (Burkina Faso)
+		BG (Bulgaria)
+		BH (Bahrain)
+		BI (Burundi)
+		BJ (Benin)
+		BL (St. Barthélemy)
+		BM (Bermuda)
+		BN (Brunei)
+		BO (Bolivia)
+		BQ (Caribbean Netherlands)
+		BR (Brazil)
+		BS (Bahamas)
+		BT (Bhutan)
+		BV (Bouvet Island)
+		BW (Botswana)
+		BY (Belarus)
+		BZ (Belize)
+		CA (Canada)
+		CC (Cocos (Keeling) Islands)
+		CD (Congo - Kinshasa)
+		CF (Central African Republic)
+		CG (Congo - Brazzaville)
+		CH (Switzerland)
+		CI (Côte d’Ivoire)
+		CK (Cook Islands)
+		CL (Chile)
+		CM (Cameroon)
+		CN (China)
+		CO (Colombia)
+		CR (Costa Rica)
+		CU (Cuba)
+		CV (Cape Verde)
+		CW (Curaçao)
+		CX (Christmas Island)
+		CY (Cyprus)
+		CZ (Czechia)
+		DE (Germany)
+		DJ (Djibouti)
+		DK (Denmark)
+		DM (Dominica)
+		DO (Dominican Republic)
+		DZ (Algeria)
+		EC (Ecuador)
+		EE (Estonia)
+		EG (Egypt)
+		EH (Western Sahara)
+		ER (Eritrea)
+		ES (Spain)
+		ET (Ethiopia)
+		FI (Finland)
+		FJ (Fiji)
+		FK (Falkland Islands)
+		FM (Micronesia)
+		FO (Faroe Islands)
+		FR (France)
+		GA (Gabon)
+		GB (United Kingdom)
+		GD (Grenada)
+		GE (Georgia)
+		GF (French Guiana)
+		GG (Guernsey)
+		GH (Ghana)
+		GI (Gibraltar)
+		GL (Greenland)
+		GM (Gambia)
+		GN (Guinea)
+		GP (Guadeloupe)
+		GQ (Equatorial Guinea)
+		GR (Greece)
+		GS (South Georgia & South Sandwich Islands)
+		GT (Guatemala)
+		GU (Guam)
+		GW (Guinea-Bissau)
+		GY (Guyana)
+		HK (Hong Kong SAR China)
+		HM (Heard & McDonald Islands)
+		HN (Honduras)
+		HR (Croatia)
+		HT (Haiti)
+		HU (Hungary)
+		ID (Indonesia)
+		IE (Ireland)
+		IL (Israel)
+		IM (Isle of Man)
+		IN (India)
+		IO (British Indian Ocean Territory)
+		IQ (Iraq)
+		IR (Iran)
+		IS (Iceland)
+		IT (Italy)
+		JE (Jersey)
+		JM (Jamaica)
+		JO (Jordan)
+		JP (Japan)
+		KE (Kenya)
+		KG (Kyrgyzstan)
+		KH (Cambodia)
+		KI (Kiribati)
+		KM (Comoros)
+		KN (St. Kitts & Nevis)
+		KP (North Korea)
+		KR (South Korea)
+		KW (Kuwait)
+		KY (Cayman Islands)
+		KZ (Kazakhstan)
+		LA (Laos)
+		LB (Lebanon)
+		LC (St. Lucia)
+		LI (Liechtenstein)
+		LK (Sri Lanka)
+		LR (Liberia)
+		LS (Lesotho)
+		LT (Lithuania)
+		LU (Luxembourg)
+		LV (Latvia)
+		LY (Libya)
+		MA (Morocco)
+		MC (Monaco)
+		MD (Moldova)
+		ME (Montenegro)
+		MF (St. Martin)
+		MG (Madagascar)
+		MH (Marshall Islands)
+		MK (North Macedonia)
+		ML (Mali)
+		MM (Myanmar (Burma))
+		MN (Mongolia)
+		MO (Macao SAR China)
+		MP (Northern Mariana Islands)
+		MQ (Martinique)
+		MR (Mauritania)
+		MS (Montserrat)
+		MT (Malta)
+		MU (Mauritius)
+		MV (Maldives)
+		MW (Malawi)
+		MX (Mexico)
+		MY (Malaysia)
+		MZ (Mozambique)
+		NA (Namibia)
+		NC (New Caledonia)
+		NE (Niger)
+		NF (Norfolk Island)
+		NG (Nigeria)
+		NI (Nicaragua)
+		NL (Netherlands)
+		NO (Norway)
+		NP (Nepal)
+		NR (Nauru)
+		NU (Niue)
+		NZ (New Zealand)
+		OM (Oman)
+		PA (Panama)
+		PE (Peru)
+		PF (French Polynesia)
+		PG (Papua New Guinea)
+		PH (Philippines)
+		PK (Pakistan)
+		PL (Poland)
+		PM (St. Pierre & Miquelon)
+		PN (Pitcairn Islands)
+		PR (Puerto Rico)
+		PS (Palestinian Territories)
+		PT (Portugal)
+		PW (Palau)
+		PY (Paraguay)
+		QA (Qatar)
+		RE (Réunion)
+		RO (Romania)
+		RS (Serbia)
+		RU (Russia)
+		RW (Rwanda)
+		SA (Saudi Arabia)
+		SB (Solomon Islands)
+		SC (Seychelles)
+		SD (Sudan)
+		SE (Sweden)
+		SG (Singapore)
+		SH (St. Helena)
+		SI (Slovenia)
+		SJ (Svalbard & Jan Mayen)
+		SK (Slovakia)
+		SL (Sierra Leone)
+		SM (San Marino)
+		SN (Senegal)
+		SO (Somalia)
+		SR (Suriname)
+		SS (South Sudan)
+		ST (São Tomé & Príncipe)
+		SV (El Salvador)
+		SX (Sint Maarten)
+		SY (Syria)
+		SZ (Eswatini)
+		TC (Turks & Caicos Islands)
+		TD (Chad)
+		TF (French Southern Territories)
+		TG (Togo)
+		TH (Thailand)
+		TJ (Tajikistan)
+		TK (Tokelau)
+		TL (Timor-Leste)
+		TM (Turkmenistan)
+		TN (Tunisia)
+		TO (Tonga)
+		TR (Turkey)
+		TT (Trinidad & Tobago)
+		TV (Tuvalu)
+		TW (Taiwan)
+		TZ (Tanzania)
+		UA (Ukraine)
+		UG (Uganda)
+		UM (US Outlying Islands)
+		US (United States)
+		UY (Uruguay)
+		UZ (Uzbekistan)
+		VA (Vatican City)
+		VC (St. Vincent & Grenadines)
+		VE (Venezuela)
+		VG (British Virgin Islands)
+		VI (US Virgin Islands)
+		VN (Vietnam)
+		VU (Vanuatu)
+		WF (Wallis & Futuna)
+		WS (Samoa)
+		YE (Yemen)
+		YT (Mayotte)
+		ZA (South Africa)
+		ZM (Zambia)
+		ZW (Zimbabwe)
+	Type: kotlin.String
+	
+	Title: Sim ISO Country Code
+	Description: ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code.
+	Required: false
+	Key: simCountryIso
+	Possible values:
+		AD (Andorra)
+		AE (United Arab Emirates)
+		AF (Afghanistan)
+		AG (Antigua & Barbuda)
+		AI (Anguilla)
+		AL (Albania)
+		AM (Armenia)
+		AO (Angola)
+		AQ (Antarctica)
+		AR (Argentina)
+		AS (American Samoa)
+		AT (Austria)
+		AU (Australia)
+		AW (Aruba)
+		AX (Åland Islands)
+		AZ (Azerbaijan)
+		BA (Bosnia & Herzegovina)
+		BB (Barbados)
+		BD (Bangladesh)
+		BE (Belgium)
+		BF (Burkina Faso)
+		BG (Bulgaria)
+		BH (Bahrain)
+		BI (Burundi)
+		BJ (Benin)
+		BL (St. Barthélemy)
+		BM (Bermuda)
+		BN (Brunei)
+		BO (Bolivia)
+		BQ (Caribbean Netherlands)
+		BR (Brazil)
+		BS (Bahamas)
+		BT (Bhutan)
+		BV (Bouvet Island)
+		BW (Botswana)
+		BY (Belarus)
+		BZ (Belize)
+		CA (Canada)
+		CC (Cocos (Keeling) Islands)
+		CD (Congo - Kinshasa)
+		CF (Central African Republic)
+		CG (Congo - Brazzaville)
+		CH (Switzerland)
+		CI (Côte d’Ivoire)
+		CK (Cook Islands)
+		CL (Chile)
+		CM (Cameroon)
+		CN (China)
+		CO (Colombia)
+		CR (Costa Rica)
+		CU (Cuba)
+		CV (Cape Verde)
+		CW (Curaçao)
+		CX (Christmas Island)
+		CY (Cyprus)
+		CZ (Czechia)
+		DE (Germany)
+		DJ (Djibouti)
+		DK (Denmark)
+		DM (Dominica)
+		DO (Dominican Republic)
+		DZ (Algeria)
+		EC (Ecuador)
+		EE (Estonia)
+		EG (Egypt)
+		EH (Western Sahara)
+		ER (Eritrea)
+		ES (Spain)
+		ET (Ethiopia)
+		FI (Finland)
+		FJ (Fiji)
+		FK (Falkland Islands)
+		FM (Micronesia)
+		FO (Faroe Islands)
+		FR (France)
+		GA (Gabon)
+		GB (United Kingdom)
+		GD (Grenada)
+		GE (Georgia)
+		GF (French Guiana)
+		GG (Guernsey)
+		GH (Ghana)
+		GI (Gibraltar)
+		GL (Greenland)
+		GM (Gambia)
+		GN (Guinea)
+		GP (Guadeloupe)
+		GQ (Equatorial Guinea)
+		GR (Greece)
+		GS (South Georgia & South Sandwich Islands)
+		GT (Guatemala)
+		GU (Guam)
+		GW (Guinea-Bissau)
+		GY (Guyana)
+		HK (Hong Kong SAR China)
+		HM (Heard & McDonald Islands)
+		HN (Honduras)
+		HR (Croatia)
+		HT (Haiti)
+		HU (Hungary)
+		ID (Indonesia)
+		IE (Ireland)
+		IL (Israel)
+		IM (Isle of Man)
+		IN (India)
+		IO (British Indian Ocean Territory)
+		IQ (Iraq)
+		IR (Iran)
+		IS (Iceland)
+		IT (Italy)
+		JE (Jersey)
+		JM (Jamaica)
+		JO (Jordan)
+		JP (Japan)
+		KE (Kenya)
+		KG (Kyrgyzstan)
+		KH (Cambodia)
+		KI (Kiribati)
+		KM (Comoros)
+		KN (St. Kitts & Nevis)
+		KP (North Korea)
+		KR (South Korea)
+		KW (Kuwait)
+		KY (Cayman Islands)
+		KZ (Kazakhstan)
+		LA (Laos)
+		LB (Lebanon)
+		LC (St. Lucia)
+		LI (Liechtenstein)
+		LK (Sri Lanka)
+		LR (Liberia)
+		LS (Lesotho)
+		LT (Lithuania)
+		LU (Luxembourg)
+		LV (Latvia)
+		LY (Libya)
+		MA (Morocco)
+		MC (Monaco)
+		MD (Moldova)
+		ME (Montenegro)
+		MF (St. Martin)
+		MG (Madagascar)
+		MH (Marshall Islands)
+		MK (North Macedonia)
+		ML (Mali)
+		MM (Myanmar (Burma))
+		MN (Mongolia)
+		MO (Macao SAR China)
+		MP (Northern Mariana Islands)
+		MQ (Martinique)
+		MR (Mauritania)
+		MS (Montserrat)
+		MT (Malta)
+		MU (Mauritius)
+		MV (Maldives)
+		MW (Malawi)
+		MX (Mexico)
+		MY (Malaysia)
+		MZ (Mozambique)
+		NA (Namibia)
+		NC (New Caledonia)
+		NE (Niger)
+		NF (Norfolk Island)
+		NG (Nigeria)
+		NI (Nicaragua)
+		NL (Netherlands)
+		NO (Norway)
+		NP (Nepal)
+		NR (Nauru)
+		NU (Niue)
+		NZ (New Zealand)
+		OM (Oman)
+		PA (Panama)
+		PE (Peru)
+		PF (French Polynesia)
+		PG (Papua New Guinea)
+		PH (Philippines)
+		PK (Pakistan)
+		PL (Poland)
+		PM (St. Pierre & Miquelon)
+		PN (Pitcairn Islands)
+		PR (Puerto Rico)
+		PS (Palestinian Territories)
+		PT (Portugal)
+		PW (Palau)
+		PY (Paraguay)
+		QA (Qatar)
+		RE (Réunion)
+		RO (Romania)
+		RS (Serbia)
+		RU (Russia)
+		RW (Rwanda)
+		SA (Saudi Arabia)
+		SB (Solomon Islands)
+		SC (Seychelles)
+		SD (Sudan)
+		SE (Sweden)
+		SG (Singapore)
+		SH (St. Helena)
+		SI (Slovenia)
+		SJ (Svalbard & Jan Mayen)
+		SK (Slovakia)
+		SL (Sierra Leone)
+		SM (San Marino)
+		SN (Senegal)
+		SO (Somalia)
+		SR (Suriname)
+		SS (South Sudan)
+		ST (São Tomé & Príncipe)
+		SV (El Salvador)
+		SX (Sint Maarten)
+		SY (Syria)
+		SZ (Eswatini)
+		TC (Turks & Caicos Islands)
+		TD (Chad)
+		TF (French Southern Territories)
+		TG (Togo)
+		TH (Thailand)
+		TJ (Tajikistan)
+		TK (Tokelau)
+		TL (Timor-Leste)
+		TM (Turkmenistan)
+		TN (Tunisia)
+		TO (Tonga)
+		TR (Turkey)
+		TT (Trinidad & Tobago)
+		TV (Tuvalu)
+		TW (Taiwan)
+		TZ (Tanzania)
+		UA (Ukraine)
+		UG (Uganda)
+		UM (US Outlying Islands)
+		US (United States)
+		UY (Uruguay)
+		UZ (Uzbekistan)
+		VA (Vatican City)
+		VC (St. Vincent & Grenadines)
+		VE (Venezuela)
+		VG (British Virgin Islands)
+		VI (US Virgin Islands)
+		VN (Vietnam)
+		VU (Vanuatu)
+		WF (Wallis & Futuna)
+		WS (Samoa)
+		YE (Yemen)
+		YT (Mayotte)
+		ZA (South Africa)
+		ZM (Zambia)
+		ZW (Zimbabwe)
+	Type: kotlin.String
+
+Index: 4
+Name: Spoof Wi-Fi connection
+Description: Spoofs an existing Wi-Fi connection.
+Enabled: false
+
+Index: 5
+Name: Enable Android debugging
+Description: Enables Android debugging capabilities. This can slow down the app.
+Enabled: false
+
+Index: 6
+Name: Change data directory location
+Description: Changes the data directory in the application from the app internal storage directory to /sdcard/android/data accessible by root-less devices.Using this patch can cause unexpected issues with some apps.
+Enabled: false
+
+Index: 7
+Name: Hex
+Description: Replaces a hexadecimal patterns of bytes of files in an APK.
+Enabled: false
+Options:
+	Title: Replacements
+	Description: Hexadecimal patterns to search for and replace with another in a target file.
+	
+	A pattern is a sequence of case insensitive strings, each representing hexadecimal bytes, separated by spaces.
+	An example pattern is 'aa 01 02 FF'.
+	
+	Every pattern must be followed by a pipe ('|'), the replacement pattern,
+	another pipe ('|'), and the path to the file to make the changes in relative to the APK root. 
+	The replacement pattern must have the same length as the original pattern.
+	
+	Full example of a valid input:
+	'aa 01 02 FF|00 00 00 00|path/to/file'
+	Required: true
+	Key: replacements
+	Type: kotlin.collections.List<kotlin.String>
+
+Index: 8
+Name: Predictive back gesture
+Description: Enables the predictive back gesture introduced on Android 13.
+Enabled: false
+
+Index: 9
+Name: Override certificate pinning
+Description: Overrides certificate pinning, allowing to inspect traffic via a proxy.
+Enabled: false
+
+Index: 10
+Name: Change package name
+Description: Appends ".revanced" to the package name by default. Changing the package name of the app can lead to unexpected issues.
+Enabled: false
+Options:
+	Title: Package name
+	Description: The name of the package to rename the app to.
+	Required: true
+	Key: packageName
+	Default: Default
+	Possible values:
+		Default (Default)
+	Type: kotlin.String
+
+Index: 11
+Name: Remove screen capture restriction
+Description: Removes the restriction of capturing audio from apps that normally wouldn't allow it.
+Enabled: false
+
+Index: 12
+Name: Remove screenshot restriction
+Description: Removes the restriction of taking screenshots in apps that normally wouldn't allow it.
+Enabled: false
+
+Index: 13
+Name: Remove share targets
+Description: Removes share targets like directly sharing to a frequent contact.
+Enabled: false
+
+Index: 14
+Name: Change version code
+Description: Changes the version code of the app. By default the highest version code is set. This allows older versions of an app to be installed if their version code is set to the same or a higher value and can stop app stores to update the app.
+Enabled: false
+Options:
+	Title: Version code
+	Description: The version code to use
+	Required: true
+	Key: versionCode
+	Default: 2147483647
+	Possible values:
+		1 (Lowest)
+		2147483647 (Highest)
+	Type: kotlin.Int
+
+Index: 145
+Name: Hide ads
+Description: Adds options to remove general ads.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 146
+Name: Video ads
+Description: Adds an option to remove ads in the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 147
+Name: Copy video URL
+Description: Adds options to display buttons in the video player to copy video URLs.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 148
+Name: Remove viewer discretion dialog
+Description: Adds an option to remove the dialog that appears when opening a video that has been age-restricted by accepting it automatically. This does not bypass the age restriction.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 149
+Name: Downloads
+Description: Adds support to download videos with an external downloader app using the in-app download button or a video player action button.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 150
+Name: Disable precise seeking gesture
+Description: Adds an option to disable precise seeking when swiping up on the seekbar.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 151
+Name: Seekbar tapping
+Description: Adds an option to enable tap-to-seek on the seekbar of the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 152
+Name: Enable slide to seek
+Description: Adds an option to enable slide to seek instead of playing at 2x speed when pressing and holding in the video player. Including this patch may cause issues with tapping or double tapping the video player overlay.
+Enabled: false
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 153
+Name: Seekbar thumbnails
+Description: Adds an option to use high quality fullscreen seekbar thumbnails. Patching 19.16.39 or lower adds an option to restore old seekbar thumbnails.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 154
+Name: Swipe controls
+Description: Adds options to enable and configure volume and brightness swipe controls.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 155
+Name: Disable auto captions
+Description: Adds an option to disable captions from being automatically enabled.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 156
+Name: Custom branding
+Description: Applies a custom app name and icon. Defaults to "YouTube ReVanced" and the ReVanced logo.
+Enabled: false
+Options:
+	Title: App name
+	Description: The name of the app.
+	Required: false
+	Key: appName
+	Default: YouTube ReVanced
+	Possible values:
+		YouTube ReVanced (YouTube ReVanced)
+		YT ReVanced (YT ReVanced)
+		YT (YT)
+		YouTube (YouTube)
+	Type: kotlin.String
+	
+	Title: App icon
+	Description: The icon to apply to the app.
+	
+	If a path to a folder is provided, the folder must contain the following folders:
+	
+	- mipmap-xxxhdpi
+	- mipmap-xxhdpi
+	- mipmap-xhdpi
+	- mipmap-hdpi
+	- mipmap-mdpi
+	
+	Each of these folders must contain the following files:
+	
+	- adaptiveproduct_youtube_background_color_108.png
+	- adaptiveproduct_youtube_foreground_color_108.png
+	- ic_launcher.png
+	- ic_launcher_round.png
+	Required: false
+	Key: iconPath
+	Default: ReVanced*Logo
+	Possible values:
+		ReVanced*Logo (ReVanced Logo)
+	Type: kotlin.String
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 157
+Name: Change header
+Description: Applies a custom header in the top left corner within the app. Defaults to the ReVanced header.
+Enabled: false
+Options:
+	Title: Header
+	Description: The header to apply to the app.
+	
+	If a path to a folder is provided, the folder must contain one or more of the following folders, depending on the DPI of the device:
+	
+	- drawable-xxxhdpi
+	- drawable-xxhdpi
+	- drawable-xhdpi
+	- drawable-hdpi
+	- drawable-mdpi
+	
+	Each of the folders must contain all of the following files:
+	
+	- yt_wordmark_header_light.png
+	- yt_wordmark_header_dark.png
+	
+	The image dimensions must be as follows:
+	- drawable-xxxhdpi: 512px x 192px
+	- drawable-xxhdpi: 387px x 144px
+	- drawable-xhdpi: 258px x 96px
+	- drawable-hdpi: 194px x 72px
+	- drawable-mdpi: 129px x 48px
+	Required: true
+	Key: header
+	Default: revanced*borderless
+	Possible values:
+		header* (YouTube)
+		premium*header (YouTube Premium)
+		revanced* (ReVanced)
+		revanced*borderless (ReVanced (borderless logo))
+	Type: kotlin.String
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 158
+Name: Hide video action buttons
+Description: Adds options to hide action buttons (such as the Download button) under videos.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 159
+Name: Navigation buttons
+Description: Adds options to hide and change navigation buttons (such as the Shorts button).
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 160
+Name: Hide player overlay buttons
+Description: Adds options to hide the player cast, autoplay, caption button and next/ previous buttons.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 161
+Name: Hide endscreen cards
+Description: Adds an option to hide suggested video cards at the end of videos.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 162
+Name: Disable fullscreen ambient mode
+Description: Adds an option to disable the ambient mode when in fullscreen.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 163
+Name: Hide layout components
+Description: Adds options to hide general layout components.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 164
+Name: Hide info cards
+Description: Adds an option to hide info cards that creators add in the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 165
+Name: Hide player flyout menu items
+Description: Adds options to hide menu items that appear when pressing the gear icon in the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 166
+Name: Disable rolling number animations
+Description: Adds an option to disable rolling number animations of video view count, user likes, and upload time.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 167
+Name: Hide seekbar
+Description: Adds an option to hide the seekbar.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 168
+Name: Hide Shorts components
+Description: Adds options to hide components related to YouTube Shorts.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 169
+Name: Disable suggested video end screen
+Description: Adds an option to disable the suggested video end screen at the end of videos.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 170
+Name: Hide timestamp
+Description: Adds an option to hide the timestamp in the bottom left of the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 171
+Name: Miniplayer
+Description: Adds options to change the in app minimized player. Patching target 19.16+ adds modern miniplayers.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 172
+Name: Disable player popup panels
+Description: Adds an option to disable panels (such as live chat) from opening automatically.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 173
+Name: Remove player controls background
+Description: Removes the dark background surrounding the video player controls.
+Enabled: false
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 174
+Name: Custom player overlay opacity
+Description: Adds an option to change the opacity of the video player background when player controls are visible.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 175
+Name: Return YouTube Dislike
+Description: Adds an option to show the dislike count of videos with Return YouTube Dislike.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 176
+Name: Wide searchbar
+Description: Adds an option to replace the search icon with a wide search bar. This will hide the YouTube logo when active.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 177
+Name: Shorts autoplay
+Description: Adds options to automatically play the next Short.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 178
+Name: SponsorBlock
+Description: Adds options to enable and configure SponsorBlock, which can skip undesired video segments such as sponsored content.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 179
+Name: Spoof app version
+Description: Adds an option to trick YouTube into thinking you are running an older version of the app. This can be used to restore old UI elements and features.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 180
+Name: Change start page
+Description: Adds an option to set which page the app opens in instead of the homepage.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 181
+Name: Disable resuming Shorts on startup
+Description: Adds an option to disable the Shorts player from resuming on app startup when Shorts were last being watched.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 182
+Name: Enable tablet layout
+Description: Adds an option to enable tablet layout.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 183
+Name: Theme
+Description: Adds options for theming and applies a custom background theme (dark background theme defaults to amoled black).
+Enabled: true
+Options:
+	Title: Dark theme background color
+	Description: Can be a hex color (#AARRGGBB) or a color resource reference.
+	Required: false
+	Key: darkThemeBackgroundColor
+	Default: @android:color/black
+	Possible values:
+		@android:color/black (Amoled black)
+		@android:color/system_neutral1_900 (Material You)
+		#FF212121 (Classic (old YouTube))
+		#FF181825 (Catppuccin (Mocha))
+		#FF290025 (Dark pink)
+		#FF001029 (Dark blue)
+		#FF002905 (Dark green)
+		#FF282900 (Dark yellow)
+		#FF291800 (Dark orange)
+		#FF290000 (Dark red)
+	Type: kotlin.String
+	
+	Title: Light theme background color
+	Description: Can be a hex color (#AARRGGBB) or a color resource reference.
+	Required: false
+	Key: lightThemeBackgroundColor
+	Default: @android:color/white
+	Possible values:
+		@android:color/white (White)
+		@android:color/system_neutral1_50 (Material You)
+		#FFE6E9EF (Catppuccin (Latte))
+		#FFFCCFF3 (Light pink)
+		#FFD1E0FF (Light blue)
+		#FFCCFFCC (Light green)
+		#FFFDFFCC (Light yellow)
+		#FFFFE6CC (Light orange)
+		#FFFFD6D6 (Light red)
+	Type: kotlin.String
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 184
+Name: Alternative thumbnails
+Description: Adds options to replace video thumbnails using the DeArrow API or image captures from the video.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 185
+Name: Bypass image region restrictions
+Description: Adds an option to use a different host for user avatar and channel images and can fix missing images that are blocked in some countries.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 186
+Name: Announcements
+Description: Adds an option to show announcements from ReVanced on app startup.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 187
+Name: Always repeat
+Description: Adds an option to always repeat videos when they end.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 188
+Name: Remove background playback restrictions
+Description: Removes restrictions on background playback, including playing kids videos in the background.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 189
+Name: Enable debugging
+Description: Adds options for debugging.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 190
+Name: Spoof device dimensions
+Description: Adds an option to spoof the device dimensions which can unlock higher video qualities.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 191
+Name: Check watch history domain name resolution
+Description: Checks if the device DNS server is preventing user watch history from being saved.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 192
+Name: Spoof video streams
+Description: Spoofs the client video streams to allow video playback.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 193
+Name: GmsCore support
+Description: Allows patched Google apps to run without root and under a different package name by using GmsCore instead of Google Play Services.
+Enabled: true
+Options:
+	Title: GmsCore vendor group ID
+	Description: The vendor's group ID for GmsCore.
+	Required: true
+	Key: gmsCoreVendorGroupId
+	Default: app.revanced
+	Possible values:
+		app.revanced (ReVanced)
+	Type: kotlin.String
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 194
+Name: Bypass URL redirects
+Description: Adds an option to bypass URL redirects and open the original URL directly.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 195
+Name: Open links externally
+Description: Adds an option to always open links in your browser instead of in the in-app-browser.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 196
+Name: Remove tracking query parameter
+Description: Adds an option to remove the tracking info from links you share.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 197
+Name: Disable zoom haptics
+Description: Adds an option to disable haptics when zooming.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 198
+Name: Remember video quality
+Description: Adds an option to remember the last video quality selected.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 199
+Name: Playback speed
+Description: Adds options to customize available playback speeds, remember the last playback speed selected and show a speed dialog button to the video player.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube
+
+Index: 200
+Name: Restore old video quality menu
+Description: Adds an option to restore the old video quality menu with specific video resolution options.
+Enabled: true
+Compatible packages:
+	Package name: com.google.android.youtube 
