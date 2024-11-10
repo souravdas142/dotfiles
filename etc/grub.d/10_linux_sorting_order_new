@@ -1,0 +1,20 @@
+diff --git a/10_linux b/10_linux.bak
+index dbad7c5..fbaa7c5 100755
+--- a/10_linux
++++ b/10_linux.bak
+@@ -202,14 +202,11 @@ submenu_indentation=""
+ # other files to order the '.old' files after their non-old counterpart
+ # in reverse-sorted order.
+ 
+-#echo "$list" > /tmp/list
+-reverse_sorted_list=$(echo $list | tr ' ' '\n' | sed -e 's/\.old$/ 1/; / 1$/! s/$/ 2/' | version_sort -V | sed -e 's/ 1$/.old/; s/ 2$//')
+-#echo "$reverse_sorted_list" > /tmp/list2
++reverse_sorted_list=$(echo $list | tr ' ' '\n' | sed -e 's/\.old$/ 1/; / 1$/! s/$/ 2/' | version_sort -r | sed -e 's/ 1$/.old/; s/ 2$//')
+ 
+ if [ "x$GRUB_TOP_LEVEL" != x ]; then
+   reverse_sorted_list=$(grub_move_to_front "$GRUB_TOP_LEVEL" ${reverse_sorted_list})
+ fi
+-#echo "$reverse_sorted_list" > /tmp/list3
+ 
+ is_top_level=true
+ for linux in ${reverse_sorted_list}; do
