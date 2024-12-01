@@ -1,0 +1,9 @@
+# Disable Broadcom BCM43142 (PCI device ID 0x4365, Vendor ID 0x14e4)
+#SUBSYSTEM=="pci", ATTRS{vendor}=="0x14e4", ATTRS{device}=="0x4365", ACTION=="add", RUN+="/bin/sh -c 'echo 1 > /sys/class/net/wlan0/device/remove'"
+
+# Disable the Broadcom BCM43142 wireless card (wlan0) by unbinding the driver
+SUBSYSTEM=="pci", ATTRS{vendor}=="0x14e4", ATTRS{device}=="0x4365", ACTION=="add", RUN+="/bin/sh -c 'echo 0000:13:00.0 > /sys/bus/pci/drivers/wl/unbind'"
+
+# To re-enable the device and rebind the driver, use the following command:
+# echo 0000:13:00.0 > /sys/bus/pci/drivers/wl/bind
+

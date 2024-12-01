@@ -1,0 +1,1 @@
+#SUBSYSTEM=="net", SUBSYSTEMS=="pci", ATTRS{idVendor}=="10ec", RUN+="/usr/bin/modprobe -r r8619"
