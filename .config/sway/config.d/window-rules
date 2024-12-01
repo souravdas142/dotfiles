@@ -1,0 +1,23 @@
+
+# Rules for window of certain program
+
+for_window [class="^.*"]								border pixel 0
+for_window [window_role="bubble"]                       floating enable 
+for_window [class="Yad"]								floating enable
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
+#for_window [class="Org\.gnome\.Nautilus"]				floating enable
+#for_window [class="persepolis"]						floating enable
+#for_window [class="[pP]cmanfm"]                        floating enable
+for_window [class="java-lang-Thread"]					floating enable,resize set 640 480,move absolute position center
+for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
+for_window [class="firefox" window_role="About"]		floating enable
+for_window [class="firefox" window_role="GtkFileChooserDialog"]		floating enable,resize set 640 480,move absolute position center
+for_window [class="firefox" instance="Place"]			floating enable
+for_window [class="copyq"]								floating enable,resize set 640 480
+for_window [class="QuiteRss"]							floating enable,resize set 640 480
+for_window [title=".*[Ss]oft\ [kK]eyboard.*"]			floating enable,resize set 645 224
+for_window [class="cb-tty"]								floating enable,resize set 640 480
+

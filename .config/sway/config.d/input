@@ -1,0 +1,21 @@
+
+
+input "type:touchpad" {
+    #send_events enabled
+    tap enabled
+    tap_button_map lrm
+    #tap_drag enabled
+    #tap_drag_lock enabled
+    #accel_speed 0.3
+    accel_profile flat
+	pointer_accel 0.5
+    natural_scroll enabled
+    left_handed disabled
+    scroll_method two_finger
+	scroll_factor 0.1
+    dwt enabled
+    dwtp enabled
+}
+
+
+

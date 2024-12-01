@@ -1,0 +1,270 @@
+[
+  {
+    "height": 30,
+    "layer": "top",
+    "position": "top",
+    "modules-center": [
+      "sway/workspaces",
+      "sway/window"
+    ],
+    "modules-left": [
+	  "custom/launch_rofi",
+      "clock",
+      "idle_inhibitor",
+      "keyboard-state",
+      "bluetooth"
+    ],
+    "modules-right": [
+      "group/hardware",
+      "backlight",
+      "network",
+      "wireplumber",
+      "custom/power",
+      "tray"
+    ],
+
+
+    "sway/window": {
+      "format": "{shell}",
+      "icon": true,
+      "icon-size": 20,
+      "max-length": 50
+    },
+    "sway/workspaces": {
+	  "window-rewrite": {},
+      "disable-scroll": true,
+      "format": "{icon}",
+      "format-icons": {
+        "active": " ",
+        "default": " ",
+        "empty": " "
+      },
+      "on-click": "activate",
+      "persistent-workspaces": {
+        "1": "[]",
+        "2": "[]",
+        "3": "[]",
+        "4": "[]",
+        "5": "[]"
+      }
+    },
+
+
+    "custom/launch_rofi": {
+        "format": "",   // for arch
+        //  "format": "󰣛",   // for fedora
+        // "format": "",  // for opensuse
+        //"on-click": "rofi -n -show drun",
+        "on-click": "~/.config/rofi/launchers/colorful/launcher.sh",
+        //"on-click-right": "rofi -n -show filebrowser",
+        "tooltip": false
+    },
+    "backlight": {
+      "format": "{icon}{percent}%",
+      "format-icons": [
+        "<span color='#a9b665'> </span>",
+        "<span color='#7daea3'> </span>",
+        "<span color='#ebdbb2'> </span>",
+        "<span color='#bd6f3e'> </span>",
+        "<span color='#d3869b'> </span>",
+        "<span color='#d8a657'> </span>",
+        "<span color='#e78a4e'> </span>",
+        "<span color='#ea6962'> </span>"
+      ],
+      "tooltip": false
+    },
+  //  "battery": {
+  //    "format": "{icon}{capacity}%",
+  //    "format-alt": "{icon} {time}",
+  //    "format-charging": " {capacity}%",
+  //    "format-full": "{icon} <span foreground='#d8a657'> </span>",
+  //    "format-icons": [
+  //      "<span foreground='#fbf1c7'> </span>",
+  //      "<span foreground='#ea6962'> </span>",
+  //      "<span foreground='#d8a657'> </span>",
+  //      "<span foreground='#a9b665'> </span>",
+  //      "<span foreground='#a9b665'> </span>"
+  //    ],
+  //    "format-plugged": " {capacity}%",
+  //    "format-time": "{H}h {M}min",
+  //    "full-at": 100,
+  //    "interval": 5,
+  //    "states": {
+  //      "critical": 25,
+  //      "good": 85,
+  //      "warning": 30
+  //    },
+  //    "tooltip": true,
+  //    "tooltip-format": "Power: <b>{power} watt</b>"
+  //  },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+       "full-at": 100,
+       "interval": 5,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        //"format-plugged": " {capacity}%",
+        "format-time": "{H}h {M}min",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip": true,
+	    //"tooltip-format": "Power: <b>{power} watt</b>",
+		"tooltip-format": "Battery: {capacity}%\nPower Draw: {power} W\nTime Remaining: {time}",
+		//"tooltip-format": "🔋 Battery: {capacity}%\n⚡ Power: {power} W\n⏳ Time Left: {time}",
+		"tooltip-format-discharging": "Battery: {capacity}%\nPower Draw: {power} W\nDischarging: {time} remaining",
+	    "tooltip-format-charging": "Battery: {capacity}%\nCharging Time Left: {time}\nHealth: {health}%",
+		"tooltip-format-full": "Battery: Fully Charged!\nHealth: {health}%",
+		"tooltip-format-plugged": "Battery: {capacity}% (Plugged)\nPower: {power} W\nHealth: {health}%",
+		"tooltip-format-unplugged": "Battery: {capacity}% (Unplugged)\nTime Remaining: {timeTo}",
+		"tooltip-format-discharging-low": "⚠️ Low Battery: {capacity}%\nTime Remaining: {time}",
+		"tooltip-format-charging-low": "⚡ Charging Low Battery: {capacity}%\nTime Until Full: {time}"
+    },
+
+/*    "clock": {
+      "align": 0,
+      "format": "<span foreground='#ebdbb2'> </span>{:%I:%M%p}",
+      "format-alt": "<span foreground='#ebdbb2'> </span>{:%a %b %d, %G}",
+      "interval": 10,
+      "rotate": 0,
+      "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },*/
+	"clock": {
+     	"format": "{:%I:%M %p}",
+     	"rotate": 0,
+     	"format-alt": "{  %d·%m·%y}",
+     	//"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "<span>{calendar}</span>",
+     	"calendar": {
+         	"mode": "month",
+         	"format": {
+           	    "months": "<span color='#ff6699'><b>{}</b></span>",
+				"days": "<span color='#cdd6f4'><b>{}</b></span>",
+           	    "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+           	    "today": "<span color='#ffcc66'><b>{}</b></span>"
+             }
+        }
+    },
+    "cpu": {
+      "format": " {usage}%{icon}",
+      "format-icons": [
+        "<span color='#69ff94'>▁</span>",
+        "<span color='#2aa9ff'>▂</span>",
+        "<span color='#f8f8f2'>▃</span>",
+        "<span color='#f8f8f2'>▄</span>",
+        "<span color='#ffffa5'>▅</span>",
+        "<span color='#ffffa5'>▆</span>",
+        "<span color='#ff9977'>▇</span>",
+        "<span color='#dd532e'>█</span>"
+      ],
+      "interval": 10,
+      "on-click": "kitty -e btop",
+      "states": {
+        "critical": 50,
+        "good": 20,
+        "warning": 40
+      }
+    },
+    "custom/power": {
+      "format": " ",
+      "on-click": "wlogout",
+      "tooltip": false
+    },
+    "group/hardware": {
+      "drawer": {
+        "children-class": "not-battery",
+        "transition-duration": 500,
+        "transition-left-to-right": false
+      },
+      "modules": [
+        "battery",
+        "cpu",
+        "memory"
+      ],
+      "orientation": "inherit"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+      }
+    },
+    "keyboard-state": {
+      "capslock": true,
+      "format": {
+        "capslock": "C{icon}",
+        "numlock": "N{icon}"
+      },
+      "format-icons": {
+        "locked": "<span foreground='#89b482'> </span>",
+        "unlocked": "<span foreground='#d3869b'> </span>"
+      },
+      "numlock": true
+    },
+    "memory": {
+      "format": "<span foreground='#bd6f3e'> </span>{used:0.1f}G",
+      "interval": 10
+    },
+    "network": {
+	  //"interface": "{ifname}",
+	  "interval": 1,
+      "format-disabled": "<span foreground='#ea6962'> </span>",
+      "format-disconnected": "<span foreground='#ea6962'>󰤭 </span>",
+      "format-ethernet": " {ipaddr}/{cidr}",
+      "format-linked": "󰈁{ifname} (No IP)",
+      "format-wifi": "<span foreground='#ddc7a1' font_style='italic' font_weight='heavy'>󰁆 {bandwidthDownBytes} 󰁞 {bandwidthUpBytes}</span>",
+      "on-click": "kitty -e nmtui",
+	  "tooltip": true,
+	  "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>",
+      "tooltip-format-ethernet": "<span foreground='#7daea3'> </span>{ifname} via {gwaddr}",
+	  //"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+      //"tooltip-format-wifi": " {ifname}\n{essid} ({signalStrength}%)\n{ipaddr} via {gwaddr}",
+      "tooltip-format-disconnected": "Disconnected"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "format-icons": {
+        "balanced": " ",
+        "default": " ",
+        "performance": " ",
+        "power-saver": " "
+      },
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}"
+    },
+    "tray": {
+      "icon-size": 16,
+      "spacing": 10
+    },
+    "wireplumber": {
+      "format": "{icon}{volume}%",
+      "format-icons": {
+        "default": [
+          "<span foreground='#d8a657'></span>",
+          "<span foreground='#a9b665'> </span>",
+          "<span foreground='#d3869b'> </span>"
+        ],
+        "headphone": " "
+      },
+      "format-muted": "<span foreground='#ea6962'> </span>",
+      "on-click": "pwvucontrol",
+      "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "tooltip": false
+    },
+    "bluetooth": {
+      "format": " {status}",
+      "format-connected": "<span foreground='#7daea3'></span> {device_alias}",
+      "format-connected-battery": "<span foreground='#7daea3'></span> {device_alias}󰁹{device_battery_percentage}%",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "bluetoothctl power on",
+      "on-click-right": "bluetoothctl power off"
+    }
+  }
+]

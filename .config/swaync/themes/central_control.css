@@ -1,0 +1,335 @@
+/* ============================================================================
+   CONTROL CENTER
+============================================================================ */
+
+/* Blank Window Styles */
+.blank-window {
+  background: transparent;
+}
+
+/* Control Center Main Styles */
+.control-center {
+  background: alpha(@backgrounddark, 0.8);
+  border-radius: 10px;
+  border: 1px solid alpha(@backgrounddark, 0.2);
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  margin: 0 18px;
+  padding: 12px;
+}
+
+/* ------------------------------
+Notification Title & Clear Button
+------------------------------ */
+
+.widget-title {
+  font-size: 1em;
+  margin: 10px;
+}
+
+.widget-title button {
+  background: @buttons;
+  border-radius: 6px;
+  padding: 10px 16px;
+}
+
+.widget-title button:hover {
+  background-color: @hover;
+}
+
+.widget-title button:hover label {
+  color: @backgroundlight;
+}
+
+.widget-title button:active {
+  background-color: @selected;
+}
+
+/* ------------------------------
+   Notifications
+------------------------------ */
+
+/* Notification Background */
+.control-center .notification-row .notification-background,
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  background-color: alpha(@backgrounddark, 0.95);
+  border-radius: 14px;
+  margin: 4px 0;
+  padding: 8px;
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/* Critical Notification Styles */
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  color: @urgent;
+}
+
+/* Notification Content */
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 8px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .time {
+  color: alpha(#ffffff, 0.4);
+  font-size: 12px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  color: alpha(#ffffff, 0.7);
+  font-size: 12px;
+}
+
+/* Notification Actions */
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  /* min-height: 3.4em; */
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  background: alpha(@selected, 0.6);
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background: @selected;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @selected;
+}
+
+/* Close Button */
+.control-center .notification-row .notification-background .close-button {
+  background: alpha(@color3, 0.6);
+  border-radius: 6px;
+  margin: 0;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: @selected;
+  color: @backgrounddark;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @selected;
+}
+
+/* ------------------------------
+   Notification Groups
+------------------------------ */
+
+/* Group Header and Buttons */
+.notification-group {
+  margin: 2px 8px;
+}
+
+.notification-group-headers {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  margin: 4px;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @hover;
+}
+
+/* ============================================================================
+   WIDGETS
+============================================================================ */
+
+/* ------------------------------
+   Do Not Disturb Widget
+------------------------------ */
+
+.widget-dnd {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.widget-dnd > switch {
+  background: @buttons;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.widget-dnd > switch:hover {
+  background: @hover;
+}
+
+.widget-dnd > switch:checked {
+  background: @selected;
+}
+
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+   Buttons Menu
+------------------------------ */
+
+.widget-buttons-grid {
+  padding: 6px 2px;
+  background: transparent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 4px;
+  padding: 6px 16px;
+  background: @buttons;
+  border-radius: 8px;
+  min-width: 40px;
+  min-height: 26px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @hover;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @color1;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+  color: @backgroundlight;
+}
+
+/* ------------------------------
+   Music Player Widget
+------------------------------ */
+
+.widget-mpris {
+  background: @backgrounddark;
+  border-radius: 10px;
+  margin: 20px 6px;
+}
+
+.widget-mpris-player {
+  background-color: @backgrounddark;
+  border-radius: 10px;
+  padding: 12px;
+  padding-bottom: 0;
+  margin: 6px;
+}
+
+.widget-mpris button {
+  margin: 16px 32px 0;
+}
+
+.widget-mpris-album-art {
+  border-radius: 8px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------
+   Volume Widget
+------------------------------ */
+
+.widget-volume {
+  background: @backgrounddark;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 0 6px 20px;
+}
+
+.progressbar {
+  color: white;
+  background: @hover;
+}
+
+.widget-volume trough {
+  background: @buttons;
+  min-height: 8px;
+  border-radius: 8px;
+}
+
+.widget-volume trough highlight {
+  background-color: @hover;
+  border-radius: 6px;
+}
+
+.widget-volume trough slider {
+  background-color: @text;
+  border-radius: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  margin: -8px 0;
+}

@@ -1,0 +1,20 @@
+# Config for sway
+#
+# Read `man 5 sway` for a complete reference.
+
+# user config directory
+set $sway_home_dir ~/.config/sway
+
+include $sway_home_dir/config.d/variables
+include $sway_config_dir/theme
+include $sway_config_dir/input
+include $sway_config_dir/bootstrap
+include $sway_config_dir/key-bindings
+include $sway_config_dir/window-rules
+
+include /etc/sway/config.d/*
+
+
+# only enable this if every app you use is compatible with wayland
+# xwayland disable
+

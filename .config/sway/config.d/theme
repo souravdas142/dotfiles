@@ -1,0 +1,37 @@
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+font pango:System San Francisco Display 8
+
+smart_borders on
+default_border pixel 2
+default_floating_border pixel 2
+#gaps outer 0
+#gaps inner 5
+#gaps only enable if more than one container available
+#smart_gaps on
+
+# Launching wallpaper
+output * background '$sway_wall_dir/sway_wallpaper.png' fill
+
+#some color variable
+set $indColor			 #00ff0000
+set $lockColor			 #808080
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+#end of color variable
+
+# window colors
+# #                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color				$indColor
+client.unfocused        $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$indColor
+#hide_edge_borders both

@@ -1,0 +1,377 @@
+
+# Status Bar {{{
+bar {
+  swaybar_command waybar
+}
+# }}}:
+
+################################### Variables ############################
+
+
+set $sway_config_dir ~/.config/sway/config.d
+set $sway_scripts_dir ~/.config/sway/scripts
+set $sway_wall_dir ~/.config/sway/wallpaper
+
+
+
+# Mod{1,2,3,4}={Alt,,,Super}
+set $mod Mod4
+
+# Set program location
+set $alacritty_colorscheme ~/.local/bin/alacritty-colorscheme
+
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "DlM"
+
+
+# Launching Notification Daemon
+exec --no-startup-id dunst
+
+# Enbable Numlock on boot
+exec --no-startup-id numlockx on
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id nm-applet --sm-disable
+
+# Enbabling ibus for keyboard layout
+#exec_always --no-startup-id fcitx5
+
+# Systray bluetooth connector
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
+
+# Launching WARP VPN
+#exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
+
+
+# Launching RSS Feed 
+#exec --no-startup-id quiterss
+
+# Launching Persepolis systray
+#exec --no-startup-id persepolis --tray
+
+# Launching Xdman systray
+#exec_always --no-startup-id xdman &
+
+
+
+input "type:touchpad" {
+    #send_events enabled
+    tap enabled
+    tap_button_map lrm
+    #tap_drag enabled
+    #tap_drag_lock enabled
+    #accel_speed 0.3
+    accel_profile flat
+	pointer_accel 0.5
+    natural_scroll enabled
+    left_handed disabled
+    scroll_method two_finger
+	scroll_factor 0.1
+    dwt enabled
+    dwtp enabled
+}
+
+
+
+
+#{
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+
+
+
+############################## ALL KEY BINDINGS #################################
+
+# Launch a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty -e tmux new-session 
+bindsym $mod+Shift+Return exec kitty
+#bindsym $mod+Return exec tilix
+
+# Launching Nautilus
+# bindsym $mod+Shift+a exec nautilus
+
+# Launching PcmanfmQt
+# bindsym $mod+Shift+z exec pcmanfm --no-desktop
+
+# Clipboard start
+# bindsym $mod+Shift+p exec --no-startup-id gpaste-client ui
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Lock you screen
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur --off 15 -- --pass-power-keys  --pass-volume-keys
+
+#application launcher
+#bindsym $mod+d exec rofi -show drun -modi drun
+#bindsym $mod+d exec rofi -modi combi -show combi -combi-modi run#drun -show-icons
+bindsym $mod+d exec ~/.config/rofi/launchers/colorful/launcher.sh
+#bindsym $mod+Shift+d exec ~/.config/rofi/launchers/colorful/rofimoji
+
+
+# Launching Browser
+#bindsym $mod+Shift+f exec firefox
+#bindsym $mod+Shift+f exec brave
+bindsym $mod+Shift+f exec google-chrome-stable --gtk-version=4 --enable-wayland-ime --wayland-text-input-version=3
+bindsym $mod+Shift+g exec google-chrome-beta
+
+# restart polybar
+#bindsym $mod+Shift+s exec ~/.config/polybar/randomLaunch.sh
+
+
+# Launching Codeblocks
+#bindsym Control+Mod1+c exec codeblocks
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace		$ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace		$ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Sometimes Accidently you poweroff your system at lockscreen instead of unlocking. Below will overide this behaviour.
+# To Enable below, You have to set "HandlePowerKey=ignore" at "/etc/systemd/logind.conf"
+# you have to pass "-- --pass-power-keys" to "betterlockscreen" to use XF86PowerOff key at lockscreen.
+# After "--" `betterlockscreen Assumes all are `i3lock` options.
+# It will disable your physical power button and mimic the same behaviour with "mod+XF86PowerOff"
+bindsym $mod+XF86PowerOff  exec --no-startup-id /sbin/poweroff
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+#}
+
+# Use pactl to adjust volume in PulseAudio.
+# DunstifyVolLight a script that control notifications behaviour
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && DunstifyVolLight volUp
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && DunstifyVolLight volMute
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5% && DunstifyVolLight brightnessInc 
+bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 5%- && DunstifyVolLight brightnessDec
+
+############################### screenshot bindigs ###############################
+
+# imgToClip alias to xclip -selection clipboard image/png -i
+
+
+# Full screen screenshot
+bindsym Print exec --no-startup-id sway-screenshot -m output -o ~/Pictures/Screenshot/
+
+
+# Active window screenshot
+bindsym  $mod+Print exec --no-startup-id sway-screenshot -m window -o ~/Pictures/Screenshot/
+
+# Crosshair selection screenshot
+bindsym Shift+Print exec --no-startup-id sway-screenshot -m region -o ~/Pictures/Screenshot/
+
+# Delayed Screenshot    -> TODO
+bindsym Ctrl+Print exec --no-startup-id sway-screenshot -m region -t 5 -o ~/Pictures/Screenshot/
+
+
+
+## Full screen screenshot
+#bindsym Print exec --no-startup-id IMG=~/Pictures/Screenshot/Screenshot-$(date +%Y-%m-%d_%H-%m-%s).png \
+#	&& grim -t png $IMG && wl-copy < $IMG
+#
+## Active window screenshot
+#bindsym  $mod+Print exec --no-startup-id IMG=~/Pictures/Screenshot/Screenshot-$(date +%Y-%m-%d_%H-%m-%s).png \
+#	&& grim -t png -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" \
+#	$IMG && wl-copy < $IMG
+#
+## Crosshair selection screenshot
+#bindsym Shift+Print exec --no-startup-id IMG=~/Pictures/Screenshot/Screenshot-$(date +%Y-%m-%d_%H-%m-%s).png \
+#	 && grim -t png -g "$(slurp)" $IMG && wl-copy < $IMG
+#
+## Delayed Screenshot    -> TODO
+#
+
+
+
+# Toggle between all available colorscheme
+bindsym $mod+Shift+m exec $alacritty_colorscheme -T
+
+# Get notification with current colorscheme
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
+
+
+################################### END OF ALL KEYBOARD BINDIGS ####################################
+
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+font pango:System San Francisco Display 8
+
+gaps outer 0
+gaps inner 5
+#gaps only enable if more than one container available
+#smart_gaps on
+
+# Launching wallpaper
+output * background '$sway_wall_dir/sway_wallpaper.png' fill
+
+#some color variable
+set $indColor			 #00ff0000
+set $lockColor			 #808080
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+#end of color variable
+
+# window colors
+# #                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color				$indColor
+client.unfocused        $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$indColor
+#hide_edge_borders both
+
+
+################################### Some startup Applicaltion ############################
+
+
+# Rules for window of certain program
+
+for_window [class="^.*"]								border pixel 0
+for_window [window_role="bubble"]                       floating enable 
+for_window [class="Yad"]								floating enable
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
+#for_window [class="Org\.gnome\.Nautilus"]				floating enable
+#for_window [class="persepolis"]						floating enable
+#for_window [class="[pP]cmanfm"]                        floating enable
+for_window [class="java-lang-Thread"]					floating enable,resize set 640 480,move absolute position center
+for_window [class="persepolis"]							move window to workspace $ws10,layout stacking
+for_window [class="firefox" window_role="About"]		floating enable
+for_window [class="firefox" window_role="GtkFileChooserDialog"]		floating enable,resize set 640 480,move absolute position center
+for_window [class="firefox" instance="Place"]			floating enable
+for_window [class="copyq"]								floating enable,resize set 640 480
+for_window [class="QuiteRss"]							floating enable,resize set 640 480
+for_window [title=".*[Ss]oft\ [kK]eyboard.*"]			floating enable,resize set 645 224
+for_window [class="cb-tty"]								floating enable,resize set 640 480
+

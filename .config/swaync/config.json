@@ -1,0 +1,82 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "layer-shell": true,
+  "cssPriority": "user",
+  "control-center-width": 400,
+  "control-center-height": 700,
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-margin-left": 8,
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+  "fit-to-screen": false,
+  "scripts": {
+    "sound": {
+      "exec": "mpv /usr/share/sounds/freedesktop/stereo/bell.oga",
+      "run-on": "receive",
+      "app-name": "^(?!de.haeckerfelix.Fragments|equibop).*"
+    },
+    "complete": {
+      "exec": "mpv /usr/share/sounds/freedesktop/stereo/complete.oga",
+      "run-on": "receive",
+      "app-name": "de.haeckerfelix.Fragments"
+    }
+  },
+  "widgets": [
+    "buttons-grid",
+    "title",
+    "notifications",
+    "mpris",
+    "volume",
+    "dnd"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "volume": {
+      "label": "   "
+    },
+    "label": {
+      "max-lines": 1,
+      "text": " "
+    },
+    "mpris": {
+      "image-size": 60,
+      "image-radius": 12
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": " ",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "",
+          "command": "overskride"
+        },
+        {
+          "label": "󰓃",
+          "command": "pwvucontrol"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && hyprshade on nightmode || hyprshade off'",
+          "update-command": "sh -c '[[ $(hyprshade current) == \"nightmode\" ]] && echo true || echo false'"
+        }
+      ]
+    }
+  }
+}

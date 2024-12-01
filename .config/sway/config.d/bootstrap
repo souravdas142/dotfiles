@@ -1,0 +1,44 @@
+
+# Status Bar {{{
+bar {
+  swaybar_command waybar
+}
+# }}}:
+
+# Lock automatically after 300 seconds. Turn off display after 600s.
+#exec swayidle -w \
+#  timeout 300 'swaylock -f' \
+#  timeout 450 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#  before-sleep 'swaylock -f'
+exec hypridle
+
+# Launching Notification Daemon
+#exec --no-startup-id dunst
+exec swaync
+
+# Enbable Numlock on boot
+exec --no-startup-id numlockx on
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id nm-applet --sm-disable
+
+# Enbabling ibus for keyboard layout
+#exec_always --no-startup-id fcitx5
+
+# Systray bluetooth connector
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
+
+# Launching WARP VPN
+#exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
+
+
+# Launching RSS Feed 
+#exec --no-startup-id quiterss
+
+# Launching Persepolis systray
+#exec --no-startup-id persepolis --tray
+
+# Launching Xdman systray
+#exec_always --no-startup-id xdman &
+
