@@ -6,8 +6,9 @@
 
 dir="$HOME/.config/polybar"
 #themes=( blocks cuts default forest material shapes colorblocks grayblocks docky panels shades )
-themes=( cuts default material shapes colorblocks hack docky panels shades )
-len=9
+#themes=( cuts default material shapes colorblocks hack docky panels shades )
+themes=( cuts material shapes colorblocks hack docky panels shades )
+len=8
 
 #killall -q polybar
 #while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done

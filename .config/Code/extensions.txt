@@ -1,0 +1,15 @@
+asvetliakov.vscode-neovim
+cschlosser.doxdocgen
+danielpinto8zz6.c-cpp-compile-run
+jeff-hykin.better-cpp-syntax
+kevinnorman.kali-terminal-dark
+ms-python.debugpy
+ms-python.python
+ms-vscode-remote.remote-ssh
+ms-vscode.cmake-tools
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cpptools-themes
+twxs.cmake
+vscode-icons-team.vscode-icons
+vscodevim.vim

@@ -1,0 +1,32 @@
+{
+    "terminal.external.linuxExec": "tilix",
+    "c-cpp-compile-run.run-in-external-terminal": true,
+    "c-cpp-compile-run.c-flags": "-Wall -Wextra -pedantic -g -std=c11 -I/usr/lib64/dbus-1.0/include/ -I/usr/include/dbus-1.0/ -ldbus-1",
+    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -pedantic -g -std=c++17",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "line",
+    "vim.cursorStylePerMode.replace": "line",
+    "vim.cursorStylePerMode.visual": "line",
+    "vim.cursorStylePerMode.visualblock": "line",
+    "vim.cursorStylePerMode.visualline": "line",
+    "C_Cpp.debugger.useBacktickCommandSubstitution": true,
+    "workbench.colorTheme": "Kali Terminal Dark",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "'Fira Code'",
+    "editor.fontFamily": "'Fira Code' ,'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontWeight": "400",
+    "editor.fontLigatures": "'cv06', 'cv09', 'ss02', 'ss03', 'ss05', 'zero', 'onum'",
+    "workbench.iconTheme": "vscode-icons",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "settingsSync.ignoredExtensions": [
+        "georgewfraser.vscode-javac"
+    ],
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/sourav/.config/Code/User/init.vim"
+}

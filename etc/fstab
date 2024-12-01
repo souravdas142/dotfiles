@@ -1,0 +1,18 @@
+# /dev/sdb2 LABEL=/
+UUID=58e8875d-0d64-44de-a965-c058caaa3e57	/         	ext4      	rw,relatime	0 1
+
+# /dev/sdb1 LABEL=BOOT
+UUID=A526-9474      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda4 LABEL=SupVar
+UUID=0bf463c6-f9ff-42e8-a237-ebd1dd18dd91	/var      	ext4      	rw,relatime	0 2
+
+# /dev/sda6 LABEL=SupCache
+UUID=172fc9c0-e5c0-4f98-a955-e9e716ae0834	/cacheHDD 	ext4      	rw,relatime	0 2
+
+# /dev/sda1 LABEL=SupHome
+UUID=083c97cb-513e-4c3c-8ae2-61301e795c0d	/homeHDD  	ext4      	rw,relatime	0 2
+
+# /dev/sdb3 LABEL=home
+UUID=3c80e9c6-7928-4484-bdf4-9f524e676bd7	/home     	ext4      	rw,relatime	0 2
+

@@ -31,7 +31,7 @@ exec_always --no-startup-id nm-applet --sm-disable
 exec_always --no-startup-id ibus-daemon --xim -d -r
 
 # Systray bluetooth connector
-exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog
 
 # Launching WARP VPN
 exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
@@ -40,7 +40,7 @@ exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
 #exec --no-startup-id copyq
 #exec --no-startup-id gpaste-client start
 
-# Launching RSS Feed 
+# Launching RSS Feed
 #exec --no-startup-id quiterss
 
 # Launching Persepolis systray
@@ -112,12 +112,13 @@ floating_modifier $mod
 # Rules for window of certain program
 
 for_window [class="^.*"]								border pixel 0
-for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="bubble"]                       floating enable
 for_window [class="Yad"]								floating enable
 for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
-for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="dialog"]                       floating enable
 for_window [window_type="menu"]                         floating enable
+for_window [class="zoom"]								floating enable,resize set 768 480
 #for_window [class="Org\.gnome\.Nautilus"]				floating enable
 #for_window [class="persepolis"]						floating enable
 #for_window [class="[pP]cmanfm"]                        floating enable
@@ -147,7 +148,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$i
 
 # Launch a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty -e tmux new-session 
+bindsym $mod+Return exec alacritty -e tmux new-session
 bindsym $mod+Shift+Return exec kitty
 #bindsym $mod+Return exec tilix
 
@@ -311,7 +312,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 5 @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && DunstifyVolLight volDwn && polybar-msg action ipc-audio_polybar hook 0
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && DunstifyVolLight volMute && polybar-msg action ipc-audio_polybar hook 0
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5% && DunstifyVolLight brightnessInc 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5% && DunstifyVolLight brightnessInc
 bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 5%- && DunstifyVolLight brightnessDec
 
 ############################### screenshot bindigs ###############################
@@ -320,15 +321,15 @@ bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 5%- && Dunst
 
 # Full Screen
 bindsym --release Print exec --no-startup-id maim --format png -m 1 | \
-tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
 
 # Active Window
 bindsym --release $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) --format png -m 1 | \
-tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
 
 # Crosshear Selection
 bindsym --release Shift+Print exec --no-startup-id maim -s --format png -m 1 | \
-tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png 
+tee ~/Pictures/Screenshot/Screenshot-$(date '+%m%d%y-%H%M%S').png | xclip -selection clipboard -t image/png
 
 # Full Screen (Fallback)
 bindsym $mod+Shift+Print --release exec --no-startup-id "flameshot full --clipboard --path \
@@ -339,7 +340,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id "flameshot full --clipbo
 bindsym $mod+Shift+m exec $alacritty_colorscheme -T
 
 # Get notification with current colorscheme
-bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s`
 
 
 ################################### END OF ALL KEYBOARD BINDIGS ####################################

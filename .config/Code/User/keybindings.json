@@ -1,0 +1,11 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "f8",
+        "command": "-extension.CompileRunInExternalTerminal"
+    },
+    {
+        "key": "alt+space",
+        "command": "extension.CompileRunInExternalTerminal"
+    }
+]

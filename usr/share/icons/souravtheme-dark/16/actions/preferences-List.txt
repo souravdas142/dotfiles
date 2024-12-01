@@ -1,0 +1,9 @@
+If you like `preferences.svg` icon you may symlink other `preferences` icons to 
+`preferences.svg` like below.
+
+preferences-desktop-accessibility1.svg -> preferences-desktop.svg
+preferences-desktop-apps-symbolic.svg -> preferences-desktop.svg
+preferences-desktop-symbolic.svg -> preferences-desktop.svg
+preferences-devices-scanner.svg -> preferences-desktop.svg
+preferences-devices-tree.svg -> preferences-desktop.svg
+preferences.svg -> preferences-desktop.svg 

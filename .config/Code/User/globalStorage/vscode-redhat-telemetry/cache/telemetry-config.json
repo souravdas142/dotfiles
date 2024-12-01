@@ -1,0 +1,12 @@
+{
+  "*": {
+    "enabled": "all",
+    "refresh": "12h",
+    "includes": [
+      {
+        "name": "*"
+      }
+    ]
+  },
+  "timestamp": 1688052890135
+}
