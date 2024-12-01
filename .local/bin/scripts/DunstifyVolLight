@@ -15,6 +15,7 @@
 
 flag=1
 Msg=
+ntfy_vol_bright="ntfy_vol_bright"
 case $1 in
 	brightnessInc)
 		#percent=$(xbacklight -get | roundoff )
@@ -24,6 +25,7 @@ case $1 in
 		appName="changeBrightness-Up"
 		flag=0
 		Msg="Brightness"
+		ntfy_vol_bright="Brightness"
 		;;
 	brightnessDec)
 		#percent=$(xbacklight -get | roundoff )
@@ -33,6 +35,7 @@ case $1 in
 		appName="changeBrightnessDwn"
 		flag=0
 		Msg="Brightness"
+		ntfy_vol_bright="Brightness"
 		;;
 	volUp)
 		percent=$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f2) * 100 / 1" | bc -l )
@@ -41,6 +44,7 @@ case $1 in
 		appName="ChangevolUp"
 		flag=0
 		Msg="Volume"
+		ntfy_vol_bright="Volume"
 		;;
 	volDwn)
 		percent=$( echo "scale=0; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f2) * 100 / 1" | bc -l )
@@ -49,6 +53,7 @@ case $1 in
 		appName="ChangevolDwn"
 		flag=0
 		Msg="Volume"
+		ntfy_vol_bright="Volume"
 		;;
 	volMute)
 		wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -ie "\[MUTED\]" > /dev/null
@@ -62,20 +67,13 @@ case $1 in
 		appName="toogleVolMute"
 		flag=0
 		Msg=$( [[ $exitCode == 0 ]] && echo "Volume Muted" || echo "Volume Unmuted" )
+		ntfy_vol_bright="Volume"
 		;;
 	*)
 		;;
 esac
 
 if [[ $flag == 0 ]]; then
-	dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" "<b>◯ </b>" $percent )"
-	#dunstify -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
+	notify-send -h string:private-synchronous:$ntfy_vol_bright -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
 	flag=1
 fi
-
-
-
-
-
-
-

@@ -21,6 +21,7 @@ urgency=
 Msg=
 setIcon=
 flag=1
+ntfy_bat="ntfy_bat"
 if acpi -a | grep -i "off" >> /dev/null ; then
 #if [[ $? ]];then # discharging
 	rate=$( acpi -b | cut -d, -f 2 | cut -d% -f 1 )
@@ -79,7 +80,7 @@ if [[ $flag == 0 ]]; then
 	#urgency="critical"
 	#timeOutMiliSec=31000 #Default
 
-	dunstify -a $appName -u $urgency -t $timeOutMiliSec -i $setIcon -r $notiId  " Battery : $percent"  "  <b><i>$Msg</i></b>\n  $(getProgressString 10 "<b> </b>" " " $percent )"
+	notify-send -h string:private-synchronous:$ntfy_bat -a $appName -u $urgency -t $timeOutMiliSec -i $setIcon -r $notiId  " Battery : $percent"  "  <b><i>$Msg</i></b>\n  $(getProgressString 10 "<b> </b>" " " $percent )"
 	flag=1
 
 fi
