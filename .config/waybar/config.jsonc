@@ -21,6 +21,7 @@
       "wireplumber",
 	  "custom/notification",
       "custom/power",
+	  "custom/battery_notify",
       "tray"
     ],
 
@@ -142,6 +143,14 @@
 		"tooltip-format-discharging-low": "⚠️ Low Battery: {capacity}%\nTime Remaining: {time}",
 		"tooltip-format-charging-low": "⚡ Charging Low Battery: {capacity}%\nTime Until Full: {time}"
     },
+
+	"custom/battery_notify": {
+		"exec": "~/.config/waybar/scripts/battery-notify.sh",
+		"interval": 30,
+		"format": "{text}",
+		"tooltip": false
+	},
+		
 
 /*    "clock": {
       "align": 0,
