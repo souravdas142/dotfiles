@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/sourav/Pictures/road_marking_cloudy_124093_5472x3648.jpg'

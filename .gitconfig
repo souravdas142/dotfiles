@@ -1,0 +1,8 @@
+[user]
+	name = Sourav Das
+	email = souravdas142@gmail.com
+	signingkey = 8C2DB43C
+[core]
+	compression = 9
+[push]
+	followTags = true
