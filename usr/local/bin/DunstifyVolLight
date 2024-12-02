@@ -1,0 +1,76 @@
+#!/bin/bash
+
+#################################################################
+#																#
+#			Maintainer : Sourav Das								#
+#			GitRepo : github.com/souravdas142					#
+#																#	
+#					Dunstify:									#
+#							brightnessNotification				#
+#							volumeNotification					#	
+#							maybe some other on					#	
+#							another day :)						#
+#																#
+##################################################################
+
+flag=1
+Msg=
+ntfy_vol_bright="ntfy_vol_bright"
+case $1 in
+	brightnessInc)
+		#percent=$(xbacklight -get | roundoff )
+		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
+		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
+		notiId=9999
+		appName="changeBrightness-Up" 
+		flag=0
+		Msg="Brightness"
+		ntfy_vol_bright="Brightness"
+		;;
+	brightnessDec)
+		#percent=$(xbacklight -get | roundoff )
+		percent="$(brightnessctl i | awk -F'[(,%]' '/Current/ {print $2}')"
+		setIcon="/usr/share/icons/Qogir/symbolic/status/display-brightness-high-symbolic.svg" 
+		notiId=9999
+		appName="changeBrightnessDwn"
+		flag=0
+		Msg="Brightness"
+		ntfy_vol_bright="Brightness"
+		;;
+	volUp)
+		percent=$( amixer -D default get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		setIcon=audio-volume-high
+		notiId=9998
+		appName="ChangevolUp"
+		flag=0
+		Msg="Volume"
+		ntfy_vol_bright="Volume"
+		;;
+	volDwn)
+		percent=$( amixer -D default get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		setIcon=audio-volume-low
+		notiId=9998
+		appName="ChangevolDwn"
+		flag=0
+		Msg="Volume"
+		ntfy_vol_bright="Volume"
+		;;
+	volMute)
+		amixer -D default get Master | tail -1 | grep -ie "\[off\]" > /dev/null
+		exitCode=$?
+		percent=$( [[ $exitCode == 0 ]] && echo "0" || amixer get Master | tail -1 | awk -F'[[,%]' '{print $2}' )
+		setIcon=$( [[ $exitCode == 0 ]] && echo "/usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg" || echo "audio-volume-high" )
+		notiId=9998 
+		appName="toogleVolMute"
+		flag=0 
+		Msg=$( [[ $exitCode == 0 ]] && echo "Volume Muted" || echo "Volume Unmuted" )
+		ntfy_vol_bright="Volume"
+		;;
+	*)
+		;;
+esac
+
+if [[ $flag == 0 ]]; then
+	notify-send -h string:private-synchronous:$ntfy_vol_bright -a $appName -u normal -i $setIcon -r $notiId "$Msg : $percent" "$(getProgressString 10 "<b> </b>" " " $percent )"
+	flag=1
+fi

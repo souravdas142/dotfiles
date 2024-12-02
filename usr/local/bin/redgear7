@@ -1,0 +1,106 @@
+#!/bin/bash
+
+####################### Functionalitis ##############################
+#    
+#   1. Detect device when plugged
+#   2. a. store prevous default sink/source into a variable
+#      b. store fallback sink/source device
+#      set sink source/output default to redgear
+#   3. launch easyeffect with a set profile 
+#      Compatible with microphone
+#   4. set volume to default one
+#   
+#    
+#   1. detect when unplugged 
+#   2.   Close easyeffects
+#   3. Restore default sink/source device
+#   4. Restore volume
+#    
+#   ## Device Details ##
+#
+#       devname = /dev/snd/pcmC2D0C
+#		driver = snd-usb-audio
+#		subsystem = usb/sound
+#		product = d8c/12/100
+#		action = add/remove
+#		idVendor=d8c
+#		idModel=0012
+#		idRevision=0100
+#       KERNEL = pcmC2D0C
+#
+#
+# rules = KERNEL=="pcmC2D0c", SUBSYSTEM=="sound", ATTRS{idProduct}=="0012", ATTRS{idVendor}=="0d8c", ACTION=="ADD", RUN+="/usr/bin/redgear.sh"
+#
+#    
+###################################################################
+
+
+
+
+action=$1 # Action will be substitute with add/remove events set by udev
+
+echo "Running by uid = $EUID" >> /tmp/udev-redgear.tmp
+
+# wait a second this is too fast for udev
+sleep 2
+
+redGearSink=$(pactl list sinks short | grep -E '.*output.*usb-C-Media_Electronics_Inc.*' | cut -f 2)
+redGearSource=$(pactl list sources short | grep -E '.*output.*usb-C-Media_Electronics_Inc.*' | cut -f 2)
+redGearSourceFallBack=$(pactl list sources short | grep -E '.*input.*usb-C-Media_Electronics_Inc.*' | cut -f 2)
+
+prevSink="$(pactl info | grep 'Default Sink' | cut -d':' -f 2)"
+prevSource="$(pactl info | grep 'Default Source' | cut -d':' -f 2)"
+
+fallBackDefaultSink=$(pactl list sinks short | grep pci | cut -f 2)
+fallBackDefaultSource=$(pactl list sources short | grep -E '.*input.*pci*' | cut -f 2)
+
+
+function addAction() {
+
+	pactl set-default-sink ${redGearSink}
+	# pactl set-default-source ${redGearSource}
+	pactl set-default-source ${redGearSourceFallBack}
+    # wait a second this is too fast for udev
+	sleep 1
+	#echo "Setting default volume of sink to 53%"
+	pactl set-sink-volume @DEFAULT_SINK@ 53% 2>&1 >> /tmp/udev-redgear.tmp
+	echo "$(date): addAction successfully run $?" >> /tmp/udev-redgear.tmp
+#	sleep 1
+#	/usr/bin/systemctl --user --no-block start easyeffects.service
+
+}
+
+
+function removeAction() {
+
+	
+#	/usr/bin/systemctl --user --no-block stop easyeffects.service
+	echo "$(date): removeAction successfully run" >> /tmp/udev-redgear.tmp
+
+}
+
+function dry-run() {
+
+	echo -e "\n\
+              redGearSink ==> $redGearSink \n\
+              redGearSource ==> $redGearSource \n\
+              redGearSourceFallBack ==> $redGearSourceFallBack \n\n\
+              prevSink ==> $prevSink \n\
+              prevSource ==> $prevSource \n\n\
+              fallBackDefaultSink ==> $fallBackDefaultSink \n\
+              fallBackDefaultSource ==> $fallBackDefaultSource \n\n\
+         "
+
+}
+
+if [ $action == "add" ]; then
+   addAction
+elif [ $action == "remove" ]; then
+	removeAction
+elif [ $action == "dry-run" ]; then
+	dry-run
+else
+	echo "$* is not a valid option"
+fi
+
+

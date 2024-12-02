@@ -1,0 +1,38 @@
+# Maintainer: Pieter Joost van de Sande <pj@born2code.net>
+# Contributor: Dylan Pitts <dylan@dpitts.us>
+
+pkgname=naivecalendar-git
+_pkgname="naivecalendar"
+provides=("naivecalendar.py")
+conflicts=("naivecalendar.py")
+pkgdesc="A rofi calendar popup"
+url="https://framagit.org/Daguhh/naivecalendar"
+pkgver=20240205.37f2ca4
+pkgrel=1
+arch=("any")
+depends=("python>=3")
+makedepends=("git")
+optdepends=('xclip: copy to clipboard'
+            'sensible-utils: ability to choose editor in update subcommand'
+            'python-caldav: show caldav events in calendar, minimal support')
+source=("git+https://framagit.org/Daguhh/naivecalendar.git")
+md5sums=("SKIP")
+license=('MIT')
+
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+  git log -1 --format='%cd.%h' --date=short | tr -d -
+}
+
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  # Change the man page installation path to standard `/usr/share/man/man1`
+  sed -i 's|man1dir = $(prefix)/share/man/man1|man1dir = $(prefix)/share/man/man1|' Makefile
+}
+
+package() {
+  cd "${srcdir}/${_pkgname}"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  make DESTDIR="${pkgdir}" prefix="/usr" install
+}
+

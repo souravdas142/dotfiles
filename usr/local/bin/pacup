@@ -1,0 +1,5 @@
+#!/bin/bash
+
+age=${1:-"1"}
+
+[[ $EUID != 0 ]] && echo "[error] run with sudo" || ( sudo reflector --verbose --latest 30 --number 10 -p http -p https -p rsync --sort rate --save /etc/pacman.d/mirrorlist --download-timeout 15 --age $age && sudo pacman -Syy && sudo powerpill -Su --noconfirm )
