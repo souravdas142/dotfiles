@@ -216,11 +216,15 @@
       "orientation": "inherit"
     },
     "idle_inhibitor": {
+	  "timeout": 180,
       "format": "{icon}",
       "format-icons": {
         "activated": " ",
         "deactivated": " "
-      }
+      },
+	  "tooltip": true,
+	  "tooltip-format-activated": "Movie Mode {status}",
+	  "tooltip-format-deactivated": "Movie Mode {status}"
     },
     "keyboard-state": {
       "capslock": true,

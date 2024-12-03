@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/sourav/.local/share/wallpapers/2_DisertArt.jpg"
+let background = "#351f19"
+let foreground = "#ccc7c5"
+let cursor     = "#ccc7c5"
+
+" Colors
+let color0  = "#351f19"
+let color1  = "#709793"
+let color2  = "#7DC1BD"
+let color3  = "#98A79F"
+let color4  = "#E0AA99"
+let color5  = "#A0C8B8"
+let color6  = "#ECDCA9"
+let color7  = "#ccc7c5"
+let color8  = "#7d6b66"
+let color9  = "#709793"
+let color10 = "#7DC1BD"
+let color11 = "#98A79F"
+let color12 = "#E0AA99"
+let color13 = "#A0C8B8"
+let color14 = "#ECDCA9"
+let color15 = "#ccc7c5"

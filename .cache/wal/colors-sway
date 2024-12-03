@@ -1,0 +1,21 @@
+set $wallpaper /home/sourav/.local/share/wallpapers/2_DisertArt.jpg
+
+set $background #351f19
+set $foreground #ccc7c5
+
+set $color0 #351f19
+set $color1 #709793
+set $color2 #7DC1BD
+set $color3 #98A79F
+set $color4 #E0AA99
+set $color5 #A0C8B8
+set $color6 #ECDCA9
+set $color7 #ccc7c5
+set $color8 #7d6b66
+set $color9 #709793
+set $color10 #7DC1BD
+set $color11 #98A79F
+set $color12 #E0AA99
+set $color13 #A0C8B8
+set $color14 #ECDCA9
+set $color15 #ccc7c5
