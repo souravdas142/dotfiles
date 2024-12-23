@@ -1,0 +1,12 @@
+
+/************************************************
+ * ROFI Color theme
+ * User: Daguhh
+ * Copyright: 2020 Daguhh
+ ***********************************************/
+
+#window {
+    location:               north west;
+    x-offset:               1%;
+    y-offset:               1%;
+}

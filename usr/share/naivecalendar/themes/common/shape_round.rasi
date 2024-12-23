@@ -1,0 +1,67 @@
+
+#window {
+    fullscreen:             false;
+    hide-scrollbar:         true;
+    lines:                  8;
+    line-padding:           10;
+    padding:                10px;
+    width:                  320px;
+    columns:                7;
+    border:                 5;
+    font:                   "hack 12";
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       2px 0px 0px ;
+    padding:      1px 0px 10px;
+}
+#listview {
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+    spacing:      3px;
+    scrollbar:    false;
+    padding:      6px ;
+    columns:      7;
+    lines:        8;
+}
+#element {
+    padding: 10px 4px 10px 6px;
+    border-radius:    30;
+}
+#element.selected.active {
+    border-radius:    0;
+}
+#element.alternate.active {
+    border-radius:    0;
+}
+#mode-switcher {
+    border:       0px 0px 0px ;
+}
+#button {
+    spacing:    0;
+}
+#inputbar {
+    spacing:    0;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+}
+#entry {
+    spacing:    0;
+}
+#prompt {
+    spacing:    0;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+}
+

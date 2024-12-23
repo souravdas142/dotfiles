@@ -1,0 +1,283 @@
+#!/usr/bin/env bash
+
+# Update a naivecalendar theme parameter in all themes, use carefully!
+
+PARAM_LIST="""
+USER_LOCALE
+PROMT_DATE_FORMAT
+IS_TODAY_HEAD_MSG
+IS_LOOP_TODAY_HEAD_MSG
+TODAY_HEAD_MSG_TXT
+DAY_ABBR_LENGHT
+FIRST_DAY_WEEK
+SYM_NEXT_MONTH
+SYM_NEXT_YEAR
+SYM_PREV_MONTH
+SYM_PREV_YEAR
+NB_ROW
+ROW_WEEK_SYM
+ROW_CAL_START
+ROW_BAR_2
+ROW_BAR_1
+SYMS_BAR_2
+SYMS_BAR_1
+SYM_SHOW_HELP
+SYM_SWITCH_THEME
+SYM_SHOW_EVENTS
+SYM_SWITCH_EVENT
+SYM_SHOW_MENU
+SYM_BACK_TO_CALENDAR
+SYM_GO_TODAY
+"""
+
+help_msg () {
+    echo """
+**usage:** naivecalendar *update-themes* [-h] [-s] [-L] [-p PARAMETER] [-v NEW_VALUE] [-f REGEX] [-e USER_EDITOR]
+
+Give a new value to a calendar parameter for all themes in ~/.config/naivecalendar/themes/
+
+/!\\ Saving your themes before use is a good practice
+
+**optional arguments:**
+  -h, --help                    show this help message and exit
+  -s, --simulate                don't change files and print to stdout
+  -L, --list-parameters         show all parameters names
+  -T, --list-themes             show all user themes
+  -a, --all-parameters          open an editor to giva a value to all parameters
+  -e, --editor                  force editor with -a flag
+  -p PARAMETER, --parameter PARAMETER
+                                parameter to change in all config files
+  -v NEW_VALUE, --value  NEW_VALUE
+                                new value to set
+  -f REGEX, --filter REGEX      if set, only edit themes with names that match the extended-regexp (grep -E)
+
+"""
+}
+
+# Yes/No question with default
+askYesNo () {
+        QUESTION=$1
+        DEFAULT=$2
+        if [ "$DEFAULT" = true ]; then                    # Valeur par défaut définie en paramètre
+                OPTIONS="[Y/n]"
+                DEFAULT="o"
+            else
+                OPTIONS="[y/N]"
+                DEFAULT="n"
+        fi
+        read -p "$QUESTION $OPTIONS " -n 1 -s -r INPUT    # Execute au premier caractère (-n 1)
+        INPUT=${INPUT:-${DEFAULT}}                        # Si $INPUT vide => remplace par $DEFAULT
+        echo ${INPUT}
+        if [[ "$INPUT" =~ ^[yYoO]$ ]]; then               # True si y,Y,O ou o
+            ANSWER=true
+        else                                              # Faux pour le reste
+            ANSWER=false
+        fi
+}
+
+list_param () {
+    printf "naivecalendar theme parameters: \n\n"
+    printf "%-25s  %-25s  %-25s  %-25s\n" $PARAM_LIST
+}
+
+THEME_LIST=$(ls -1 $HOME/.config/naivecalendar/themes/*.cfg | sed -r 's/.*\/(.*)\.cfg/\1/g') 
+#if [ -z "$THEME_LIST" ]; then
+#    printf "No themes in user folder ($HOME/.config/naivecalendar/themes/)\n"
+#    askYesNo "Do you want to start with a copy of installation themes?" true
+#    if [ "$ANSWER" = true ]; then
+#        cp -r "$(dirname $0)/../themes" "$HOME/.config/naivecalendar/"
+#        printf "done\n"
+#        exit 0
+#    fi  
+#fi
+
+list_themes () {
+    printf "naivecalendar user themes : \n\n"
+    if [ -z $THEME_LIST ]; then
+        echo "No themes in user configuration folder"
+        echo "Create your own themes or start with installation themes running"
+        echo ""
+        echo "      naivecalendar configure --clone THEMES"
+        echo ""
+    else
+        printf "%-25s  %-25s  %-25s  %-25s\n" $THEME_LIST
+    fi
+}
+
+get_editor () {
+    if ! [[ -f "$HOME/.selected_editor" ]]; then
+        select-editor
+    fi
+source "$HOME/.selected_editor"
+USER_EDITOR=$SELECTED_EDITOR
+}
+
+# Save parameters
+option="$@"
+
+# Loop over named parameters
+while [ $# -gt 0 ] ; do
+    key="$1"
+    case $key in
+        -h|--help)
+            help_msg 
+            exit 0
+            ;;
+        -L|--list-parameters)
+            list_param
+            exit 0
+            ;;
+        -T|--list-themes)
+            list_themes
+            exit 0
+            ;;
+        -p|--parameter)
+            PARAM="$2"
+            shift # past argument
+            ;;
+        -s|--simulate)
+            IS_SIMULATE="true"
+            ;;
+        -v|--value)
+            VALUE="$2"
+            shift # past argument
+            ;;
+        -f|--filter)
+            FILTER="$2"
+            shift
+            ;;
+        -e|--editor)
+            USER_EDITOR="$2"
+            shift
+            ;;
+        -a|--all-parameters)
+            IS_ALL_PARAM="true"
+            ;;
+        *)
+          printf "**************************\n"
+          printf " Wrong argument : $1\n"
+          printf "**************************\n"
+          exit 1
+    esac
+    shift # past value
+done
+
+if [ -z "$USER_EDITOR" ]; then
+    get_editor
+fi
+
+
+
+if [ -z "$FILTER" ]; then
+    FILES=$(ls "$HOME/.config/naivecalendar/themes/" | grep -E "cfg")
+else
+    FILES=$(ls "$HOME/.config/naivecalendar/themes/" | grep -e ".*\.cfg" | sed 's/\.cfg//g' | grep -E "$FILTER" | sed 's/$/.cfg/g')
+fi
+
+if [ -n "$IS_ALL_PARAM" ]; then
+    touch "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "####################################################################\n"  >"$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "# Only set values will be overrided\n" >>"$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "# If you want to empty a parameter, assign it to  '_'\n#\n" >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "# Changes will be made as soon as you save and exit this editor\n" >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "# Just quit to cancel\n#\n" >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "# Following themes files will be modified: \n" >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "#%30s  %30s  %30s  %30s\n" $FILES >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    printf "%s \n $PARAM_LIST" | sed -r 's/^([A-Z_0-9]+)/\1 = /g' >> "$HOME/.cache/naivecalendar/updateall.cfg"
+    $USER_EDITOR "$HOME/.cache/naivecalendar/updateall.cfg"
+
+    sleep 1
+    printf "Start updating files"
+
+    datas="$(cat "$HOME/.cache/naivecalendar/updateall.cfg" | grep -P '^[A-Z_0-9]+.*=.*[\w\d]+' | sed -e 's/ /ooo/g' )"
+    for f in $FILES; do
+        tmp_file="$HOME/.cache/naivecalendar/temp_file"
+        cat "$HOME/.config/naivecalendar/themes/$f" > $tmp_file
+        UPDATED_PARAMS="" 
+        for oline in $datas; do 
+            line="$(echo $oline | sed 's/ooo/ /g')"
+            param="$(echo "$line" | sed 's/=.*//g')"
+            value="$(echo "$line" | sed 's/.*=//g' | sed 's/^ *_.*//g')"
+            expr="s?^("$param" *=).*?\1 "$value"?g"
+            UPDATED_PARAMS="$UPDATED_PARAMS $param"
+            #echo "$param === $value"
+            if [ -z "$IS_SIMULATE" ]; then
+                sed -i -r "$expr" "$HOME/.config/naivecalendar/themes/$f"
+            else
+                sed -i -r "$expr" "$tmp_file"
+            fi
+        done
+        if [ -n "$IS_SIMULATE" ]; then
+            echo ""
+            echo "====================================================="
+            echo "====================================================="
+            echo "                $f                                   "
+            echo "====================================================="
+            echo "====================================================="
+            cat $tmp_file
+        else
+            printf "...."
+        fi
+    done
+    if [ -n "$tmp_file" ]; then
+        rm $tmp_file
+    fi
+    if [[ "$UPDATED_PARAMS" == "" ]] ;then
+        printf "\nNo modifications made\n"
+    else
+        printf "\nUpdated parameters:\n"
+        printf '%25s %25s %25s %25s\n' $UPDATED_PARAMS
+        printf "\nIn themes :\n"
+        printf '%25s %25s %25s %25s\n' $(echo $FILES | sed -e 's/\.cfg//g' )
+    fi
+
+else
+    # Test parameters validity
+    if [ -z "$PARAM" ]
+      then
+        printf "***********************************************\n"
+        echo "Please give a parameter to set, see -L option"
+        printf "***********************************************\n"
+        exit 0
+    fi
+
+    if echo $PARAM_LIST | grep -w $PARAM > /dev/null; then
+        printf "setting parameter $PARAM "
+    else
+        printf "*********************************************************\n"
+        printf "$PARAM is not in the parameter list, see -L option \n"
+        printf "*********************************************************\n"
+        exit 0
+    fi
+
+    if [ -z "$VALUE" ]
+      then
+        printf "\n***********************************************\n"
+        printf "Please give a value for $PARAM \n"
+        printf "***********************************************\n"
+        exit 0
+    else
+        printf "to $VALUE \n"
+    fi
+
+    i=0
+    for f in $FILES; do
+        expr="s/^("$PARAM" =).*/\1 "$VALUE"/g"
+        if [ -n "$IS_SIMULATE" ]; then
+            sed -r "$expr" "$HOME/.config/naivecalendar/themes/$f"
+        else
+            sed -i -r "$expr" "$HOME/.config/naivecalendar/themes/$f"
+        fi
+        i=$(($i+1))
+    done
+    echo "$i files Updated:"
+    echo $FILES | sed -e 's/\.cfg//g'
+
+fi 
+
+if [ -n "$IS_SIMULATE" ]; then
+    printf "***************************************************\n"
+    printf "* /!\ remove '-s|--simulate' to apply changes /!\ *\n"
+    printf "***************************************************\n"
+fi
+printf "Bye!\n"

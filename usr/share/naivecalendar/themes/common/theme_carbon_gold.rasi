@@ -1,0 +1,25 @@
+/************************************************
+ * ROFI Color theme
+ * Upload by: Daguhh
+ * Theme : Carbon Gold <https://www.deviantart.com/zb652/art/Carbon-Gold-871562529>
+ * Creator : ZB652 <https://www.deviantart.com/zb652>
+ ***********************************************/
+
+@import "theme_base.rasi"
+
+
+* {
+    foreground:                  #bdb09d;
+    background:                  rgb(50,61,63);
+    border:                      @background;
+    foreground-normal:           @foreground;
+    background-normal:           @background;
+    foreground-active:           #d5c57a;
+    background-active:           @background;
+    foreground-urgent:           #3f679a;
+    background-urgent:           @background;
+    foreground-select:           #19498b;
+    background-select:           #d1aa69;
+    font:                       "FontAwesome 12";
+}
+
