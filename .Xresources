@@ -1,3 +1,5 @@
+Xcursor.theme: Qogir_Manjaro
+#Xcursor.size: 0
 
 !URxvt*termName: rxvt-unicode
 !URxvt*termName:         rxvt-256color
