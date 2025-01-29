@@ -1,0 +1,28 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+#
+
+menuentry "archlinux-latest-x86_64.iso" {
+  insmod fat
+  insmod ext2
+  insmod part_gpt
+  insmod iso9660
+  set isofile="/iso/archlinux-x86_64.iso"
+  loopback loop (hd0,10)$isofile
+  linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/sda10 img_loop=$isofile earlymodules=loop
+  initrd (loop)/arch/boot/x86_64/initramfs-linux.img
+}
+
+menuentry "manjaro-latest-x86_64.iso" {
+  insmod fat
+  insmod ext2
+  insmod part_gpt
+  insmod iso9660
+  set isofile="/iso/manjaro-i3-latest-linux69.iso"
+  loopback loop (hd0,10)$isofile
+  linux (loop)/boot/vmlinuz-x86_64 img_dev=/dev/sda10 img_loop=$isofile earlymodules=loop
+  initrd (loop)/boot/intel_ucode.img (loop)/boot/initramfs-x86_64.img
+}
