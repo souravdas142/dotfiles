@@ -16,9 +16,10 @@
 # --------------------------
 
 
-packageName="app.revanced.android.youtube.sourav1" # default = app.revanced.android.youtube.revanced
+packageName="app.revanced.android.youtube.sourav1" # default = app.revanced.android.youtube
+#packageName="app.revanced.android.youtube" # default = app.revanced.android.youtube.revanced
 
-appName="YT ReVanced" # default = YouTube ReVanced
+appName="YouTube Rev" # default = YouTube ReVanced
 #	Possible values:
 #		YouTube ReVanced (YouTube ReVanced)
 #		YT ReVanced (YT ReVanced)
