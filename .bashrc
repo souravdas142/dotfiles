@@ -26,7 +26,7 @@ export HISTFILESIZE=-1
 export HISTTIMEFORMAT="%d/%m/%y %T "
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-export HISTCONTROL=erasedups:ignoredups
+export HISTCONTROL=erasedups:ignoredups:ignorespace
 export HISTFILE=~/.bash_ext_history
 #immidiate appednd share all history from all seassion
 #PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -69,7 +69,7 @@ fi
 if [ "$color_prompt" = yes ]; then
 
     PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\W\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\] "
-	
+
 else
 
     PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\W\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\] "
@@ -132,11 +132,26 @@ fi
 #alacricity-color-scheme path
 export cmModPoly=$HOME/.config/polybar/modules
 
-PATH="$PATH:$HOME/.opam/default/bin"
-
-
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
-export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+#config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
+#if [ -f "$config" ]; then
+#
+#
+#	gtk_theme="$(grep 'gtk-theme-name' "$config" | sed 's/.*\s*=\s*//')"
+#	icon_theme="$(grep 'gtk-icon-theme-name' "$config" | sed 's/.*\s*=\s*//')"
+#	cursor_theme="$(grep 'gtk-cursor-theme-name' "$config" | sed 's/.*\s*=\s*//')"
+#	font_name="$(grep 'gtk-font-name' "$config" | sed 's/.*\s*=\s*//')"
+#
+#
+#
+#fi
+
+
+
+
+#export GTK_THEME="Breeze-Dark"
+#export GTK_THEME="${gtk_theme:-WhiteSur-Dark}"
+
