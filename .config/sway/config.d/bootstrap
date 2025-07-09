@@ -21,19 +21,19 @@ exec --no-startup-id numlockx on
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id nm-applet --sm-disable
+exec_always --no-startup-id nm-applet --indicator
 
 # Enbabling ibus for keyboard layout
-#exec_always --no-startup-id fcitx5
+exec --no-startup-id fcitx5 -d --replace
 
 # Systray bluetooth connector
-exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog
 
 # Launching WARP VPN
 #exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
 
 
-# Launching RSS Feed 
+# Launching RSS Feed
 #exec --no-startup-id quiterss
 
 # Launching Persepolis systray

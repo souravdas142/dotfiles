@@ -1,0 +1,73 @@
+# Maintainer: Sourav Das <souravdas142@gmail.com>
+pkgname=fcitx5-openbangla-git
+pkgver=2.0.0.r110.gb1a3a6f
+pkgrel=1
+pkgdesc="An OpenSource Bengali Input Method for Fcitx5"
+arch=('x86_64')
+url="https://openbangla.github.io"
+license=('GPL3')
+
+# Handle conflicts/replaces with openbangla-keyboard-bin
+provides=('openbangla-keyboard' 'openbangla-keyboard-bin')
+conflicts=('openbangla-keyboard' 'openbangla-keyboard-bin')
+replaces=('openbangla-keyboard-bin')
+
+# Runtime dependencies (must be present when using the package)
+depends=(
+    'fcitx5'        # Core requirement
+    'qt5-base'       # QT integration core
+    'zstd'           # Compression library used
+    'gcc-libs'       # Runtime libraries
+    'fcitx5-configtool: Configuration GUI'
+    'fcitx5-qt: Better Qt integration'
+    'fcitx5-gtk: GTK applications support'
+)
+
+# Build-time dependencies (only needed during compilation)
+makedepends=(
+    'base-devel'     # Basic build tools
+    'cmake'          # Build system
+    'rust'           # For engine components
+    'git'            # For cloning repos
+)
+
+# Optional components (enhanced functionality)
+optdepends=(
+    'ttf-indic-otf: Bangla fonts'
+    'ttf-freebanglafont: Additional Bangla fonts'
+)
+
+source=(
+    "openbangla-keyboard::git+https://github.com/OpenBangla/OpenBangla-Keyboard#branch=develop"
+    "riti::git+https://github.com/OpenBangla/riti"
+)
+sha256sums=('SKIP' 'SKIP')
+
+pkgver() {
+    cd "$srcdir/openbangla-keyboard"
+    git describe --tags --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+    cd "$srcdir/openbangla-keyboard"
+    git submodule init
+    git config submodule."src/engine/riti".url "$srcdir/riti"
+    git -c protocol.file.allow=always submodule update --recursive
+}
+
+build() {
+    cmake -B build -S openbangla-keyboard \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+        -DENABLE_FCITX=ON \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+        -DENABLE_IBUS=OFF
+    make -C build -j$(nproc)
+}
+
+package() {
+    make -C build DESTDIR="$pkgdir" install
+    
+    # Clean up any potential IBUS leftovers
+    rm -rf "$pkgdir"/usr/share/ibus
+    rm -rf "$pkgdir"/usr/lib/ibus-openbangla*
+}
