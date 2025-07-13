@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# Load directory vars (if needed)
+DIR="$HOME/.config/waybar/scripts/wlsunset"
+
+# Default temperature file
+SUNVAR_FILE="$DIR/sunvar.sh"
+
+# Initialize if sunvar.sh doesn't exist
+if [ ! -f "$SUNVAR_FILE" ]; then
+  echo "VAR=4000" > "$SUNVAR_FILE"
+fi
+
+# Load current temperature
+source "$SUNVAR_FILE"
+VAR=${VAR:-4000}  # Fallback to 4000K if unset
+
+# Function: Adjust temperature
+adjust_temp() {
+  case "$1" in
+    inc)
+      VAR=$((VAR + 200))
+	  echo "incrementing by 200..."
+      [ $VAR -gt 6500 ] && VAR=6500  # Clamp max
+      ;;
+    dec)
+      VAR=$((VAR - 200))
+      [ $VAR -lt 1200 ] && VAR=1200  # Clamp min
+      ;;
+    *)
+      echo "Usage: $0 [inc|dec]"
+      exit 1
+      ;;
+  esac
+
+  # Save new temperature
+  echo "VAR=$VAR" > "$SUNVAR_FILE"
+  echo "New temperature: $VAR K"
+
+  # Restart wlsunset with updated value
+
+    # Kill existing instance if running
+  if pgrep -x "wlsunset" >/dev/null; then
+    pkill -x "wlsunset" 2>/dev/null
+    # Small delay to ensure process termination
+    while pgrep -x "wlsunset" >/dev/null; do
+      #sleep 0.1
+	  true
+    done
+  fi
+
+
+  command wlsunset -t "$VAR" -T "$((VAR+5))" > /dev/null 2>&1 &
+}
+
+toggleSunOnOff() {
+
+	if pgrep -x "wlsunset" >/dev/null; then
+	  pkill -x "wlsunset" 2>/dev/null
+	  # Small delay to ensure process termination
+	  while pgrep -x "wlsunset" >/dev/null; do
+	    #sleep 0.1
+	    true
+	  done
+	else
+	  source "$DIR/sunvar.sh"
+	  command wlsunset -t "$VAR" -T "$((VAR+5))" > /dev/null 2>&1 &
+	  echo "wlsunset started at $VAR K"
+	fi
+
+}
+
+# Main logic
+case "$1" in
+  inc|dec) adjust_temp "$1" ;;
+  toggle) toggleSunOnOff ;;
+  *)       echo "Usage: $0 [inc|dec]" ;;
+esac

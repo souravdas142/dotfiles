@@ -12,12 +12,13 @@
       "clock",
       "idle_inhibitor",
       "keyboard-state",
-      "bluetooth"
+      "bluetooth",
+      "network"
     ],
     "modules-right": [
       "group/hardware",
       "backlight",
-      "network",
+	  "custom/wlsunset",
       "wireplumber",
 	  "custom/notification",
       "custom/power",
@@ -26,6 +27,15 @@
     ],
 
 
+	"custom/wlsunset": {
+		"format": " {}K",
+  		"tooltip": "Right-click: Toggle\nScroll: Adjust temperature",
+  		"exec": "echo $(source ~/.config/waybar/scripts/wlsunset/sunvar.sh; echo $VAR)",
+  		"on-click-right": "bash ~/.config/waybar/scripts/wlsunset/wlsunset toggle",
+  		"on-scroll-up": "bash ~/.config/waybar/scripts/wlsunset/wlsunset dec",
+  		"on-scroll-down": "bash ~/.config/waybar/scripts/wlsunset/wlsunset inc",
+  		"interval": 5
+	},
     "sway/window": {
       "format": "{shell}",
       "icon": true,
@@ -152,7 +162,7 @@
 		"format": "{text}",
 		"tooltip": false
 	},
-		
+
 
 /*    "clock": {
       "align": 0,
@@ -314,7 +324,8 @@
     "bluetooth": {
       "format": " {status}",
       "format-connected": "<span foreground='#7daea3'></span> {device_alias}",
-      "format-connected-battery": "<span foreground='#7daea3'></span> {device_alias}󰁹{device_battery_percentage}%",
+      /*"format-connected-battery": "<span foreground='#7daea3'></span> {device_alias} 󰁹{device_battery_percentage}%",*/
+      "format-connected-battery": "<span foreground='#7daea3'></span> 󰁹{device_battery_percentage}%",
       "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

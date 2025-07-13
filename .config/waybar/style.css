@@ -84,7 +84,7 @@ window#waybar {
 
 .modules-right {
   background: linear-gradient(135deg, #202020, #202020) padding-box, linear-gradient(135deg, #d3869b, #7daea3) border-box;
-  border: 2px solid transparent; 
+  border: 2px solid transparent;
   border-radius: 25px;
   color: inherit;
   /*margin: 10px 5px 10px 0;*/
@@ -155,7 +155,25 @@ window#waybar {
 #bluetooth.on {
   color: #89b482;
 }
-#tray {
+/*#tray {
   margin: 0 0 0 0;
-  padding: 2px 15px 2px 2px;  /*up,right,down,left   */
+  padding: 2px 15px 2px 2px;
+}
+#tray menu menuitem:hover {
+	background-color: red;
+	color: green;
+}*/
+#tray menu {
+    background-color: #32302f;
+    border: 1px solid #905b15;
+    color: #d4be98;
+    font-size: 22px;
+    padding: 4px;
+}
+#tray menu menuitem {
+    padding-top: 3px; padding-bottom: 3px;
+    font-size: 22px;
+}
+#tray menu menuitem:hover {
+    background-color: #6d4c23;
 }
