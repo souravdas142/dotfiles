@@ -11,9 +11,13 @@ if [ ! -f "$SUNVAR_FILE" ]; then
   echo "VAR=4000" > "$SUNVAR_FILE"
 fi
 
+get_temp() {
+    cat "$SUNVAR_FILE" 2>/dev/null || echo 4000
+}
+
+
 # Load current temperature
-source "$SUNVAR_FILE"
-VAR=${VAR:-4000}  # Fallback to 4000K if unset
+VAR=$(get_temp)  # Fallback to 4000K if unset
 
 # Function: Adjust temperature
 adjust_temp() {
@@ -34,7 +38,7 @@ adjust_temp() {
   esac
 
   # Save new temperature
-  echo "VAR=$VAR" > "$SUNVAR_FILE"
+  echo "$VAR" > "$SUNVAR_FILE"
   echo "New temperature: $VAR K"
 
   # Restart wlsunset with updated value
@@ -63,7 +67,7 @@ toggleSunOnOff() {
 	    true
 	  done
 	else
-	  source "$DIR/sunvar.sh"
+	  VAR=$(get_temp)
 	  command wlsunset -t "$VAR" -T "$((VAR+5))" > /dev/null 2>&1 &
 	  echo "wlsunset started at $VAR K"
 	fi

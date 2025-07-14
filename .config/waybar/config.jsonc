@@ -28,13 +28,23 @@
 
 
 	"custom/wlsunset": {
-		"format": " {}K",
-  		"tooltip": "Right-click: Toggle\nScroll: Adjust temperature",
-  		"exec": "echo $(source ~/.config/waybar/scripts/wlsunset/sunvar.sh; echo $VAR)",
-  		"on-click-right": "bash ~/.config/waybar/scripts/wlsunset/wlsunset toggle",
-  		"on-scroll-up": "bash ~/.config/waybar/scripts/wlsunset/wlsunset dec",
-  		"on-scroll-down": "bash ~/.config/waybar/scripts/wlsunset/wlsunset inc",
-  		"interval": 5
+	  "format": "{icon} {text}K",
+	  "format-icons": {
+	      "on": "󰛨",
+	      "off": ""
+	  },
+	  "icon_color": {
+	      "on": "#ffcc00",
+	      "off": "#aaaaaa"
+	  },
+      "tooltip": "Right-click: Toggle\nScroll: Adjust temperature",
+      "exec": "bash -c 'TEMP=$(cat ~/.config/waybar/scripts/wlsunset/sunvar.sh 2>/dev/null || echo 4000); STATUS=$(pgrep -x wlsunset >/dev/null && echo \"on\" || echo \"off\"); printf \"{\\\"text\\\":\\\"%s\\\",\\\"alt\\\":\\\"%s\\\"}\" \"$TEMP\" \"$STATUS\"'",
+      "return-type": "json",
+      "on-click-right": "bash ~/.config/waybar/scripts/wlsunset/wlsunset toggle",
+      "on-scroll-up": "bash ~/.config/waybar/scripts/wlsunset/wlsunset dec",
+      "on-scroll-down": "bash ~/.config/waybar/scripts/wlsunset/wlsunset inc",
+	  "signal": 1,
+      "interval": 5
 	},
     "sway/window": {
       "format": "{shell}",
