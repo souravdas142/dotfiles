@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get temperature from sunvar.sh or default to 4000
+TEMP=$(cat ~/.config/waybar/scripts/wlsunset/sunvar.sh 2>/dev/null || echo 4000)
+
+# Check if wlsunset process is running
+if pgrep -x wlsunset >/dev/null; then
+    STATUS="on"
+else
+    STATUS="off"
+fi
+
+# If status is "off", set temperature to 6500
+if [[ "$STATUS" == "off" ]]; then
+    TEMP="6500"
+fi
+
+# Define the tooltip text based on the status
+if [[ "$STATUS" == "on" ]]; then
+    TOOLTIP_TEXT="wlsunset is ON (${TEMP}K)\nRight-click: Toggle\nScroll: Adjust temperature"
+else
+    TOOLTIP_TEXT="wlsunset is OFF\nRight-click: Toggle\nScroll: Adjust temperature"
+fi
+
+
+# Print the JSON output including the "tooltip" field
+printf '{"text":"%s","alt":"%s","tooltip":"%s"}\n' "$TEMP" "$STATUS" "$TOOLTIP_TEXT"
