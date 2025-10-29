@@ -31,22 +31,27 @@ if acpi -a | grep -i "off" >> /dev/null ; then
 		timeOutMiliSec=31000
 		Msg="Battery Low $(echo -e "\n  Please Charge your Laptop\n")"
 		flag=0
-	elif [[ $rate -lt 15 && $rate -gt 7 ]]; then
+	elif [[ $rate -lt 15 && $rate -gt 10 ]]; then
 		urgency="critical"
 		setIcon="battery-low"
 		timeOutMiliSec=31000
-		Msg="Battery Critically Low $(echo -e "\n  Will be hibernate.\n")"
+		Msg="Battery Critically Low $(echo -e "\n  Will be Poweroff.\n")"
 		flag=0
-	elif [[ $rate -le 7 ]]; then
-		if [[ $rate -lt 7 ]]; then
-			sleep 10
-			systemctl hibernate
-		fi
-		Msg="Battery Critically Low $(echo -e "\n  Hibernating...\n")"
+	elif [[ $rate -le 10 ]]; then
+		Msg="Battery Critically Low $(echo -e "\n  PoweringOff...\n")"
 		urgency="critical"
 		setIcon="battery-empty"
 		timeOutMiliSec=31000
 		flag=0
+		if [[ $rate -lt 10 ]]; then
+			percent=$rate
+			appName="ShowCharge"
+			notiId=9997
+			notify-send -h string:private-synchronous:$ntfy_bat -a $appName -u $urgency -t $timeOutMiliSec -i $setIcon -r $notiId  " Battery : $percent"  "  <b><i>$Msg</i></b>\n  $(getProgressString 10 "<b> </b>" " " $percent )"
+			sleep 10
+			#systemctl poweroff
+			sudo /usr/local/bin/force-poweroff.sh
+		fi
 	fi
 
 else
