@@ -1,0 +1,8 @@
+[Unit]
+Description=Check battery and power off if low
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/lowbatt-check.sh
+

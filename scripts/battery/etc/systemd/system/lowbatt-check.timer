@@ -1,0 +1,11 @@
+[Unit]
+Description=Run low battery check every 30 seconds
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=30s
+Unit=lowbatt-check.service
+
+[Install]
+WantedBy=timers.target
+
