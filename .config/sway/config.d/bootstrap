@@ -1,6 +1,6 @@
 
 
-exec_always wpaperd
+exec wpaperd -d
 
 # Status Bar {{{
 bar {
