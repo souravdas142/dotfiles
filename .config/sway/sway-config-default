@@ -36,7 +36,7 @@ set $ws10 "DlM"
 
 
 # Launching Notification Daemon
-exec --no-startup-id dunst
+#exec --no-startup-id dunst
 
 # Enbable Numlock on boot
 exec --no-startup-id numlockx on
@@ -49,13 +49,13 @@ exec_always --no-startup-id nm-applet --sm-disable
 #exec_always --no-startup-id fcitx5
 
 # Systray bluetooth connector
-exec_always --no-startup-id blueman-applet --loglevel 5 --syslog 
+exec_always --no-startup-id blueman-applet --loglevel 5 --syslog
 
 # Launching WARP VPN
 #exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &
 
 
-# Launching RSS Feed 
+# Launching RSS Feed
 #exec --no-startup-id quiterss
 
 # Launching Persepolis systray
@@ -98,7 +98,7 @@ floating_modifier $mod
 
 # Launch a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty -e tmux new-session 
+bindsym $mod+Return exec alacritty -e tmux new-session
 bindsym $mod+Shift+Return exec kitty
 #bindsym $mod+Return exec tilix
 
@@ -263,7 +263,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && DunstifyVolLight volDwn
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && DunstifyVolLight volMute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5% && DunstifyVolLight brightnessInc 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5% && DunstifyVolLight brightnessInc
 bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 5%- && DunstifyVolLight brightnessDec
 
 ############################### screenshot bindigs ###############################
@@ -308,7 +308,7 @@ bindsym Ctrl+Print exec --no-startup-id sway-screenshot -m region -t 5 -o ~/Pict
 bindsym $mod+Shift+m exec $alacritty_colorscheme -T
 
 # Get notification with current colorscheme
-bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s` 
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s`
 
 
 ################################### END OF ALL KEYBOARD BINDIGS ####################################
@@ -356,11 +356,11 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$i
 # Rules for window of certain program
 
 for_window [class="^.*"]								border pixel 0
-for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="bubble"]                       floating enable
 for_window [class="Yad"]								floating enable
 for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
-for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="dialog"]                       floating enable
 for_window [window_type="menu"]                         floating enable
 #for_window [class="Org\.gnome\.Nautilus"]				floating enable
 #for_window [class="persepolis"]						floating enable

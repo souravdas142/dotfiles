@@ -5,6 +5,10 @@ set $sway_config_dir ~/.config/sway/config.d
 set $sway_scripts_dir ~/.config/sway/scripts
 set $sway_wall_dir ~/.config/sway/wallpaper
 
+# GTK theming
+#set $GTK_THEME Breeze-Dark
+#set $GTK_ICON_THEME souravtheme-dark
+#set $XCURSOR_THEME Qogir
 
 
 # Mod{1,2,3,4}={Alt,,,Super}

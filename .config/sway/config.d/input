@@ -4,8 +4,8 @@ input "type:touchpad" {
     #send_events enabled
     tap enabled
     tap_button_map lrm
-    #tap_drag enabled
-    #tap_drag_lock enabled
+    drag enabled
+    drag_lock disabled
     #accel_speed 0.3
     accel_profile flat
 	pointer_accel 0.5

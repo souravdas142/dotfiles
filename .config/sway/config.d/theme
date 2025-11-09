@@ -7,6 +7,35 @@
 #font pango:DejaVu Sans Mono 8
 font pango:System San Francisco Display 8
 
+#exec_always --no-startup-id ~/.config/sway/scripts/import-gsettings
+
+# GTK, icon & cursor themes
+#exec_always {
+#  gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"
+#  gsettings set org.gnome.desktop.interface cursor-theme "Qogir"
+#  gsettings set org.gnome.desktop.interface font-name "Droid Sans 10"
+#}
+#
+## GTK theme for subshell apps
+##set $GTK_THEME "Breeze-Dark"
+##set $GTK_ICON_THEME "souravtheme-dark"
+##set $XCURSOR_THEME "Qogir"
+##
+## GTK Theming Fix
+#set $gtk_theme WhiteSur-Dark
+#set $icon_theme Papirus-Dark
+#set $cursor_theme Qogir
+
+#exec_always {
+#    export GTK_THEME=$gtk_theme
+#    export GTK_ICON_THEME=$icon_theme
+#    export XCURSOR_THEME=$cursor_theme
+#    export XDG_CURRENT_DESKTOP=sway
+#    export XDG_SESSION_DESKTOP=sway
+#    export XDG_SESSION_TYPE=wayland
+#}
+
+
 smart_borders on
 default_border pixel 2
 default_floating_border pixel 2
@@ -15,8 +44,8 @@ gaps inner 5
 #gaps only enable if more than one container available
 smart_gaps on
 
-# Launching wallpaper
-output * background '$sway_wall_dir/sway_wallpaper.png' fill
+# Launching wallpaper replaces by wpaper
+#output * background '$sway_wall_dir/sway_wallpaper.png' fill
 
 #some color variable
 set $indColor			 #00ff0000

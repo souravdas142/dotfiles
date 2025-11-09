@@ -1,4 +1,7 @@
 
+
+exec_always wpaperd
+
 # Status Bar {{{
 bar {
   swaybar_command waybar
