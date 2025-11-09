@@ -1,0 +1,12 @@
+[default]
+duration = "2hours"
+mode = "stretch"
+sorting = "random"
+
+[any]
+path = "/home/sourav/Downloads/revo/image"
+
+#[default.transition.hexagonalize]
+## default values for hexagonalize
+## steps = 50
+## horizontal-hexagons = 20.0
