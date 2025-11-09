@@ -5,6 +5,7 @@ sorting = "random"
 
 [any]
 path = "/home/sourav/Downloads/revo/image"
+exec = "/home/sourav/.config/wpaperd/scripts.d/echo.sh"
 
 #[default.transition.hexagonalize]
 ## default values for hexagonalize
