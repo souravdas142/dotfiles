@@ -1,0 +1,6 @@
+ACTION=="add", SUBSYSTEM=="leds", \
+  ATTRS{idVendor}=="2357", ATTRS{idProduct}=="011e", \
+  RUN+="/bin/sh -c 'echo none > /sys/class/leds/%k/trigger'"
+
+
+

@@ -1,12 +1,15 @@
 #!/bin/bash
 #
-if [[ "$EUID" != 0 ]]; then
-	echo -e "\n[*] Run with root permission:\n";
-	exit
+
+if [[ "$EUID" -ne 0 ]]; then
+    echo -e "\n[*] Run as root!\n"
+    exit 1
 fi
 
-LBA=$(sudo smartctl -a /dev/sda | grep "Total_LBAs_Written" | cut -d" " -f38)
+LBA=$(smartctl -a /dev/sda | awk '/Total_LBAs_Written/ {print $NF}')
 
-calc=$(echo "scale=2; (${LBA} * 512) / (1024 * 1024 * 1024.0)" | bc -l)
+# Convert LBA → GiB
+written_gib=$(echo "scale=2; (${LBA} * 512) / (1024^3)" | bc -l)
 
-echo "${calc}GiB Written / 307200Gib (300TiB)"
+echo "${written_gib} GiB Written / 307200 GiB (300 TiB)"
+
