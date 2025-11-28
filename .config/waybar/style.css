@@ -177,3 +177,19 @@ window#waybar {
 #tray menu menuitem:hover {
     background-color: #6d4c23;
 }
+/*
+#custom-t2u_led.on,
+#custom-t2u_led.not-network.on {
+    color: #50fa7b;
+}
+
+#custom-t2u_led.off,
+#custom-t2u_led.not-network.off {
+    color: #ff5555;
+}
+
+#custom-t2u_led.missing,
+#custom-t2u_led.not-network.missing {
+    color: #888888;
+}
+*/

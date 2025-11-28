@@ -2,7 +2,6 @@
   {
     "height": 30,
     "layer": "top",
-	"ipc": true,
     "position": "top",
     "modules-center": [
       "sway/workspaces",
@@ -14,7 +13,7 @@
       "idle_inhibitor",
       "keyboard-state",
       "bluetooth",
-      "group/networkinfo"
+      "network"
     ],
     "modules-right": [
       "group/hardware",
@@ -226,18 +225,6 @@
 		"on-click": "~/.config/rofi/applets/bin/powermenu.sh",
       "tooltip": false
     },
-    "group/networkinfo": {
-      "drawer": {
-        "children-class": "not-network",
-        "transition-duration": 500,
-        "transition-left-to-right": false
-      },
-      "modules": [
-		"network",
-        "custom/t2u_led"
-      ],
-      "orientation": "inherit"
-    },
     "group/hardware": {
       "drawer": {
         "children-class": "not-battery",
@@ -323,34 +310,6 @@
       "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
       "tooltip": false
     },
-//  "custom/t2u_led": {
-//	"exec": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --status",
-//  	"return-type": "json",
-//  	"interval": 0,
-//  	"signal": 9,
-//  	"on-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --toggle",
-//  	"on-right-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --off",
-//  	"on-middle-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --on"
-//  },
-
-  "custom/t2u_led": {
-    "format": "  {text} {icon}",
-    "format-icons": {
-      "on": "󰛨",
-      "off": "󱐋",
-      "missing": ""
-    },
-	"return-type": "json",
-    "tooltip": true,
-    "interval": 0,
-    "signal": 9,
-    "exec": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --status",
-    "on-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --toggle",
-    "on-right-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --off",
-    "on-middle-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --on"
-  },
-
-
   // Notification
   "custom/notification": {
     "format": "{} {icon}",
