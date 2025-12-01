@@ -1,0 +1,11 @@
+Connected to 8c:a3:99:4b:a8:b2 (on wlp0s20f0u3)
+	SSID: JioSDFiber_5G
+	freq: 5180.0
+	RX: 16642001 bytes (34529 packets)
+	TX: 4734532 bytes (7324 packets)
+	signal: -50 dBm
+	rx bitrate: 292.5 MBit/s VHT-MCS 7 80MHz VHT-NSS 1
+	tx bitrate: 351.0 MBit/s VHT-MCS 8 80MHz VHT-NSS 1
+	bss flags: short-slot-time
+	dtim period: 2
+	beacon int: 100

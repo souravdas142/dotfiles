@@ -1,0 +1,22 @@
+NIC statistics:
+     rx_packets: 37997
+     rx_bytes: 18981579
+     rx_duplicates: 20
+     rx_fragments: 27316
+     rx_dropped: 20
+     tx_packets: 7934
+     tx_bytes: 4909354
+     tx_filtered: 0
+     tx_retry_failed: 12
+     tx_retries: 0
+     sta_state: 4
+     txrate: 351000000
+     rxrate: 292500000
+     signal: 207
+     channel: 0
+     noise: 18446744073709551615
+     ch_time: 18446744073709551615
+     ch_time_busy: 18446744073709551615
+     ch_time_ext_busy: 18446744073709551615
+     ch_time_rx: 18446744073709551615
+     ch_time_tx: 18446744073709551615

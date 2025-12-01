@@ -1,0 +1,485 @@
+Nov 27 18:53:44 Arch-Linux-SSD (udev-worker)[29598]: 1-3: sd-device: Created database file '/run/udev/data/c189:2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3'.
+Nov 27 18:53:44 Arch-Linux-SSD (udev-worker)[29598]: 1-3: sd-device: Created database file '/run/udev/data/c189:2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3'.
+Nov 27 18:53:44 Arch-Linux-SSD (udev-worker)[29598]: 1-3: Device processed (SEQNUM=4500, ACTION=change)
+Nov 27 18:53:44 Arch-Linux-SSD (udev-worker)[29598]: 1-3: sd-device-monitor(worker): Passed 1194 byte to netlink monitor.
+Nov 27 18:53:44 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:53:47 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:53:47 Arch-Linux-SSD systemd-udevd[267]: Worker [29595] exited.
+Nov 27 18:53:47 Arch-Linux-SSD systemd-udevd[267]: Worker [29598] exited.
+Nov 27 18:53:47 Arch-Linux-SSD systemd-udevd[267]: Worker [29596] exited.
+Nov 27 18:53:47 Arch-Linux-SSD systemd-udevd[267]: Worker [29597] exited.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4501, ACTION=change)
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4501, ACTION=change)
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 29746.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [29746] is forked for processing SEQNUM=4501.
+Nov 27 18:53:56 Arch-Linux-SSD (udev-worker)[29746]: ACAD: Processing device (SEQNUM=4501, ACTION=change)
+Nov 27 18:53:56 Arch-Linux-SSD (udev-worker)[29746]: ACAD: Device processed (SEQNUM=4501, ACTION=change)
+Nov 27 18:53:56 Arch-Linux-SSD (udev-worker)[29746]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:53:56 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:53:57 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4502, ACTION=change)
+Nov 27 18:53:57 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4502, ACTION=change)
+Nov 27 18:53:57 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 801 byte to netlink monitor.
+Nov 27 18:53:57 Arch-Linux-SSD (udev-worker)[29746]: BAT1: Processing device (SEQNUM=4502, ACTION=change)
+Nov 27 18:53:57 Arch-Linux-SSD (udev-worker)[29746]: BAT1: Device processed (SEQNUM=4502, ACTION=change)
+Nov 27 18:53:57 Arch-Linux-SSD (udev-worker)[29746]: BAT1: sd-device-monitor(worker): Passed 801 byte to netlink monitor.
+Nov 27 18:53:57 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:00 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:54:00 Arch-Linux-SSD systemd-udevd[267]: Worker [29746] exited.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4503, ACTION=change)
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4503, ACTION=change)
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 29806.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [29806] is forked for processing SEQNUM=4503.
+Nov 27 18:54:11 Arch-Linux-SSD (udev-worker)[29806]: ACAD: Processing device (SEQNUM=4503, ACTION=change)
+Nov 27 18:54:11 Arch-Linux-SSD (udev-worker)[29806]: ACAD: Device processed (SEQNUM=4503, ACTION=change)
+Nov 27 18:54:11 Arch-Linux-SSD (udev-worker)[29806]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:54:11 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:12 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4504, ACTION=change)
+Nov 27 18:54:12 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4504, ACTION=change)
+Nov 27 18:54:12 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 798 byte to netlink monitor.
+Nov 27 18:54:12 Arch-Linux-SSD (udev-worker)[29806]: BAT1: Processing device (SEQNUM=4504, ACTION=change)
+Nov 27 18:54:12 Arch-Linux-SSD (udev-worker)[29806]: BAT1: Device processed (SEQNUM=4504, ACTION=change)
+Nov 27 18:54:12 Arch-Linux-SSD (udev-worker)[29806]: BAT1: sd-device-monitor(worker): Passed 798 byte to netlink monitor.
+Nov 27 18:54:12 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Worker [29806] exited.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3: Device is queued (SEQNUM=4505, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: Device is queued (SEQNUM=4506, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3: Device ready for processing (SEQNUM=4505, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 29882.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3: Worker [29882] is forked for processing SEQNUM=4505.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4506 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: Processing device (SEQNUM=4505, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: sd-device: Created database file '/run/udev/data/c189:2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: /usr/lib/udev/rules.d/50-udev-default.rules:20 IMPORT{builtin}="usb_id": Importing properties from results of builtin command "usb_id".
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: Device is queued (SEQNUM=4507, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: SEQNUM=4507 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: SEQNUM=4507 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: Device is queued (SEQNUM=4508, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: phy1: Device is queued (SEQNUM=4509, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: Device is queued (SEQNUM=4510, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: SEQNUM=4508 blocked by SEQNUM=4507
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: SEQNUM=4508 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: SEQNUM=4508 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: phy1: SEQNUM=4509 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: phy1: SEQNUM=4509 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: SEQNUM=4510 blocked by SEQNUM=4509
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: SEQNUM=4510 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: SEQNUM=4510 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlan0: Device is queued (SEQNUM=4511, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: Device is queued (SEQNUM=4512, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: Device is queued (SEQNUM=4513, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: /usr/lib/udev/rules.d/50-udev-default.rules:20 IMPORT{builtin}="hwdb --subsystem=usb": Importing properties from results of builtin command "hwdb --subsystem=usb".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: hwdb modalias key: "usb:v2357p011E:802.11ac WLAN Adapter "
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: /usr/lib/udev/rules.d/50-udev-default.rules:30 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: Device is queued (SEQNUM=4514, ACTION=bind)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlan0: SEQNUM=4511 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlan0: SEQNUM=4511 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: SEQNUM=4512 blocked by SEQNUM=4511
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: SEQNUM=4512 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: SEQNUM=4512 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: SEQNUM=4513 blocked by SEQNUM=4511
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: SEQNUM=4513 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: SEQNUM=4513 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4513
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4512
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4511
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4510
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4509
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4508
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4507
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4506
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: SEQNUM=4514 blocked by SEQNUM=4505
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: Successfully created symlink '/dev/char/189:2' to '/dev/bus/usb/001/003'
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: sd-device: Created database file '/run/udev/data/c189:2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: sd-device: Created database file '/run/udev/data/c189:2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: Device processed (SEQNUM=4505, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3: sd-device-monitor(worker): Passed 1194 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: Device ready for processing (SEQNUM=4506, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: sd-device-monitor(manager): Passed 340 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Processing device (SEQNUM=4506, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/40-gphoto.rules:9 IMPORT{builtin}="usb_id": Importing properties from results of builtin command "usb_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Failed to access usb_interface: No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/40-gphoto.rules:9 IMPORT{builtin}="usb_id": Failed to run builtin "usb_id": No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/50-udev-default.rules:21 IMPORT{builtin}="hwdb --subsystem=$env{SUBSYSTEM}": Importing properties from results of builtin command "hwdb --subsystem=usb".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: hwdb modalias key: "usb:v2357p011Ed0200dc00dsc00dp00icFFiscFFipFFin00"
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/50-udev-default.rules:30 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/80-drivers.rules:5 RUN{builtin}+="kmod load": Set command: kmod load
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device: Created database file '/run/udev/data/+usb:1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Running built-in command "kmod load"
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: Loading module: usb:v2357p011Ed0200dc00dsc00dp00icFFiscFFipFFin00
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: Module 'rtw88_8821au' is deny-listed (by kmod)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: Module 'rtw_8821au' is already loaded
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device: Created database file '/run/udev/data/+usb:1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Device processed (SEQNUM=4506, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device-monitor(worker): Passed 581 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: Device ready for processing (SEQNUM=4507, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: sd-device-monitor(manager): Passed 207 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: phy1: Device ready for processing (SEQNUM=4509, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 29891.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: phy1: Worker [29891] is forked for processing SEQNUM=4509.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlan0: Device ready for processing (SEQNUM=4511, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: Processing device (SEQNUM=4507, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: phy1: Processing device (SEQNUM=4509, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: /usr/lib/udev/rules.d/71-seat.rules:75 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 29892.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlan0: Worker [29892] is forked for processing SEQNUM=4511.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Processing device (SEQNUM=4511, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/50-udev-default.rules:32 IMPORT{builtin}="net_driver": Importing properties from results of builtin command "net_driver".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device: Created database file '/run/udev/data/+leds:rtw88-1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/leds/rtw88-1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device: Created database file '/run/udev/data/+leds:rtw88-1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/leds/rtw88-1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: Device processed (SEQNUM=4507, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device-monitor(worker): Passed 420 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: Device ready for processing (SEQNUM=4508, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rtw88-1-3:1.0: sd-device-monitor(manager): Passed 226 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: Processing device (SEQNUM=4508, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device: Created database file '/run/udev/data/+leds:rtw88-1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/leds/rtw88-1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: phy1: Device processed (SEQNUM=4509, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: /usr/lib/udev/rules.d/71-seat.rules:75 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/75-net-description.rules:6 IMPORT{builtin}="hwdb 'net:naming:dr$env{ID_NET_DRIVER}:'": Importing properties from results of builtin command "hwdb 'net:naming:drrtw_8821au:'".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: No entry found from hwdb.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/75-net-description.rules:6 IMPORT{builtin}="hwdb 'net:naming:dr$env{ID_NET_DRIVER}:'": Failed to run builtin "hwdb 'net:naming:drrtw_8821au:'": No data available
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/75-net-description.rules:8 IMPORT{builtin}="usb_id": Importing properties from results of builtin command "usb_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: phy1: sd-device-monitor(worker): Passed 208 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: Device ready for processing (SEQNUM=4510, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rfkill2: sd-device-monitor(manager): Passed 289 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: 1-3:1.0: if_class:255 protocol:0
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device: Created database file '/run/udev/data/+leds:rtw88-1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/leds/rtw88-1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device: Created database file '/run/udev/data/+leds:rtw88-1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/leds/rtw88-1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: Device processed (SEQNUM=4508, ACTION=change)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rtw88-1-3:1.0: sd-device-monitor(worker): Passed 439 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: Processing device (SEQNUM=4510, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/75-net-description.rules:8 IMPORT{builtin}="hwdb --subsystem=usb": Importing properties from results of builtin command "hwdb --subsystem=usb".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: hwdb modalias key: "usb:v2357p011Ed0200dc00dsc00dp00icFFiscFFipFFin00"
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/75-net-description.rules:15 IMPORT{builtin}="net_id": Importing properties from results of builtin command "net_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: /usr/lib/udev/rules.d/99-systemd.rules:78 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: MAC address identifier: hw_addr=8c:90:2d:95:20:38 → x8c902d952038
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: sd-device: Created database file '/run/udev/data/+rfkill:rfkill2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/ieee80211/phy1/rfkill2'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: sd-device: Created database file '/run/udev/data/+rfkill:rfkill2' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/ieee80211/phy1/rfkill2'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: Device processed (SEQNUM=4510, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: 1-3:1.0: USB name identifier: ports=3 config=n/a interface=n/a → u3
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29891]: rfkill2: sd-device-monitor(worker): Passed 441 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: PCI path identifier: domain=n/a bus_and_slot=p0s20 func=f0 port=n/a → wlp0s20f0u3
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: 0000:00:14.0: Failed to read firmware_node/sun, ignoring: No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: 0000:00:14.0: Failed to find parent PCI device, ignoring: No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Could not get BCMA parent device: No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/80-net-setup-link.rules:5 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/80-net-setup-link.rules:9 IMPORT{builtin}="net_setup_link": Importing properties from results of builtin command "net_setup_link".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Device has name_assign_type attribute: 1
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Device has addr_assign_type attribute: 0
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Config file /usr/lib/systemd/network/99-default.link is applied
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: MAC address on the device already matches policy "persistent".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: Policy *path* yields "wlp0s20f0u3".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/80-net-setup-link.rules:11 NAME="$env{ID_NET_NAME}": Set network interface name: wlp0s20f0u3
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: /usr/lib/udev/rules.d/99-systemd.rules:69 RUN+="/usr/lib/systemd/systemd-sysctl --prefix=/net/ipv4/conf/$name --prefix=/net/ipv4/neigh/$name --prefix=/net/ipv6/conf/$name --prefix=/net/ipv6/neigh/$name": Set command: /usr/lib/systemd/systemd-sysctl --prefix=/net/ipv4/conf/wlp0s20f0u3 --prefix=/net/ipv4/neigh/wlp0s20f0u3 --prefix=/net/ipv6/conf/wlp0s20f0u3 --prefix=/net/ipv6/neigh/wlp0s20f0u3
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlan0: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlan0'.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: Device is queued (SEQNUM=4515, ACTION=move)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: SEQNUM=4515 blocked by SEQNUM=4514
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: SEQNUM=4515 blocked by SEQNUM=4513
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: SEQNUM=4515 blocked by SEQNUM=4512
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: SEQNUM=4515 blocked by SEQNUM=4511
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Network interface 4 is renamed from 'wlan0' to 'wlp0s20f0u3'
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlp0s20f0u3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Running command "/usr/lib/systemd/systemd-sysctl --prefix=/net/ipv4/conf/wlp0s20f0u3 --prefix=/net/ipv4/neigh/wlp0s20f0u3 --prefix=/net/ipv6/conf/wlp0s20f0u3 --prefix=/net/ipv6/neigh/wlp0s20f0u3"
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Found callout binary: "/usr/lib/systemd/systemd-sysctl".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Starting '/usr/lib/systemd/systemd-sysctl --prefix=/net/ipv4/conf/wlp0s20f0u3 --prefix=/net/ipv4/neigh/wlp0s20f0u3 --prefix=/net/ipv6/conf/wlp0s20f0u3 --prefix=/net/ipv6/neigh/wlp0s20f0u3'
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: Successfully forked off '(spawn)' as PID 29895.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Process '/usr/lib/systemd/systemd-sysctl --prefix=/net/ipv4/conf/wlp0s20f0u3 --prefix=/net/ipv4/neigh/wlp0s20f0u3 --prefix=/net/ipv6/conf/wlp0s20f0u3 --prefix=/net/ipv6/neigh/wlp0s20f0u3' succeeded.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlp0s20f0u3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: Device processed (SEQNUM=4511, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: wlp0s20f0u3: sd-device-monitor(worker): Passed 1517 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: Device ready for processing (SEQNUM=4512, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: rx-0: sd-device-monitor(manager): Passed 212 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: Device ready for processing (SEQNUM=4513, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: tx-0: sd-device-monitor(manager): Passed 212 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rx-0: Processing device (SEQNUM=4512, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: tx-0: Processing device (SEQNUM=4513, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rx-0: Device processed (SEQNUM=4512, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: rx-0: sd-device-monitor(worker): Passed 212 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: tx-0: Device processed (SEQNUM=4513, ACTION=add)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29892]: tx-0: sd-device-monitor(worker): Passed 212 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: Device ready for processing (SEQNUM=4514, ACTION=bind)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: 1-3:1.0: sd-device-monitor(manager): Passed 341 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Processing device (SEQNUM=4514, ACTION=bind)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device: Created database file '/run/udev/data/+usb:1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/40-gphoto.rules:9 IMPORT{builtin}="usb_id": Importing properties from results of builtin command "usb_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Failed to access usb_interface: No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/40-gphoto.rules:9 IMPORT{builtin}="usb_id": Failed to run builtin "usb_id": No such file or directory
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/50-udev-default.rules:21 IMPORT{builtin}="hwdb --subsystem=$env{SUBSYSTEM}": Importing properties from results of builtin command "hwdb --subsystem=usb".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: hwdb modalias key: "usb:v2357p011Ed0200dc00dsc00dp00icFFiscFFipFFin00"
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: /usr/lib/udev/rules.d/50-udev-default.rules:30 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device: Created database file '/run/udev/data/+usb:1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device: Created database file '/run/udev/data/+usb:1-3:1.0' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: Device processed (SEQNUM=4514, ACTION=bind)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: sd-device-monitor(worker): Passed 582 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: Device ready for processing (SEQNUM=4515, ACTION=move)
+Nov 27 18:54:16 Arch-Linux-SSD systemd-udevd[267]: wlp0s20f0u3: sd-device-monitor(manager): Passed 321 byte to netlink monitor.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Processing device (SEQNUM=4515, ACTION=move)
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlp0s20f0u3'.
+Nov 27 18:54:16 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/50-udev-default.rules:32 IMPORT{builtin}="net_driver": Importing properties from results of builtin command "net_driver".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/75-net-description.rules:6 IMPORT{builtin}="hwdb 'net:naming:dr$env{ID_NET_DRIVER}:'": Importing properties from results of builtin command "hwdb 'net:naming:drrtw_8821au:'".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: No entry found from hwdb.
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/75-net-description.rules:6 IMPORT{builtin}="hwdb 'net:naming:dr$env{ID_NET_DRIVER}:'": Failed to run builtin "hwdb 'net:naming:drrtw_8821au:'": No data available
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/75-net-description.rules:8 IMPORT{builtin}="usb_id": Importing properties from results of builtin command "usb_id".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: if_class:255 protocol:0
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/75-net-description.rules:8 IMPORT{builtin}="hwdb --subsystem=usb": Importing properties from results of builtin command "hwdb --subsystem=usb".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: hwdb modalias key: "usb:v2357p011Ed0200dc00dsc00dp00icFFiscFFipFFin00"
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/75-net-description.rules:15 IMPORT{builtin}="net_id": Importing properties from results of builtin command "net_id".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: MAC address identifier: hw_addr=8c:90:2d:95:20:38 → x8c902d952038
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: 1-3:1.0: USB name identifier: ports=3 config=n/a interface=n/a → u3
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: PCI path identifier: domain=n/a bus_and_slot=p0s20 func=f0 port=n/a → wlp0s20f0u3
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: 0000:00:14.0: Failed to read firmware_node/sun, ignoring: No such file or directory
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: 0000:00:14.0: Failed to find parent PCI device, ignoring: No such file or directory
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Could not get BCMA parent device: No such file or directory
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/80-net-setup-link.rules:5 IMPORT{builtin}="path_id": Importing properties from results of builtin command "path_id".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/80-net-setup-link.rules:9 IMPORT{builtin}="net_setup_link": Importing properties from results of builtin command "net_setup_link".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Device has name_assign_type attribute: 4
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Device has addr_assign_type attribute: 0
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Config file /usr/lib/systemd/network/99-default.link is applied
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: MAC address on the device already matches policy "persistent".
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Not applying Name= and NamePolicy= on 'move' uevent.
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Not applying AlternativeNames= and AlternativeNamesPolicy= on 'move' uevent.
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: /usr/lib/udev/rules.d/80-net-setup-link.rules:11 NAME="$env{ID_NET_NAME}": Set network interface name: wlp0s20f0u3
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlp0s20f0u3'.
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: sd-device: Created database file '/run/udev/data/n4' for '/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/net/wlp0s20f0u3'.
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: Device processed (SEQNUM=4515, ACTION=move)
+Nov 27 18:54:17 Arch-Linux-SSD (udev-worker)[29882]: wlp0s20f0u3: sd-device-monitor(worker): Passed 1556 byte to netlink monitor.
+Nov 27 18:54:17 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:20 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:54:20 Arch-Linux-SSD systemd-udevd[267]: Worker [29891] exited.
+Nov 27 18:54:20 Arch-Linux-SSD systemd-udevd[267]: Worker [29882] exited.
+Nov 27 18:54:20 Arch-Linux-SSD systemd-udevd[267]: Worker [29892] exited.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4525, ACTION=change)
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4525, ACTION=change)
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30115.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30115] is forked for processing SEQNUM=4525.
+Nov 27 18:54:30 Arch-Linux-SSD (udev-worker)[30115]: ACAD: Processing device (SEQNUM=4525, ACTION=change)
+Nov 27 18:54:30 Arch-Linux-SSD (udev-worker)[30115]: ACAD: Device processed (SEQNUM=4525, ACTION=change)
+Nov 27 18:54:30 Arch-Linux-SSD (udev-worker)[30115]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:54:30 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:31 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4526, ACTION=change)
+Nov 27 18:54:31 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4526, ACTION=change)
+Nov 27 18:54:31 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 801 byte to netlink monitor.
+Nov 27 18:54:31 Arch-Linux-SSD (udev-worker)[30115]: BAT1: Processing device (SEQNUM=4526, ACTION=change)
+Nov 27 18:54:31 Arch-Linux-SSD (udev-worker)[30115]: BAT1: Device processed (SEQNUM=4526, ACTION=change)
+Nov 27 18:54:31 Arch-Linux-SSD (udev-worker)[30115]: BAT1: sd-device-monitor(worker): Passed 801 byte to netlink monitor.
+Nov 27 18:54:31 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:35 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:54:35 Arch-Linux-SSD systemd-udevd[267]: Worker [30115] exited.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4527, ACTION=change)
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4527, ACTION=change)
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30143.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30143] is forked for processing SEQNUM=4527.
+Nov 27 18:54:42 Arch-Linux-SSD (udev-worker)[30143]: ACAD: Processing device (SEQNUM=4527, ACTION=change)
+Nov 27 18:54:42 Arch-Linux-SSD (udev-worker)[30143]: ACAD: Device processed (SEQNUM=4527, ACTION=change)
+Nov 27 18:54:42 Arch-Linux-SSD (udev-worker)[30143]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:54:42 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:43 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4528, ACTION=change)
+Nov 27 18:54:43 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4528, ACTION=change)
+Nov 27 18:54:43 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 798 byte to netlink monitor.
+Nov 27 18:54:43 Arch-Linux-SSD (udev-worker)[30143]: BAT1: Processing device (SEQNUM=4528, ACTION=change)
+Nov 27 18:54:43 Arch-Linux-SSD (udev-worker)[30143]: BAT1: Device processed (SEQNUM=4528, ACTION=change)
+Nov 27 18:54:43 Arch-Linux-SSD (udev-worker)[30143]: BAT1: sd-device-monitor(worker): Passed 798 byte to netlink monitor.
+Nov 27 18:54:43 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:54:46 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:54:46 Arch-Linux-SSD systemd-udevd[267]: Worker [30143] exited.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4529, ACTION=change)
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4529, ACTION=change)
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30198.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30198] is forked for processing SEQNUM=4529.
+Nov 27 18:55:01 Arch-Linux-SSD (udev-worker)[30198]: ACAD: Processing device (SEQNUM=4529, ACTION=change)
+Nov 27 18:55:01 Arch-Linux-SSD (udev-worker)[30198]: ACAD: Device processed (SEQNUM=4529, ACTION=change)
+Nov 27 18:55:01 Arch-Linux-SSD (udev-worker)[30198]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:55:01 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:02 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4530, ACTION=change)
+Nov 27 18:55:02 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4530, ACTION=change)
+Nov 27 18:55:02 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 801 byte to netlink monitor.
+Nov 27 18:55:02 Arch-Linux-SSD (udev-worker)[30198]: BAT1: Processing device (SEQNUM=4530, ACTION=change)
+Nov 27 18:55:02 Arch-Linux-SSD (udev-worker)[30198]: BAT1: Device processed (SEQNUM=4530, ACTION=change)
+Nov 27 18:55:02 Arch-Linux-SSD (udev-worker)[30198]: BAT1: sd-device-monitor(worker): Passed 801 byte to netlink monitor.
+Nov 27 18:55:02 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:06 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:55:06 Arch-Linux-SSD systemd-udevd[267]: Worker [30198] exited.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4531, ACTION=change)
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4531, ACTION=change)
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30228.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30228] is forked for processing SEQNUM=4531.
+Nov 27 18:55:12 Arch-Linux-SSD (udev-worker)[30228]: ACAD: Processing device (SEQNUM=4531, ACTION=change)
+Nov 27 18:55:12 Arch-Linux-SSD (udev-worker)[30228]: ACAD: Device processed (SEQNUM=4531, ACTION=change)
+Nov 27 18:55:12 Arch-Linux-SSD (udev-worker)[30228]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:55:12 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:13 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4532, ACTION=change)
+Nov 27 18:55:13 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4532, ACTION=change)
+Nov 27 18:55:13 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 798 byte to netlink monitor.
+Nov 27 18:55:13 Arch-Linux-SSD (udev-worker)[30228]: BAT1: Processing device (SEQNUM=4532, ACTION=change)
+Nov 27 18:55:13 Arch-Linux-SSD (udev-worker)[30228]: BAT1: Device processed (SEQNUM=4532, ACTION=change)
+Nov 27 18:55:13 Arch-Linux-SSD (udev-worker)[30228]: BAT1: sd-device-monitor(worker): Passed 798 byte to netlink monitor.
+Nov 27 18:55:13 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:17 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:55:17 Arch-Linux-SSD systemd-udevd[267]: Worker [30228] exited.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4533, ACTION=change)
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4533, ACTION=change)
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30274.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30274] is forked for processing SEQNUM=4533.
+Nov 27 18:55:28 Arch-Linux-SSD (udev-worker)[30274]: ACAD: Processing device (SEQNUM=4533, ACTION=change)
+Nov 27 18:55:28 Arch-Linux-SSD (udev-worker)[30274]: ACAD: Device processed (SEQNUM=4533, ACTION=change)
+Nov 27 18:55:28 Arch-Linux-SSD (udev-worker)[30274]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:55:28 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:29 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4534, ACTION=change)
+Nov 27 18:55:29 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4534, ACTION=change)
+Nov 27 18:55:29 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 801 byte to netlink monitor.
+Nov 27 18:55:29 Arch-Linux-SSD (udev-worker)[30274]: BAT1: Processing device (SEQNUM=4534, ACTION=change)
+Nov 27 18:55:29 Arch-Linux-SSD (udev-worker)[30274]: BAT1: Device processed (SEQNUM=4534, ACTION=change)
+Nov 27 18:55:29 Arch-Linux-SSD (udev-worker)[30274]: BAT1: sd-device-monitor(worker): Passed 801 byte to netlink monitor.
+Nov 27 18:55:29 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:33 Arch-Linux-SSD systemd-udevd[267]: Cleaning up idle workers.
+Nov 27 18:55:33 Arch-Linux-SSD systemd-udevd[267]: Worker [30274] exited.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device is queued (SEQNUM=4535, ACTION=change)
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0-tun.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-auto-link-local.network.example' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vb.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-station.network.example' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/89-ethernet.network.example' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-vz.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-ve.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-ap.network.example' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-container-host0.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-namespace-ns-tun.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-6rd-tunnel.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-vm-vt.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/systemd/network/80-wifi-adhoc.network' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Skipping file '/usr/lib/udev/rules.d/README' with unexpected suffix.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: ACAD: Device ready for processing (SEQNUM=4535, ACTION=change)
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: Successfully forked off '(udev-worker)' as PID 30305.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: ACAD: Worker [30305] is forked for processing SEQNUM=4535.
+Nov 27 18:55:39 Arch-Linux-SSD (udev-worker)[30305]: ACAD: Processing device (SEQNUM=4535, ACTION=change)
+Nov 27 18:55:39 Arch-Linux-SSD (udev-worker)[30305]: ACAD: Device processed (SEQNUM=4535, ACTION=change)
+Nov 27 18:55:39 Arch-Linux-SSD (udev-worker)[30305]: ACAD: sd-device-monitor(worker): Passed 302 byte to netlink monitor.
+Nov 27 18:55:39 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.
+Nov 27 18:55:40 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device is queued (SEQNUM=4536, ACTION=change)
+Nov 27 18:55:40 Arch-Linux-SSD systemd-udevd[267]: BAT1: Device ready for processing (SEQNUM=4536, ACTION=change)
+Nov 27 18:55:40 Arch-Linux-SSD systemd-udevd[267]: BAT1: sd-device-monitor(manager): Passed 798 byte to netlink monitor.
+Nov 27 18:55:40 Arch-Linux-SSD (udev-worker)[30305]: BAT1: Processing device (SEQNUM=4536, ACTION=change)
+Nov 27 18:55:40 Arch-Linux-SSD (udev-worker)[30305]: BAT1: Device processed (SEQNUM=4536, ACTION=change)
+Nov 27 18:55:40 Arch-Linux-SSD (udev-worker)[30305]: BAT1: sd-device-monitor(worker): Passed 798 byte to netlink monitor.
+Nov 27 18:55:40 Arch-Linux-SSD systemd-udevd[267]: No events are queued, removed /run/udev/queue.

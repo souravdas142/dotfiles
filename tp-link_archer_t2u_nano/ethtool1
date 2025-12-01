@@ -1,0 +1,10 @@
+driver: rtw_8821au
+version: 6.17.8-arch1-1
+firmware-version: N/A
+expansion-rom-version: 
+bus-info: 1-3:1.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no

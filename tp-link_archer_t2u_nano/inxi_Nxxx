@@ -1,0 +1,10 @@
+Network:
+  Device-1: Realtek RTL810xE PCI Express Fast Ethernet vendor: Hewlett-Packard
+    driver: r8169 v: kernel pcie: speed: 2.5 GT/s lanes: 1 port: 3000
+    bus-ID: 02:00.0 chip-ID: 10ec:8136 class-ID: 0200
+  Device-2: Broadcom BCM43142 802.11b/g/n vendor: Hewlett-Packard
+    driver: bcma-pci-bridge v: N/A pcie: speed: 2.5 GT/s lanes: 1
+    bus-ID: 03:00.0 chip-ID: 14e4:4365 class-ID: 0280
+  Device-3: TP-Link AC600 wireless Realtek RTL8811AU [Archer T2U Nano]
+    driver: rtw_8821au type: USB rev: 2.1 speed: 480 Mb/s lanes: 1 bus-ID: 1-3:3
+    chip-ID: 2357:011e class-ID: 0000 serial: 00e04c000001
