@@ -42,7 +42,7 @@ bindsym $mod+d exec ~/.config/rofi/launchers/launcher.sh
 # Launching Browser
 #bindsym $mod+Shift+f exec firefox
 #bindsym $mod+Shift+f exec brave
-bindsym $mod+Shift+f exec google-chrome-stable --enable-wayland-ime --wayland-text-input-version=3
+bindsym $mod+Shift+f exec google-chrome-stable
 bindsym $mod+Shift+g exec google-chrome-beta
 
 # restart polybar
@@ -148,6 +148,7 @@ bindsym $mod+XF86PowerOff  exec --no-startup-id /sbin/poweroff
 #screenlock
 #    bindsym $mod+shift+x  exec  swaylock -f
 	bindsym $mod+Shift+x exec hyprlock
+	bindsym $mod+Shift+z exec swaymsg output eDP-1 dpms toggle
 
 
 # resize window (you can also use the mouse for that)
