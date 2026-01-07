@@ -1,0 +1,43 @@
+# example configuration
+
+capture_backend = "layer-shell"
+emulation_backend = "wlroots"
+
+# cert_path = ""
+
+
+# configure release bind
+release_bind = [ "KeyA", "KeyS", "KeyD", "KeyF" ]
+
+# optional port (defaults to 4242)
+port = 4242
+
+# list of authorized tls certificate fingerprints that
+# are accepted for incoming traffic
+[authorized_fingerprints]
+"07:d7:5b:e8:9d:f7:3e:fa:a8:ab:0f:da:37:a1:a3:c3:23:7d:9c:da:74:1e:5b:05:d2:a3:dd:f2:f6:6a:4c:b7" = "Arch-Linux"
+"29:96:d1:51:87:70:a3:e2:c4:c9:8e:76:2d:92:5a:55:af:24:e5:e0:90:73:ea:fc:ca:0b:3f:93:e1:3d:1c:61" = "Arch-Linux-SSD"
+
+# define a client on the right side with host name "iridium"
+[[clients]]
+# position (left | right | top | bottom)
+position = "left"
+#host_name = ""
+# hostname
+hostname = "Arch-Linux"
+# activate this client immediately when lan-mouse is started
+activate_on_startup = true
+# optional list of (known) ip addresses
+ips = ["10.83.26.226"]
+#enter_hook = "echo entered_arch_dell"
+
+# define a client on the left side with IP address 192.168.178.189
+[[clients]]
+position = "left"
+# The hostname is optional: When no hostname is specified,
+# at least one ip address needs to be specified.
+hostname = "thorium"
+# ips for ethernet and wifi
+ips = ["192.168.178.189", "192.168.178.172"]
+# optional port
+port = 4242
