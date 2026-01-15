@@ -1,16 +1,15 @@
 /*******************************************************
- * ROFI Minimal Theme - Transparent Edition
+ * ROFI Minimal Theme - Vibrant Edition
  *******************************************************/
 
 * {
-    /* The 'cc' at the end of bg-col sets the transparency (80%) */
-    /* Use 'aa' for 66% or 'ff' for 100% (solid) */
-    bg-col:      #111213ef;     
-    bg-sel:      #363d41ff;     /* Keep selection solid for contrast */
-    border-col:  #4a5057;       /* Slightly brighter border to define edges */
-    text-col:    #c5d1d1;     
-    accent-col:  #98e6e6;     
-    ff-col:      #ffffff;     
+    /* Adjusted for non-transparent, punchy colors */
+    bg-col:      #111213;     /* Deeper, cleaner dark background */
+    bg-sel:      #363d41;     /* Brighter selection slate */
+    border-col:  #3d444b;     /* More visible border */
+    text-col:    #c5d1d1;     /* Brightened muted teal (for unselected text) */
+    accent-col:  #98e6e6;     /* Vibrant Cyan/Teal for highlights */
+    ff-col:      #ffffff;     /* Pure white */
     
     width: 500;
     font: "JetBrainsMono Nerd Font 11";
@@ -18,29 +17,25 @@
 
 window {
     height: 300px;
-    border: 0px;               /* Added a small border so it doesn't get lost on the desktop */
-    border-color: @border-col;
+    border: 0px;
     border-radius: 18px;
     background-color: @bg-col;
 }
 
 mainbox {
-    /* Set to transparent so it shows the window background */
-    background-color: transparent; 
+    background-color: @bg-col;
     padding: 20px;
 }
 
 inputbar {
     children: [prompt, entry];
-    background-color: transparent; /* Changed to transparent for a cleaner look */
+    background-color: @bg-col;
     border: 2px;
     border-radius: 12px;
     border-color: @border-col;
     margin: 0px 0px 10px 0px;
     padding: 10px;
 }
-
-/* ... (rest of your existing logic remains the same) ... */
 
 prompt {
     background-color: transparent;
@@ -50,6 +45,7 @@ prompt {
 
 entry {
     background-color: transparent;
+    /* This is the text you type - made it brighter than #838788 */
     text-color: #e0e0e0;
     placeholder: "Search...";
     placeholder-color: @ff-col;
@@ -72,7 +68,8 @@ element {
 }
 
 element selected {
-    background-color: @bg-sel;
+    /* Using a slightly more bluish tint for the selection bar */
+    background-color: #2e3943; 
     text-color: @accent-col;
 }
 
