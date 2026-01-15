@@ -1,6 +1,6 @@
 
 
-exec wpaperd -d
+exec_always wpaperd -d
 
 # Status Bar {{{
 bar {
@@ -14,6 +14,7 @@ bar {
 #  timeout 450 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 #  before-sleep 'swaylock -f'
 exec hypridle
+
 
 # Launching Notification Daemon
 #exec --no-startup-id dunst
@@ -31,6 +32,8 @@ exec --no-startup-id fcitx5 -d --replace
 
 # Systray bluetooth connector
 exec_always --no-startup-id blueman-applet --loglevel 5 --syslog
+
+exec wl-paste --watch cliphist store
 
 # Launching WARP VPN
 #exec_always python ~/Desktop/git/warp-cloudflare-gui/main.py --hide &

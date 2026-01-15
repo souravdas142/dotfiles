@@ -30,6 +30,8 @@ bindsym $mod+Shift+q kill
 # restart the waybar
 bindsym $mod+Shift+w exec killall -SIGUSR2 waybar
 
+bindsym alt+Shift+v exec ~/.config/cliphist/cliphist-dialogue.sh
+
 
 
 #application launcher
@@ -147,7 +149,7 @@ bindsym $mod+XF86PowerOff  exec --no-startup-id /sbin/poweroff
 
 #screenlock
 #    bindsym $mod+shift+x  exec  swaylock -f
-	bindsym $mod+Shift+x exec hyprlock
+	bindsym $mod+Shift+x exec swaymsg output eDP-1 dpms on && hyprlock
 	bindsym $mod+Shift+z exec swaymsg output eDP-1 dpms toggle
 
 
