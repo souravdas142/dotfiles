@@ -1,0 +1,133 @@
+
+# =========================================================
+# SWAYFX : VIMIX DARK AMETHYST MODULE
+# ---------------------------------------------------------
+# Theme target:
+#   Vimix-dark-amethyst
+#
+# Design language:
+# - subtle amethyst depth
+# - sharp i3-style geometry
+# - modern GTK consistency
+# - lightweight compositor effects
+# - dark flat UI with soft separation
+#
+# Hardware target:
+# - Intel HD 520/530
+# - i5 6th gen
+# - 8GB DDR3
+#
+# Performance profile:
+# - very low CPU usage
+# - negligible RAM impact
+# - blur intentionally disabled
+# =========================================================
+
+# Goal:
+# - subtle window depth separation
+# - GTK/CSD friendly shadows
+# - Vimix Dark Compact Amethyst compatible
+# - lightweight for Intel HD 520 / i5 6th gen
+# - no blur for maximum responsiveness
+# - i3-like sharp aesthetics with modern polish
+#
+# Estimated overhead:
+# - RAM: negligible (~10-40MB)
+# - CPU: near idle
+# - GPU: very light
+#
+# Recommended for:
+# - coding workflows
+# - Eclipse / IntelliJ / terminals
+# - dark GTK themes
+# - Sway on integrated Intel graphics
+# =========================================================
+
+
+
+# ---------------------------------------------------------
+# Window geometry
+# ---------------------------------------------------------
+
+# Preserve sharp i3/Sway aesthetics
+# Vimix already provides modern styling
+corner_radius 0
+
+
+# ---------------------------------------------------------
+# Blur
+# ---------------------------------------------------------
+
+# Disabled intentionally.
+# Blur is the single most expensive effect.
+# Keeping this off preserves responsiveness.
+# Blur is expensive on older Intel iGPUs.
+# Keep disabled for best latency and battery.
+blur disable
+
+
+# ---------------------------------------------------------
+# Shadows
+# ---------------------------------------------------------
+
+# Enable compositor shadows
+# This provides the missing visual depth
+# that vanilla Sway lacks with dark themes.
+shadows enable
+
+# Important for GTK/Qt CSD applications:
+# Eclipse, Nautilus, IntelliJ, etc.
+shadows_on_csd enable
+
+
+# ---------------------------------------------------------
+# Shadow tuning
+# ---------------------------------------------------------
+
+# Soft but compact shadow spread.
+# Matches Vimix compact design language.
+shadow_blur_radius 4
+
+# Active window shadow
+# Slight amethyst-tinted depth feeling
+#shadow_color #16111f99
+shadow_color #120d1ccc
+
+# Inactive window shadow
+# Very subtle to avoid visual clutter
+#shadow_inactive_color #0f0b142e
+#shadow_inactive_color #0f0b1433
+shadow_inactive_color #1a152633
+
+# Keep shadows centered and modern
+shadow_offset 0 4
+
+
+
+# ---------------------------------------------------------
+# Lightweight extras worth enabling
+# ---------------------------------------------------------
+
+# Improves visual smoothness during resize
+# Very cheap performance-wise
+# (only if supported by your swayfx build)
+# render_unfocused_fps 15
+
+# Keeps rendering efficient while inactive
+# Useful for laptops
+# max_render_time off
+
+# ---------------------------------------------------------
+# Avoid enabling for this setup
+# ---------------------------------------------------------
+
+# blur enable
+# layer_effects blur
+# transparency-heavy configs
+# huge shadow blur radius (>16)
+# aggressive rounded corners
+#
+# These reduce responsiveness on
+# older Intel integrated graphics.
+# ---------------------------------------------------------
+

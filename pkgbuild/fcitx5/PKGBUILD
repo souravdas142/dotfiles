@@ -1,6 +1,6 @@
 # Maintainer: Sourav Das <souravdas142@gmail.com>
 pkgname=fcitx5-openbangla-git
-pkgver=2.0.0.r110.gb1a3a6f
+pkgver=2.0.0.r121.g06d91e1
 pkgrel=1
 pkgdesc="An OpenSource Bengali Input Method for Fcitx5"
 arch=('x86_64')
@@ -18,9 +18,9 @@ depends=(
     'qt5-base'       # QT integration core
     'zstd'           # Compression library used
     'gcc-libs'       # Runtime libraries
-    'fcitx5-configtool: Configuration GUI'
-    'fcitx5-qt: Better Qt integration'
-    'fcitx5-gtk: GTK applications support'
+    'fcitx5-configtool'
+    'fcitx5-qt'
+    'fcitx5-gtk'
 )
 
 # Build-time dependencies (only needed during compilation)

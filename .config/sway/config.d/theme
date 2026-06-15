@@ -37,30 +37,52 @@ font pango:System San Francisco Display 8
 
 
 smart_borders on
-default_border pixel 2
-default_floating_border pixel 2
-gaps outer 0
-gaps inner 5
+default_border pixel 3
+default_floating_border pixel 3
+gaps outer 2
+gaps inner 4
 #gaps only enable if more than one container available
 smart_gaps on
+
+# Disable this if you are running swaywm
+include $sway_config_dir/swayfx-specific
 
 # Launching wallpaper replaces by wpaper
 #output * background '$sway_wall_dir/sway_wallpaper.png' fill
 
-#some color variable
-set $indColor			 #00ff0000
-set $lockColor			 #808080
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-#end of color variable
 
+# -------------------------------------------------
+# Vimix Dark Compact Amethyst inspired colors
+# -------------------------------------------------
+
+# core colors
+set $indColor            #b084f5
+set $lockColor           #6c7086
+
+set $bg-color            #2b2d37
+set $inactive-bg-color   #242631
+
+set $text-color          #f5f6fa
+set $inactive-text-color #8b90a8
+
+set $urgent-bg-color     #d95c5c
+
+# border palette (amethyst tinted)
+set $border1             #b084f5
+set $border2             #554a6f
+set $border3             #74639a
+set $border4             #d95c5c
+
+# optional child border accent
+set $child-border        #8a63d2
+
+# -------------------------------------------------
 # window colors
-# #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color				$indColor
-client.unfocused        $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
-client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color		$indColor
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color				$indColor
-#hide_edge_borders both
+# class                 border     backgr.            text                  indicator           child_border
+# -------------------------------------------------
+
+client.focused          $border1   $bg-color          $text-color           $indColor           $child-border
+client.focused_inactive $border3   $inactive-bg-color $inactive-text-color  $indColor           $border3
+client.unfocused        $border2   $inactive-bg-color $inactive-text-color  $indColor           $border2
+client.urgent           $border4   $urgent-bg-color   $text-color           $border4            $border4
+client.placeholder      #1e2029    #1e2029            #aeb3c2               #1e2029             #1e2029
