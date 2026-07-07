@@ -59,16 +59,18 @@ adjust_temp() {
 
 toggleSunOnOff() {
 
-	if pgrep -x "wlsunset" >/dev/null; then
+	## Find wlsunset processes, but exclude this script's PID ($$)
+	if pgrep -x "wlsunset" | grep -v -q "^$$$" >/dev/null; then
 	  pkill -x "wlsunset" 2>/dev/null
 	  # Small delay to ensure process termination
-	  while pgrep -x "wlsunset" >/dev/null; do
-	    #sleep 0.1
-	    true
+	  while pgrep -x "wlsunset" | grep -v -q "^$$$" >/dev/null; do
+	    sleep 0.1
+	    #true
 	  done
 	else
 	  VAR=$(get_temp)
-	  command wlsunset -t "$VAR" -T "$((VAR+5))" > /dev/null 2>&1 &
+	  # # Use absolute path or ensure this doesn't accidentally re-run the script
+	  /usr/bin/wlsunset -t "$VAR" -T "$((VAR+5))" > /dev/null 2>&1 &
 	  echo "wlsunset started at $VAR K"
 	fi
 
@@ -78,5 +80,5 @@ toggleSunOnOff() {
 case "$1" in
   inc|dec) adjust_temp "$1" ;;
   toggle) toggleSunOnOff ;;
-  *)       echo "Usage: $0 [inc|dec]" ;;
+  *)       echo "Usage: $0 [inc|dec|toggle]" ;;
 esac

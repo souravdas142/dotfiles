@@ -45,3 +45,6 @@ exec wl-paste --watch cliphist store
 # Launching Xdman systray
 #exec_always --no-startup-id xdman &
 
+# Enabling wlsunset  at startup
+exec --no-startup-id ~/.config/waybar/scripts/wlsunset/wlsunset toggle
+
