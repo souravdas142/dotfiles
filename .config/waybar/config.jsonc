@@ -288,7 +288,7 @@
       "format-wifi": "<span foreground='#ddc7a1' font_style='italic' font_weight='heavy'>󰁆 {bandwidthDownBytes} 󰁞 {bandwidthUpBytes}</span>",
       "on-click": "kitty -e nmtui",
 	  "tooltip": true,
-	  "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>",
+	  "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nLink Bitrate:<b>tx{txBitrate} rx{rxBitrate}</b>\nLink Speed:<b>{linkSpeed}</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>",
 	  "tooltip-format-ethernet": "Network: <b>Ethernet</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>",
 	  //"tooltip-format": "{ifname} via {gwaddr} 󰊗",
       //"tooltip-format-wifi": " {ifname}\n{essid} ({signalStrength}%)\n{ipaddr} via {gwaddr}",

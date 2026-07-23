@@ -1,6 +1,6 @@
 # Maintainer: Sourav Das <souravdas142@gmail.com>
 pkgname=fcitx5-openbangla-git
-pkgver=2.0.0.r121.g06d91e1
+pkgver=2.0.0.r125.gf83d5d0
 pkgrel=1
 pkgdesc="An OpenSource Bengali Input Method for Fcitx5"
 arch=('x86_64')

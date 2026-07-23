@@ -31,6 +31,15 @@
       "app-name": "de.haeckerfelix.Fragments"
     }
   },
+  "notification-visibility": {
+    "downgrade-chrome-urgency": {
+      "state": "enabled",
+      "app-name": "(?i)chrome",
+      "desktop-entry": "(?i)chrome",
+      "urgency": "Critical",
+      "override-urgency": "normal"
+    }
+  },
   "widgets": [
     "buttons-grid",
     "title",
