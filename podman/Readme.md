@@ -24,6 +24,18 @@ exec systemctl --user import-environment XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRES
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS
 
 
+
+┌─[shilpa@Arch-Linux]─[podman]
+└──╼ $ cat /etc/subuid | grep $(whoami)
+shilpa:100000:65536
+shilpa2:231072:65536
+┌─[shilpa@Arch-Linux]─[podman]
+└──╼ $ cat /etc/subgid | grep $(whoami)
+shilpa:100000:65536
+shilpa2:231072:65536
+┌─[shilpa@Arch-Linux]─[podman]
+└──╼ $
+
 and then 
 
 loginctl enable-linger $USER
@@ -38,8 +50,9 @@ start podman
 
 systemctl start --user podman.sock
 
+check running a hellow world
 
-
+podman run --rm docker.io/library/hello-world
 
 
 

@@ -342,7 +342,7 @@
     },
 	"return-type": "json",
     "tooltip": true,
-    "interval": 0,
+    "interval": 5,
     "signal": 9,
     "exec": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --status",
     "on-click": "~/.config/waybar/scripts/toggle-wifi-led/t2u-led.sh --toggle",
