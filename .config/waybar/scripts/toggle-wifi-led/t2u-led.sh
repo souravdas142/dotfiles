@@ -2,7 +2,7 @@
 
 ##############################################
 # T2U LED Unified Script (toggle + status)
-# With cached path lookups for 0% CPU impact
+# Runs udevadm ONCE on first load, then uses cache
 ##############################################
 
 VID="2357"
@@ -19,25 +19,33 @@ icon_off="network-error"
 ##############################################
 
 find_led_path() {
-    # 1. Use cached path if it still exists on disk
+    # 1. If cache file exists, use it immediately (NO udevadm)
     if [ -f "$CACHE_FILE" ]; then
-        cached_path=$(cat "$CACHE_FILE")
-        if [ -d "$cached_path" ]; then
-            echo "$cached_path"
-            return
-        fi
+        /usr/bin/cat "$CACHE_FILE"
+        return
     fi
 
-    # 2. Fallback to udevadm search if cache is missing or invalid
+    # 2. Cache missing: Run udevadm ONCE to discover path
+    local found_path=""
     for led in /sys/class/leds/*; do
         udev_info=$(udevadm info -a "$led" 2>/dev/null)
         [[ "$udev_info" == *"ATTRS{idVendor}==\"$VID\""* ]] &&
         [[ "$udev_info" == *"ATTRS{idProduct}==\"$PID\""* ]] && {
-            echo "$led" | tee "$CACHE_FILE" >/dev/null
-            echo "$led"
-            return
+            found_path="$led"
+            break
         }
     done
+
+    # 3. Save discovered path (or hardcoded fallback) to cache
+    if [ -n "$found_path" ]; then
+        echo "$found_path" > "$CACHE_FILE"
+        echo "$found_path"
+    else
+        # Fallback path if auto-discovery fails
+        local fallback_path="/sys/class/leds/rtw88-1-3:1.0"
+        echo "$fallback_path" > "$CACHE_FILE"
+        echo "$fallback_path"
+    fi
 }
 
 refresh_waybar() {
@@ -70,8 +78,8 @@ notify_led() {
 
 LED_PATH=$(find_led_path)
 
-if [ -z "$LED_PATH" ]; then
-    rm -f "$CACHE_FILE" 2>/dev/null
+# Ensure the path saved in cache actually exists on sysfs
+if [ ! -d "$LED_PATH" ]; then
     if [ "$1" = "--status" ]; then
         echo '{"text":"","class":"missing","tooltip":"Device not found"}'
         exit 0
@@ -80,7 +88,7 @@ if [ -z "$LED_PATH" ]; then
 fi
 
 TRIGGER="$LED_PATH/trigger"
-CURRENT=$(grep -o '\[[^]]*\]' "$TRIGGER" | tr -d '[]')
+CURRENT=$(grep -o '\[[^]]*\]' "$TRIGGER" 2>/dev/null | tr -d '[]')
 
 do_on() {
     echo phy0tpt | sudo tee "$TRIGGER" >/dev/null
@@ -103,11 +111,6 @@ do_toggle() {
 }
 
 do_status() {
-    if [ -z "$LED_PATH" ]; then
-        echo '{"text":"","class":"missing","tooltip":"Device not found"}'
-        exit 0
-    fi
-
     if [ "$CURRENT" = "none" ]; then
         echo '{"text":"","class":"off","tooltip":"T2U LED: OFF"}'
     else
