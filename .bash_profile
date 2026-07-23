@@ -38,7 +38,8 @@ function startwayland() {
 	if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
 		#unset SWAYSOCK
 		#exec dbus-run-session sway
-		exec env -u SWAYSOCK dbus-run-session sway
+		#exec env -u SWAYSOCK dbus-run-session sway
+		exec sway
 	fi
 
 	while [[ ! $WAYLAND_DISPLAY && $XDG_VTNR -eq 1 ]]

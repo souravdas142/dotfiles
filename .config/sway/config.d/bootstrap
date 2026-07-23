@@ -48,3 +48,6 @@ exec wl-paste --watch cliphist store
 # Enabling wlsunset  at startup
 exec --no-startup-id ~/.config/waybar/scripts/wlsunset/wlsunset toggle
 
+# Force DBus & systemd to adopt Wayland session environment variables
+exec systemctl --user import-environment XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS WAYLAND_DISPLAY
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS
