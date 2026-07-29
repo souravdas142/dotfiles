@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-wayLandLogFile=/home/$USER/.local/share/wayland/startwayland.log
-xOrgLogFile=/home/$USER/.local/share/wayland/startxOrg.log
+wayLandLogFile="$HOME/.local/share/wayland/startwayland.log"
+xOrgLogFile="$HOME/.local/share/wayland/startxOrg.log"
 
 
 
@@ -13,14 +13,14 @@ function log() {
 
 	if [ "$1" == "xorg" ]; then
 		LogFile=$xOrgLogFile
-		check_display= $WAYLAND_DISPLAY
+		check_display=$DISPLAY
 	elif [ "$1" == "wayland" ]; then
 		LogFile=$wayLandLogFile
-		check_display=$DISPLAY
+		check_display=$WAYLAND_DISPLAY
 	fi
 
 
-	if [ -z "$check_display" ] && [ "$XDG_VTNR" -eq 1 ]; then
+	if [ -z "$check_display" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
 		echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $@" 2>&1 | tee -a $LogFile
 
 	fi
@@ -33,16 +33,23 @@ function startwayland() {
 
 	count=0
 
+	# 1. Parse and export all variables defined in ~/.config/environment.d/*.conf
+	if [ -d "$HOME/.config/environment.d" ]; then
+	    for file in "$HOME"/.config/environment.d/*.conf; do
+	        [ -f "$file" ] && [ -r "$file" ] && set -a && source "$file" && set +a
+	    done
+	fi
+
 	log "wayland" "$@" "Start logging for $USER@tty$XDG_VTNR ........"
 
-	if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+	if [ -z "$WAYLAND_DISPLAY" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
 		#unset SWAYSOCK
 		#exec dbus-run-session sway
 		#exec env -u SWAYSOCK dbus-run-session sway
 		exec sway
 	fi
 
-	while [[ ! $WAYLAND_DISPLAY && $XDG_VTNR -eq 1 ]]
+	while [[ ! $WAYLAND_DISPLAY && "${XDG_VTNR:-0}" -eq 1 ]]
 	do
 
 		count=$( expr $count + 1 )
@@ -55,7 +62,8 @@ function startwayland() {
 
 			#unset SWAYSOCK
 			#exec dbus-run-session sway -- -keeptty 2>&1 | tee -a $LogFile
-			exec env -u SWAYSOCK dbus-run-session sway
+			#exec env -u SWAYSOCK dbus-run-session sway
+			exec sway
 			flag2=$?
 			if [ $flag2 -eq 0 ]; then
 				log "wayland" "executed starting Wayland..."
@@ -93,7 +101,7 @@ function startxorg() {
 
 	log "xorg" "\n\nStart logging for $USER@tty$XDG_VTNR ........"
 
-	while [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]
+	while [[ ! $DISPLAY && "${XDG_VTNR:-0}" -eq 1 ]]
 	do
 
 	count=$( expr $count + 1 )

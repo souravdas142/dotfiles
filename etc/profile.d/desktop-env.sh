@@ -1,6 +1,7 @@
 
 if { env | grep -i "sway" >/dev/null 2>&1; }; then
     export XDG_CURRENT_DESKTOP=sway
+	export XDG_SESSION_DESKTOP=sway
 elif { env | grep -i "river" >/dev/null 2>&1; }; then
     export XDG_CURRENT_DESKTOP=river
 elif { env | grep -i "weston" >/dev/null 2>&1; }; then
@@ -11,6 +12,7 @@ elif { env | grep -i "hikari" >/dev/null 2>&1; }; then
     export XDG_CURRENT_DESKTOP=hikari
 elif { env | grep -i "hyprland" >/dev/null 2>&1; }; then
     export XDG_CURRENT_DESKTOP=hyprland
+	export XDG_SESSION_DESKTOP=hyprland
 elif { env | grep -i "i3" >/dev/null 2>&1; }; then
     export XDG_CURRENT_DESKTOP=i3
 elif { env | grep -i "openbox" >/dev/null 2>&1; }; then
